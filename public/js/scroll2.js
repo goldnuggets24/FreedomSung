@@ -211,7 +211,7 @@ onscroll = function() {
 
     if(change == 0) {
       tempMarker.setLatLng([23.1136, -82.3666]);
-      map.setView([23.1136, -82.3666], 4); 
+      map.setView([-26.20192,28.05097], 13);  
 
       change = 1;
     }
