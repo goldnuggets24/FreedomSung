@@ -63,9 +63,6 @@ $('#citymap').css("top", pos_y2+"px");
 var pos_y1 = $(window).height() * 0.15 + 410;
 $('#current_date').css("top", pos_y1+"px");
 
-var pos_y3 = $(window).height() * 0.15 + 270;
-$('#notes').css("top", pos_y3+"px");
-
 var g = svg_city.append("g")
       	.attr("class", "boundary")
 		.append("path")

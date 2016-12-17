@@ -9,7 +9,7 @@ L.mapbox.accessToken = 'pk.eyJ1IjoiZ29sZG51Z2dldHMyNCIsImEiOiJjaXZvOGxwN2swMWZ5M
 // sets initial map view:
 var map = L.map('map', {
     zoomControl: true
-}).setView([23.1136, -82.3666], 4);
+}).setView([-26.204407 + 8,28.037939 + 30], 4);
 
 var scrollTop = 0;
 
@@ -49,7 +49,7 @@ var myIcon = L.icon({
 
 var circleRadius = 170; //1200;
 
-var tempMarker = L.circle([23.1136, -82.3666], circleRadius, {
+var tempMarker = L.circle([ -26.20192, 28.05097 ], circleRadius, {
     // color: 'rgba(255,0,0,1)',
     // color: '#F44336',
     color: '#FFEB3B',
@@ -67,14 +67,14 @@ function ready(error, data, city) {
 
   var RADIUS = 280000;
   // var RADIUS = 3000;
-  var filterCircle = L.circle([23.1136, -82.3666], RADIUS, {
+  var filterCircle = L.circle([-26.1715215,28.0400245], RADIUS, {
       color: '#FFEB3B',
       opacity: 0.5,
       weight: 2,
       fillOpacity: 0
   }).addTo(centerLayer);
 
-  L.circle([23.1136, -82.3666], RADIUS/142, {
+  L.circle([-26.1715215,28.0400245], RADIUS/8, {
       color: '#FFEB3B',
       opacity: 1,
       weight: 0,
@@ -171,7 +171,7 @@ onscroll = function() {
     // map.removeLayer(markerLayer);
     map.removeLayer(cityLayer);
 
-    map.setView([23.1136, -82.3666], 4);
+    map.setView([-26.204407 + 8,28.037939 + 30], 4);
 
     $('#h1').css({"visibility":"visible"});
     $('#h2').css({"visibility":"visible"});

@@ -2,7 +2,7 @@
 /**
  * Module dependencies.
  */
-
+var cool = require('cool-ascii-faces');
 var express = require('express');
 var http = require('http');
 var path = require('path');
@@ -11,6 +11,10 @@ var path = require('path');
 
 // the ExpressJS App
 var app = express();
+
+app.get('/cool', function(request, response) {
+  response.send(cool());
+});
 
 // configuration of port, templates (/views), static files (/public)
 // and other expressjs settings for the web server.
