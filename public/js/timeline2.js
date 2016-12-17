@@ -63,6 +63,9 @@ $('#citymap').css("top", pos_y2+"px");
 var pos_y1 = $(window).height() * 0.15 + 410;
 $('#current_date').css("top", pos_y1+"px");
 
+var pos_y3 = $(window).height() * 0.15 + 270;
+$('#notes').css("top", pos_y3+"px");
+
 var g = svg_city.append("g")
       	.attr("class", "boundary")
 		.append("path")
@@ -119,7 +122,7 @@ function makeTimeline(data, city) {
       	.attr("d", path);
 
     current = svg_city.append("circle")
-		.style("fill", "#FFEB3B")
+		.style("fill", "#000")
 		.attr("class", "circle")
 		.style("opacity", 1)
 		.attr("r", 3.5 )
@@ -196,6 +199,9 @@ function updateTimeline(d) {
     		$('#current_date').html('<span style="color:yellow">Date : <span><span style="color:white">'
     			+e.date+"</span>");
 
+    		$('#notes').html('<span style="color:yellow">Notes : <span><span style="color:white">'
+    			+e.notes+"</span>");
+
     		var ty = d3.select(this).attr("cy");
     		stateLine.transition().duration(520).attr('y1', ty);
 
@@ -252,7 +258,7 @@ function openImg(d) {
     var popupContent = slideshowContent;
 
     tempMarker.bindPopup(popupContent,{
-        closeButton: false,
+        closeButton: true,
         minWidth: 419,
         maxWidth: 800
     });

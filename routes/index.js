@@ -5,10 +5,34 @@
  * Routes contains the functions (callbacks) associated with request urls.
  */
 
+var express = require('express');
+var app = express();
+
 var request = require('request'); // library to make requests to remote urls
 
 var moment = require("moment"); // date manipulation library
 var astronautModel = require("../models/astronaut.js"); //db model
+var cool = require("cool-ascii-faces");
+
+app.set('port', (process.env.PORT || 5000));
+
+app.use(express.static(__dirname + '/public'));
+
+// views is directory for all template files
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+
+app.get('/', function(request, response) {
+  response.render('pages/index')
+});
+
+app.get('/cool', function(request, response) {
+  response.send(cool());
+});
+
+// app.listen(app.get('port'), function() {
+//   console.log('Node app is running on port', app.get('port'));
+// });
 
 
 exports.index = function(req, res) {
@@ -62,7 +86,6 @@ exports.fail = function(req, res) {
 	console.log("fail page requested");
 	res.render('fail.html');
 }
-
 
 // /*
 // 	GET /

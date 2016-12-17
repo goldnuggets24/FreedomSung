@@ -1,14 +1,15 @@
 // Tayo
-L.mapbox.accessToken = 'pk.eyJ1Ijoib2pvbGFvIiwiYSI6IlVMbWRBRDAifQ.fGYcIjLhkNO5xFAUcXNtmw';
+L.mapbox.accessToken = 'pk.eyJ1IjoiZ29sZG51Z2dldHMyNCIsImEiOiJjaXZvOGxwN2swMWZ5Mm9wNWh6c28ya2QxIn0.2iRf87DRtYMGIYAPw0P5bg';
 
 // color: examples.map-i86nkdio
 // grey: examples.map-20v6611k
 // satellite: examples.map-2k9d7u0c
 // white: examples.map-8ced9urs'
 // 'https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png'
+// sets initial map view:
 var map = L.map('map', {
-    zoomControl: false
-}).setView([-26.204407 + 8,28.037939 + 30], 4);
+    zoomControl: true
+}).setView([23.1136, -82.3666], 4);
 
 var scrollTop = 0;
 
@@ -26,7 +27,7 @@ if (map.tap) map.tap.disable();
 var pos_y = $(window).height() * 0.15 + 450;
 $('#cityname').css("top", pos_y+"px");
 
-var base_layer = L.mapbox.tileLayer('examples.map-2k9d7u0c');
+var base_layer = L.mapbox.tileLayer('examples.map-8ced9urs');
 base_layer.setOpacity(1);
 base_layer.addTo(map);
 
@@ -48,7 +49,7 @@ var myIcon = L.icon({
 
 var circleRadius = 170; //1200;
 
-var tempMarker = L.circle([ -26.20192, 28.05097 ], circleRadius, {
+var tempMarker = L.circle([23.1136, -82.3666], circleRadius, {
     // color: 'rgba(255,0,0,1)',
     // color: '#F44336',
     color: '#FFEB3B',
@@ -66,14 +67,14 @@ function ready(error, data, city) {
 
   var RADIUS = 280000;
   // var RADIUS = 3000;
-  var filterCircle = L.circle([-26.1715215,28.0400245], RADIUS, {
+  var filterCircle = L.circle([23.1136, -82.3666], RADIUS, {
       color: '#FFEB3B',
-      opacity: 1,
+      opacity: 0.5,
       weight: 2,
       fillOpacity: 0
   }).addTo(centerLayer);
 
-  L.circle([-26.1715215,28.0400245], RADIUS/8, {
+  L.circle([23.1136, -82.3666], RADIUS/142, {
       color: '#FFEB3B',
       opacity: 1,
       weight: 0,
@@ -117,19 +118,31 @@ function Init(d) {
   var slideshowContent = '';
   var img = d.pic;
 
-  var slideshowContent = '<div class="image' +
-                            '<img src="' + img + '" />' +
-                            '<div class="caption">' + lat +","+ lon + '</div>' +
-                          '</div>';
-
-  var popupContent =      '<h2>' + d.event + '</h2>' +
-                            '<div class="slideshow">' +
-                                slideshowContent +
-                          '</div>';
+  if(d.type == 'pic') {
+      var temp_pic = '\''+d.pic+'\'';
+      slideshowContent = '<h3>' + d.event + '</h3>' + 
+              '<img src="' + d.pic + '"'
+                + ' style="cursor:pointer" '
+                + 'onclick="showImage('+ temp_pic+');"'
+              + ' />' 
+              +'<div class="caption">' + '</div>';
+    } else if(d.type == 'video') {
+      slideshowContent = '<h3>' + d.event + '</h3>' + d.video;
+    }
 
   marker.openPopup();
   marker.addTo(cityLayer);
   // marker.addTo(markerLayer);
+
+  marker.bindPopup(slideshowContent,{
+        closeButton: true,
+        minWidth: 419,
+        maxWidth: 800
+    });
+
+  marker.on('click', function(){
+    marker.bindPopup(slideshowContent);
+  });
 
   var textMarker = L.marker([ lat, lon ], {
     icon: L.divIcon({
@@ -158,7 +171,7 @@ onscroll = function() {
     // map.removeLayer(markerLayer);
     map.removeLayer(cityLayer);
 
-    map.setView([-26.204407 + 8,28.037939 + 30], 4);
+    map.setView([23.1136, -82.3666], 4);
 
     $('#h1').css({"visibility":"visible"});
     $('#h2').css({"visibility":"visible"});
@@ -177,6 +190,7 @@ onscroll = function() {
     $('#southAftica').css({"visibility":"hidden"});
 
     $('#current_date').css({"visibility":"hidden"});
+    $('#notes').css({"visibility":"hidden"});
     $('#cityname').css({"visibility":"hidden"});
 
     tooltip.style("visibility", "hidden");
@@ -196,8 +210,8 @@ onscroll = function() {
     base_layer.setOpacity(0.8);
 
     if(change == 0) {
-      tempMarker.setLatLng([-26.20192,28.05097 ]);
-      map.setView([-26.20192,28.05097], 13); 
+      tempMarker.setLatLng([23.1136, -82.3666]);
+      map.setView([23.1136, -82.3666], 4); 
 
       change = 1;
     }
@@ -230,6 +244,7 @@ onscroll = function() {
 
     $('#current_date').css({"visibility":"visible"});
 
+    $('#notes').css({"visibility":"visible"});
     $('#image').css({"visibility":"visible"});
     $('#pointing').css({"visibility":"visible"});
     $('#southAftica').css({"visibility":"visible"});
