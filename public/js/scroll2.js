@@ -69,7 +69,7 @@ function ready(error, data, city) {
   // var RADIUS = 3000;
   var filterCircle = L.circle([-26.1715215,28.0400245], RADIUS, {
       color: '#FFEB3B',
-      opacity: 0.5,
+      opacity: 1,
       weight: 2,
       fillOpacity: 0
   }).addTo(centerLayer);
@@ -129,6 +129,11 @@ function Init(d) {
     } else if(d.type == 'video') {
       slideshowContent = '<h3>' + d.event + '</h3>' + d.video;
     }
+
+  var popupContent =      '<h2>' + d.event + '</h2>' +
+                        '<div class="slideshow">' +
+                            slideshowContent +
+                      '</div>';
 
   marker.openPopup();
   marker.addTo(cityLayer);
@@ -210,7 +215,7 @@ onscroll = function() {
     base_layer.setOpacity(0.8);
 
     if(change == 0) {
-      tempMarker.setLatLng([23.1136, -82.3666]);
+      tempMarker.setLatLng([-26.20192,28.05097 ]);
       map.setView([-26.20192,28.05097], 13);  
 
       change = 1;

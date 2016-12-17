@@ -119,7 +119,7 @@ function makeTimeline(data, city) {
       	.attr("d", path);
 
     current = svg_city.append("circle")
-		.style("fill", "#000")
+		.style("fill", "#FFEB3B")
 		.attr("class", "circle")
 		.style("opacity", 1)
 		.attr("r", 3.5 )
@@ -195,9 +195,6 @@ function updateTimeline(d) {
 
     		$('#current_date').html('<span style="color:yellow">Date : <span><span style="color:white">'
     			+e.date+"</span>");
-
-    		$('#notes').html('<span style="color:yellow">Notes : <span><span style="color:white">'
-    			+e.notes+"</span>");
 
     		var ty = d3.select(this).attr("cy");
     		stateLine.transition().duration(520).attr('y1', ty);
