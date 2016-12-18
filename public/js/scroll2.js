@@ -1,5 +1,5 @@
 // Tayo
-L.mapbox.accessToken = 'pk.eyJ1IjoiZ29sZG51Z2dldHMyNCIsImEiOiJjaXZvOGxwN2swMWZ5Mm9wNWh6c28ya2QxIn0.2iRf87DRtYMGIYAPw0P5bg';
+L.mapbox.accessToken = 'pk.eyJ1Ijoib2pvbGFvIiwiYSI6IlVMbWRBRDAifQ.fGYcIjLhkNO5xFAUcXNtmw';
 
 // color: examples.map-i86nkdio
 // grey: examples.map-20v6611k
@@ -27,7 +27,7 @@ if (map.tap) map.tap.disable();
 var pos_y = $(window).height() * 0.15 + 450;
 $('#cityname').css("top", pos_y+"px");
 
-var base_layer = L.mapbox.tileLayer('examples.map-8ced9urs');
+var base_layer = L.mapbox.tileLayer('examples.map-2k9d7u0c');
 base_layer.setOpacity(1);
 base_layer.addTo(map);
 
