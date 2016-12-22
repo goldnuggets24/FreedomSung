@@ -162,7 +162,6 @@ function Init(d) {
 // hide labels after zoom level 13
   map.on('zoomend', function () {
     zoomLevel = map.getZoom();
-    alert(zoomLevel);
     if (zoomLevel >13) {
       textMarker.setOpacity(1);
       console.log(zoomLevel)
