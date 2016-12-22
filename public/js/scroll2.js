@@ -159,6 +159,18 @@ function Init(d) {
   });
 
   textMarker.addTo(cityLayer);
+// hide labels after zoom level 13
+  map.on('zoomend', function () {
+    zoomLevel = map.getZoom();
+    alert(zoomLevel);
+    if (zoomLevel >13) {
+      textMarker.setOpacity(1);
+      console.log(zoomLevel)
+    } else {
+      console.log(zoomLevel)
+      textMarker.setOpacity(0);
+    }
+  });
 }
 var change = 0;
 
@@ -272,4 +284,3 @@ function unselectAll() {
 function hideMe(obj) {
     obj.style.visibility = 'hidden';
 }
-

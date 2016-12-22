@@ -260,3 +260,4 @@ function openImg(d) {
     tempMarker.openPopup();
 }
 
+tempMarker.setOpacity(0.3);
