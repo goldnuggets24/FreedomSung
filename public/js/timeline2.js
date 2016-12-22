@@ -203,7 +203,7 @@ function updateTimeline(d) {
 				tempMarker.setLatLng([e.start_lat, e.start_lon ]);
 				// marker.properties['marker-color'] = '#ff8888';
 				
-				map.setView([e.start_lat, e.start_lon], 14); // 16, 9
+				map.setView([e.start_lat, e.start_lon], 14); // 16, 9 
 
 				// var t = 0.06;
 
