@@ -157,6 +157,7 @@ function Init(d) {
         iconSize: [180, -5]
     })
   });
+  
 
   textMarker.addTo(cityLayer);
 // hide labels after zoom level 13
