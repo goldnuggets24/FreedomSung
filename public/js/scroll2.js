@@ -1,6 +1,6 @@
 // Tayo
 L.mapbox.accessToken = 'pk.eyJ1Ijoib2pvbGFvIiwiYSI6IlVMbWRBRDAifQ.fGYcIjLhkNO5xFAUcXNtmw';
-
+ 
 // color: examples.map-i86nkdio
 // grey: examples.map-20v6611k
 // satellite: examples.map-2k9d7u0c
