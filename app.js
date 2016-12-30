@@ -2,19 +2,14 @@
 /**
  * Module dependencies.
  */
-var cool = require('cool-ascii-faces');
 var express = require('express');
 var http = require('http');
 var path = require('path');
 // var mongoose = require('mongoose');
-
+var cool = require('cool-ascii-faces');
 
 // the ExpressJS App
 var app = express();
-
-app.get('/cool', function(request, response) {
-  response.send(cool());
-});
 
 // configuration of port, templates (/views), static files (/public)
 // and other expressjs settings for the web server.
@@ -57,6 +52,10 @@ app.configure(function(){
 
 app.configure('development', function(){
   app.use(express.errorHandler());
+});
+
+app.get('/cool', function(request, response) {
+  response.send(cool());
 });
 
 

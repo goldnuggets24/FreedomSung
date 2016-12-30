@@ -51,7 +51,7 @@ exports.pass_fail = function(req, res) {
 	if(req.body.inputPassword == "freedom") {
 		console.log("correct password!");
 		// res.redirect('/freedom');
-		res.redirect('/test');
+	res.redirect('/test');
 	}  else {
 		console.log("wrong password!");
 		res.redirect('/fail');
