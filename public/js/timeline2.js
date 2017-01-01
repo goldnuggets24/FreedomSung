@@ -220,7 +220,7 @@ function updateTimeline(d) {
 
 				openImg(e);
 				eventname = e.event;
-
+				// updates map location on johanessburg.geojson
 				var current_position = proj([ e.start_lon, e.start_lat ]); // lon, lat
 				current.attr("transform", "translate("+ current_position +")");
 				current2.attr("transform", "translate("+ current_position +")");

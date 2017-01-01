@@ -107,10 +107,15 @@ function Init(d) {
   //     fillOpacity: 0.0
   // });
 
+  // Define map icons per category
+  var icon = '';
+  if(d.category == 'Red') {var icon = 'car';}
+
   var marker = L.marker([lat, lon], {
     icon: L.mapbox.marker.icon({
-      'marker-color': '#FFEB3B', //yellow
-      'marker-size': 'small'
+      'marker-color': '#FFEB3B', //yellow markers
+      'marker-size': 'small',
+      'marker-symbol': icon
     })
   });
 
@@ -147,6 +152,11 @@ function Init(d) {
 
   marker.on('click', function(){
     marker.bindPopup(slideshowContent);
+
+    var current_position = proj([ d.start_lon, d.start_lat ]); // lon, lat
+        current.attr("transform", "translate("+ current_position +")");
+        current2.attr("transform", "translate("+ current_position +")");    
+
   });
 
   var textMarker = L.marker([ lat, lon ], {
