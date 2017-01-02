@@ -155,8 +155,9 @@ function Init(d) {
 
     var current_position = proj([ d.start_lon, d.start_lat ]); // lon, lat
         current.attr("transform", "translate("+ current_position +")");
-        current2.attr("transform", "translate("+ current_position +")");    
-
+        current2.attr("transform", "translate("+ current_position +")");
+    $('#current_date').html('<span style="color:yellow">Date : <span><span style="color:white">'
+          +d.date+"</span>");
   });
 
   var textMarker = L.marker([ lat, lon ], {
@@ -175,9 +176,7 @@ function Init(d) {
     zoomLevel = map.getZoom();
     if (zoomLevel >13) {
       textMarker.setOpacity(1);
-      console.log(zoomLevel)
     } else {
-      console.log(zoomLevel)
       textMarker.setOpacity(0);
     }
   });
