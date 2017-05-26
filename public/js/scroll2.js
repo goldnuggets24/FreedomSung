@@ -1,4 +1,4 @@
-// Tayo
+// MapBox API integration
 L.mapbox.accessToken = 'pk.eyJ1Ijoib2pvbGFvIiwiYSI6IlVMbWRBRDAifQ.fGYcIjLhkNO5xFAUcXNtmw';
  
 // color: examples.map-i86nkdio
@@ -32,7 +32,7 @@ base_layer.setOpacity(1);
 base_layer.addTo(map);
 
 queue()
-  // .defer(d3.csv, "event2.csv")
+  // .defer(d3.csv, "event2.csv") // Integrates with map and event scheduler
   .defer(d3.csv, "event_final2.csv")
   .defer(d3.json, "johannesburg.geojson")
   .await(ready);
@@ -48,7 +48,7 @@ var myIcon = L.icon({
 });
 
 var circleRadius = 170; //1200;
-
+// Not sure where this is used... 
 var tempMarker = L.circle([ -26.20192, 28.05097 ], circleRadius, {
     // color: 'rgba(255,0,0,1)',
     // color: '#F44336',
@@ -143,7 +143,7 @@ function Init(d) {
   marker.openPopup();
   marker.addTo(cityLayer);
   // marker.addTo(markerLayer);
-
+// Adds content to sidebar area
   marker.bindPopup(slideshowContent,{
         closeButton: true,
         minWidth: 419,
@@ -156,7 +156,7 @@ function Init(d) {
     var current_position = proj([ d.start_lon, d.start_lat ]); // lon, lat
         current.attr("transform", "translate("+ current_position +")");
         current2.attr("transform", "translate("+ current_position +")");
-    $('#current_date').html('<span style="color:yellow">Date : <span><span style="color:white">'
+    $('#current_date').html('<span style="color:yellow">Date: <span><span style="color:white">'
           +d.date+"</span>");
   });
 

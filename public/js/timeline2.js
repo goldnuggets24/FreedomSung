@@ -7,7 +7,7 @@ var width = 50,
 
 var width2 = 200,
 	height2 = 260;
-
+// Timeline rendering
 var y = d3.time.scale()
 	.range([2, height]);
 
@@ -170,7 +170,7 @@ function hideTimeline() {
 }
 
 var eventname = 'test';
-
+// Called by scroll when icon is clicked
 function updateTimeline(d) {
 	if(d<smallScale) {  d = smallScale; } 
 	if(d>largeScale) { d = largeScale; }
@@ -232,7 +232,7 @@ function updateTimeline(d) {
 		}
 	});
 }
-
+// Content created in popups
 function openImg(d) {
 	
     var slideshowContent;
