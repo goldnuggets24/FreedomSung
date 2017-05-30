@@ -1,68 +1,65 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <style>
-       #map {
-        height: 400px;
-        width: 100%;
-       }
-    </style>
+  	<meta charset="utf-8">
   </head>
   <body>
-    <h3>My Google Maps Demo</h3>
+    <h3>Integrate Google Map with Street View</h3>
     <div id="map"></div>
+    <div id="pano"></div>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map, #pano {
+        float: left;
+        height: 100%;
+        width: 45%;
+      }
+    </style>
+
     <script>
-      function initMap() {
-        var uluru = {lat: -25.363, lng: 131.044};
+		var markers = [
+			{ lat: -26.243254, lng: 27.923966, name: "1" },
+			{ lat: -26.673235, lng: 27.8040497, name: "2" },
+			{ lat: -26.19284, lng: 28.06601, name: "3" },
+			{ lat: -26.2676604, lng: 27.8606672, name: "4" }
+		];
+      function initialize() {
+      	var myLatlng = new google.maps.LatLng(markers[0].lat,markers[0].lng);
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: new google.maps.LatLng(-34.397, 150.644)
+			center: {lat: -26.607459, lng: 27.840795},
+			zoom: 9
         });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-		var point = new google.maps.LatLng(-34.397, 150.644);
+		var panorama = new google.maps.StreetViewPanorama(
+			document.getElementById('pano'), {
+			position: {lat: -26.243254, lng: 27.923966},
+			pov: {
+				heading: 34,
+				pitch: 10
+			}
+		});
 
-		var streetViewService = new google.maps.StreetViewService();
-		var panorama = map.getStreetView();
-      
-
-		var streetViewMaxDistance = 100;          
-		// var point = new google.maps.LatLng(-34.397, 150.644);
-		// var streetViewService = new google.maps.StreetViewService();
-		// var panorama = streetViewService.gmap.getStreetView();
-
-		streetViewService.getPanoramaByLocation(point, streetViewMaxDistance, function (streetViewPanoramaData, status) {
-
-		if(status === google.maps.StreetViewStatus.OK){
-			var oldPoint = point;
-			point = streetViewPanoramaData.location.latLng;
-
-			var heading = google.maps.geometry.spherical.computeHeading(point,oldPoint);            
-
-			panorama.setPosition(point);
-			panorama.setPov({
-				heading: heading,
-				zoom: 1,
-				pitch: 0
+		// draw all markers
+		for (var index in markers) addMarker(markers[index]);
+        	function addMarker(data) {
+  			// Create the marker
+			var marker = new google.maps.Marker({
+			position: new google.maps.LatLng(data.lat, data.lng),
+			map: map,
+			label: data.name
+		});
+			google.maps.event.addListener(marker,'click', function(e) {
+				panorama.setPosition(marker.getPosition());
 			});
-			panorama.setVisible(true);
-
-		}else{
-			// no street view available in this range, or some error occurred
-			console.log("Sorry! Street View is not available.");
-        }
-    });
-}
-
-
-
-
+		}
+		google.maps.event.addDomListener(window, 'load', initialize);
+	}
     </script>
-
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCv_nlgcXxbQp2hBtwUd118lGoW_Nhbpdc&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCv_nlgcXxbQp2hBtwUd118lGoW_Nhbpdc&callback=initialize">
     </script>
   </body>
 </html>
