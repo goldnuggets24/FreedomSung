@@ -5,6 +5,9 @@
   </head>
   <body>
     <h3>Integrate Google Map with Street View</h3>
+    <a href="" id="markerBtn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored modal__trigger" data-modal="#modal">
+        Launch Modal
+      </a>
     <div id="map"></div>
     <div id="pano"></div>
     <style>
@@ -51,6 +54,9 @@
 			map: map,
 			label: data.name
 		});
+      marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
 			google.maps.event.addListener(marker,'click', function(e) {
 				panorama.setPosition(marker.getPosition());
 			});
@@ -58,8 +64,57 @@
 		google.maps.event.addDomListener(window, 'load', initialize);
 	}
     </script>
-    <script async defer
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="/css/material-modal.css">
+    <script 
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCv_nlgcXxbQp2hBtwUd118lGoW_Nhbpdc&callback=initialize">
     </script>
+    <script async defer src="/content.js"></script>
+
+    <!-- Uses a transparent header that draws on top of the layout's background -->
+<style>
+.demo-layout-transparent {
+  background: url('../assets/demos/transparent.jpg') center / cover;
+}
+.demo-layout-transparent .mdl-layout__header,
+.demo-layout-transparent .mdl-layout__drawer-button {
+  /* This background is dark, so we set text to white. Use 87% black instead if
+     your background is light. */
+  color: white;
+}
+</style>
+
+      <div id="modal" class="modal modal__bg">
+        <div class="modal__dialog">
+          <div class="modal__content">
+            <div class="modal__header">
+              <div class="modal__title">
+                <h2 class="modal__title-text">Modal</h2>
+              </div>
+
+              <span class="mdl-button mdl-button--icon mdl-js-button  material-icons  modal__close"></span>
+            </div>
+
+
+            <div class="modal__text" id="mapTime">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis laboriosam accusantium facere suscipit, alias accusamus corrupti consequatur at porro, voluptates commodi sed omnis voluptatem, ex officiis illum, architecto fugiat id?
+              </p>
+            </div>
+
+            <div class="modal__footer">
+              <a class="mdl-button mdl-button--colored mdl-js-button  modal__close">
+                Close
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js"></script> <!-- MDL JavaScript -->
+    <script src="/js/material-modal.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </body>
 </html>
