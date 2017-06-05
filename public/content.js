@@ -1,5 +1,7 @@
 $( document ).ready(function() {
     mdc.autoInit();
+    $('.tap-target').tapTarget('open');
+    $('.tap-target').tapTarget('close');
     var drawerEl = document.querySelector('.mdc-persistent-drawer');
         var MDCPersistentDrawer = mdc.drawer.MDCPersistentDrawer;
         var drawer = new MDCPersistentDrawer(drawerEl);
@@ -27,7 +29,7 @@ $( document ).ready(function() {
         'Aboriginal people of the area. It has many springs, waterholes, '+
         'rock caves and ancient paintings. Uluru is listed as a World '+
         'Heritage Site.</p>'+
-        '<p><a href="#" id="click-me">Street View</a></p>'+
+        '<p><a href="#" id="click-me">View this Event</a></p>'+
         '</div>'+
         '</div>';
 
