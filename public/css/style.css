@@ -6,6 +6,44 @@
  * Version: 1.0
  * URL: http://blacktie.co
  */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+#controls {
+	width: 140px; 
+	float:right;
+	position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background: #fff;
+    padding: 10px;
+}
+  
+ #map, #gmap-list {
+    float: left;
+    height: 100%;
+    width: 100%;
+}
+ 
+ #modal-map {
+    width: 800px;
+    height: 400px;
+  }
+ 
+ #markerBtn {display: none;}
+  .demo-layout-transparent {
+  background: url('../assets/demos/transparent.jpg') center / cover;
+ }
+
+ .demo-layout-transparent .mdl-layout__header,
+ .demo-layout-transparent .mdl-layout__drawer-button {
+    color: white;
+ }
  
 .font-thin {
 	font-family: "Titillium Web", sans-serif;
@@ -612,4 +650,41 @@ body {
 
 .navigation-slide {
 	cursor: pointer;
+}
+
+/* Place drawer and content side by side. */
+.demo-body {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+/* A simple menu button. */
+.demo-menu {
+  background: none;
+  border: none;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  margin: 0;
+  margin-right: 24px;
+  color: #FFF;
+  box-sizing: border-box;
+}
+
+/* Stack toolbar and main on top of each other. */
+.demo-content {
+  display: inline-flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.demo-main {
+  padding-left: 16px;
 }

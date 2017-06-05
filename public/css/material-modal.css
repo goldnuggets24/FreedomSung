@@ -43,7 +43,7 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 .modal__dialog {
-  max-width: 600px;
+  max-width: 100%;
   padding: 1.2rem;
 }
 .modal__content {
@@ -84,7 +84,7 @@
   display: flex;
   justify-content: stretch;
   line-height: normal;
-  padding: 16px;
+  padding: 10px 0 0 16px;
   perspective-origin: 165px 56px;
   transform-origin: 165px 56px;
   box-sizing: border-box;
@@ -106,8 +106,8 @@
   font-size: 13px;
   line-height: 18px;
   overflow: hidden;
-  padding: 16px;
-  width: 90%;
+  padding: 0 16px;
+  width: 100%;
 }
 .modal__footer {
   font-size: 16px;
