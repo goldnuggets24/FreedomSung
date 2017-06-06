@@ -147,6 +147,15 @@ body {
 	z-index: 9;
 }
 
+#menu {
+	float:right;
+}
+
+.tap-target-content {
+	top: -51px !important;
+	left: 52px !important;
+}
+
 .inv .active-menu {
 	background-color: #e4e6e5;
 }
