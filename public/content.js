@@ -51,6 +51,7 @@ $( document ).ready(function() {
             lat: 51.2,
             lon: 22.2,
             title: 'Title B2',
+            icon: '/green-pin.png',
             html: [
                 '&lt;h3&gt;Content B2&lt;/h3&gt;',
                 '&lt;p&gt;Lorem Ipsum..&lt;/p&gt;'
@@ -60,7 +61,7 @@ $( document ).ready(function() {
         {
             lat: 49.4,
             lon: 35.9,
-            icon: 'https://www.iconfinder.com/data/icons/metro-uinvert-dock/256/Google_Maps.png',
+            icon: '/blue-pin.png',
             title: 'Title C2',
             html: [
                 '&lt;h3&gt;Content C2&lt;/h3&gt;',
@@ -71,7 +72,7 @@ $( document ).ready(function() {
         {
             lat: 47.8,
             lon: 15.6,
-            icon: 'https://www.iconfinder.com/data/icons/metro-uinvert-dock/256/Google_Maps.png',
+            icon: '/red-pin.png',
             title: 'Title D2',
             html: [
                 '&lt;h3&gt;Content D2&lt;/h3&gt;',
