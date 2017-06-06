@@ -35,7 +35,6 @@ html, body {
     height: 400px;
   }
  
- #markerBtn {display: none;}
   .demo-layout-transparent {
   background: url('../assets/demos/transparent.jpg') center / cover;
  }

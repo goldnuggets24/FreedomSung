@@ -29,7 +29,7 @@ $( document ).ready(function() {
         'Aboriginal people of the area. It has many springs, waterholes, '+
         'rock caves and ancient paintings. Uluru is listed as a World '+
         'Heritage Site.</p>'+
-        '<p><a href="#" id="click-me" class="modal__trigger" data-modal="#modal">View this Event</a></p>'+
+        '<p><a href="#" id="click-me" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>'+
         '</div>'+
         '</div>';
 
