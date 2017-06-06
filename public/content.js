@@ -29,26 +29,12 @@ $( document ).ready(function() {
         'Aboriginal people of the area. It has many springs, waterholes, '+
         'rock caves and ancient paintings. Uluru is listed as a World '+
         'Heritage Site.</p>'+
-        '<p><a href="#" id="click-me">View this Event</a></p>'+
+        '<p><a href="#" id="click-me" class="modal__trigger" data-modal="#modal">View this Event</a></p>'+
         '</div>'+
         '</div>';
 
     var infowindow = new google.maps.InfoWindow({
       content: contentString
-    });
-
-    google.maps.event.addListener(infowindow, 'domready', function() {
-        document.getElementById("click-me").addEventListener("click", function(e) {
-            $('.mdl-button__ripple-container').click();
-            var modalMap = new google.maps.StreetViewPanorama(
-                document.getElementById('modal-map'), {
-                position: {lat: -26.243254, lng: 27.923966},
-                pov: {
-                    heading: 34,
-                    pitch: 10
-                }
-            });
-        });
     });
 
     var LocsB = [
