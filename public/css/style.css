@@ -12,6 +12,10 @@ html, body {
     margin: 0;
     padding: 0;
   }
+
+h5 {
+	margin: 24px 0 10px;
+}
   
 #controls {
 	width: 140px; 
@@ -62,6 +66,8 @@ html, body {
 * {
 	position: relative;
 }
+
+.white-text {color: #ffffff;}
 
 .breaker {
 	clear: both;
@@ -152,8 +158,8 @@ body {
 }
 
 .tap-target-content {
-	top: -51px !important;
-	left: 52px !important;
+	top: -28px !important;
+	left: 44px !important;
 }
 
 .inv .active-menu {

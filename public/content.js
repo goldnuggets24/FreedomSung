@@ -1,7 +1,9 @@
 $( document ).ready(function() {
     mdc.autoInit();
+    // tap to content on event popup
     $('.tap-target').tapTarget('open');
     $('.tap-target').tapTarget('close');
+    // navigation drawer
     var drawerEl = document.querySelector('.mdc-persistent-drawer');
         var MDCPersistentDrawer = mdc.drawer.MDCPersistentDrawer;
         var drawer = new MDCPersistentDrawer(drawerEl);
@@ -39,54 +41,47 @@ $( document ).ready(function() {
 
     var LocsB = [
         {
-            lat: 52.1,
-            lon: 11.3,
-            title: 'Title A2',
+            lat: -26.243254,
+            lon: 27.923966,
+            title: 'Event 1',
             html: [
                 contentString
             ].join(''),
             zoom: 8
         },
         {
-            lat: 51.2,
-            lon: 22.2,
-            title: 'Title B2',
+            lat: -26.673235,
+            lon: 27.8040497,
+            title: 'Event 2',
             icon: '/green-pin.png',
             html: [
-                '&lt;h3&gt;Content B2&lt;/h3&gt;',
-                '&lt;p&gt;Lorem Ipsum..&lt;/p&gt;'
+                '<h3>Content<h3>',
+                '<p>Lorem Ipsum</p>'
             ].join(''),
             zoom: 8
         },
         {
-            lat: 49.4,
-            lon: 35.9,
+            lat: -26.19284,
+            lon: 28.06601,
             icon: '/blue-pin.png',
-            title: 'Title C2',
+            title: 'Event 3',
             html: [
-                '&lt;h3&gt;Content C2&lt;/h3&gt;',
-                '&lt;p&gt;Lorem Ipsum..&lt;/p&gt;'
+                '<h3>Content<h3>',
+                '<p>Lorem Ipsum</p>'
             ].join(''),
             zoom: 4
         },
         {
-            lat: 47.8,
-            lon: 15.6,
+            lat: -26.2676604,
+            lon: 27.8606672,
             icon: '/red-pin.png',
-            title: 'Title D2',
+            title: 'Event 4',
             html: [
-                '&lt;h3&gt;Content D2&lt;/h3&gt;',
-                '&lt;p&gt;Lorem Ipsum..&lt;/p&gt;'
+                '<h3>Content<h3>',
+                '<p>Lorem Ipsum</p>'
             ].join(''),
             zoom: 6
         }
-    ];
-
-    var markers = [
-      { lat: -26.243254, lng: 27.923966, name: "1" },
-      { lat: -26.673235, lng: 27.8040497, name: "2" },
-      { lat: -26.19284, lng: 28.06601, name: "3" },
-      { lat: -26.2676604, lng: 27.8606672, name: "4" }
     ];
 
     map = new Maplace({
