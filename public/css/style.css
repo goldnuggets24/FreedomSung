@@ -16,6 +16,11 @@ html, body {
 h5 {
 	margin: 24px 0 10px;
 }
+
+#bg_intro {
+	color: #000000;
+	padding: 10px;
+}
   
 #controls {
 	width: 140px; 
@@ -701,4 +706,8 @@ body {
 
 .demo-main {
   padding-left: 16px;
+}
+
+#citymap {
+	top: -84px;
 }
