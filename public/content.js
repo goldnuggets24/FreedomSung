@@ -84,12 +84,33 @@ $( document ).ready(function() {
         }
     ];
 
-    map = new Maplace({
+    var styles = {
+        'MapBox': [{
+            featureType: 'all',
+            stylers: [
+                { invert_lightness: 'false' }
+            ]
+        }],
+        'Greyscale': [{
+            featureType: 'all',
+            stylers: [
+                { saturation: -100 },
+                { gamma: 0.50 }
+            ]
+        }]
+    }
+
+    maplace = new Maplace({
         map_div: '#gmap-list',
+        styles: styles,
+        scrollwheel: false,
         controls_type: 'list',
         controls_on_map: false,
         controls_title: 'Choose a location:',
         locations: LocsB,
+        map_options: {
+            scrollwheel: false
+        },
         afterShow: function() {
           $("#click-me").on("click", function(e) {
             $('.mdl-button__ripple-container').click();
