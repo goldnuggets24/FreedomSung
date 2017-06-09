@@ -175,7 +175,7 @@ function myMap() {
       ['<div class="info_content">' +
       '<h3>London Eye</h3>' +
       '<p>The London Eye is a giant Ferris wheel situated on the banks of the River Thames. The entire structure is 135 metres (443 ft) tall and the wheel has a diameter of 120 metres (394 ft).</p>' +        '</div>'],
-      ['<div class="info_content">' +
+      ['<div class="info_content"><p><a href="#" id="click-me" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' +
       '<h3>Palace of Westminster</h3>' +
       '<p>The Palace of Westminster is the meeting place of the House of Commons and the House of Lords, the two houses of the Parliament of the United Kingdom. Commonly known as the Houses of Parliament after its tenants.</p>' +
       '</div>']
@@ -183,48 +183,61 @@ function myMap() {
 
   // Display multiple markers on a map
   var infoWindow = new google.maps.InfoWindow(), marker, i;
+
   // Loop through our array of markers & place each one on the map  
   for( i = 0; i < markers.length; i++ ) {
-      var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
-      bounds.extend(position);
-      markers[i] = new google.maps.Marker({
-          position: position,
-          map: map,
-          title: markers[i][0]
-      });
+    var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+    bounds.extend(position);
+    markers[i] = new google.maps.Marker({
+        position: position,
+        map: map,
+        title: markers[i][0]
+    });
 
-      markers[i].index = i;
-      // console.log(markers[0]);
+    markers[i].index = i;
+    // console.log(markers[0]);
 
-      // Allow each marker to have an info window    
-      google.maps.event.addListener(markers[i], 'click', (function(marker, i) {
-          return function() {
-              infoWindow.setContent(infoWindowContent[i][0]);
-              infoWindow.open(map, markers[this.index]);
+    // Allow each marker to have an info window    
+    google.maps.event.addListener(markers[i], 'click', (function(marker, i) {
+      return function() {
+        infoWindow.setContent(infoWindowContent[i][0]);
+        infoWindow.open(map, markers[this.index]);
+      }
+    })(marker, i));
+    // on scroll
+    $(window).scroll( function() { 
+      var scrolled_val = $(document).scrollTop().valueOf();
+      console.log(scrolled_val);
+      if (scrolled_val < 1027) {
+        infoWindow.setContent(infoWindowContent[0][0]);
+        map.setCenter(markers[0].getPosition());
+        infoWindow.open(map, markers[0]);
+      } else {
+        infoWindow.setContent(infoWindowContent[1][0]);
+        map.setCenter(markers[1].getPosition());
+        infoWindow.open(map, markers[1]);
+      }
+    });
+    // allow 'click-me' to produce streetView map
+    google.maps.event.addListener(infoWindow, 'domready', function(){
+      $("#click-me").on("click", function(e) {
+        var modalMap = new google.maps.StreetViewPanorama(
+          document.getElementById('modal-map'), {
+          position: {lat: -26.243254, lng: 27.923966},
+          pov: {
+              heading: 34,
+              pitch: 10
           }
-      })(marker, i));
-
-      $(window).scroll( function() { 
-        var scrolled_val = $(document).scrollTop().valueOf();
-        console.log(scrolled_val);
-        if (scrolled_val < 1027) {
-            infoWindow.setContent(infoWindowContent[0][0]);
-            map.setCenter(markers[0].getPosition());
-            console.log(markers[0].title);
-            infoWindow.open(map, markers[0]);
-        } else {
-            infoWindow.setContent(infoWindowContent[1][0]);
-            map.setCenter(markers[1].getPosition());
-            console.log(markers[1].title);
-            infoWindow.open(map, markers[1]);
-          }
+        });
       });
-      // Automatically center the map fitting all markers on the screen
-      map.fitBounds(bounds);
+    });
+
+    // Automatically center the map fitting all markers on the screen
+    map.fitBounds(bounds);
   }
   // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
   var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
-      this.setZoom(14);
-      google.maps.event.removeListener(boundsListener);
+    this.setZoom(14);
+    google.maps.event.removeListener(boundsListener);
   });
 }
