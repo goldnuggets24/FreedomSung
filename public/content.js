@@ -208,12 +208,12 @@ function myMap() {
         var scrolled_val = $(document).scrollTop().valueOf();
         console.log(scrolled_val);
         if (scrolled_val < 1027) {
-            infoWindow.setContent('one');
+            infoWindow.setContent(infoWindowContent[0][0]);
             map.setCenter(markers[0].getPosition());
             console.log(markers[0].title);
             infoWindow.open(map, markers[0]);
         } else {
-            infoWindow.setContent('two');
+            infoWindow.setContent(infoWindowContent[1][0]);
             map.setCenter(markers[1].getPosition());
             console.log(markers[1].title);
             infoWindow.open(map, markers[1]);
