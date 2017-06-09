@@ -67,17 +67,6 @@ $( document ).ready(function() {
     //     },
     //     afterShow: function(index, location, marker) {
     //         // console.log(marker);
-    //       $("#click-me").on("click", function(e) {
-    //         $('.mdl-button__ripple-container').click();
-    //         var modalMap = new google.maps.StreetViewPanorama(
-    //             document.getElementById('modal-map'), {
-    //             position: {lat: -26.243254, lng: 27.923966},
-    //             pov: {
-    //                 heading: 34,
-    //                 pitch: 10
-    //             }
-    //         });
-    //       });
     //     }
     // }).Load();
 });
@@ -227,7 +216,8 @@ function myMap() {
           pov: {
               heading: 34,
               pitch: 10
-          }
+          },
+          enableCloseButton: true
         });
       });
     });
