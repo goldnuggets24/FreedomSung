@@ -39,12 +39,23 @@ h5 {
     width: 100%;
 }
  
- #modal-map {
-    width: 100%;
+ #modal-map, #modal-map-too {
+    width: 40%;
     height: 100%;
-    position: absolute;
+    position: static;
+    float:left;
     z-index: 999999;
   }
+
+  #floating-panel {
+        width: 45%;
+        height: 100%;
+        float: right;
+        text-align: left;
+        overflow: auto;
+        position: static;
+        border: 0px solid #999;
+      }
 /* 
   .demo-layout-transparent {
   background: url('../assets/demos/transparent.jpg') center / cover;

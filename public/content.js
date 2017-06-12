@@ -35,40 +35,24 @@ $( document ).ready(function() {
         '</div>'+
         '</div>';
 
-    // var infowindow = new google.maps.InfoWindow({
-    //   content: contentString
-    // });
-
-    // maplace = new Maplace({
-    //     map_div: '#gmap-list',
-    //     styles: styles,
-    //     scrollwheel: false,
-    //     controls_type: 'list',
-    //     controls_on_map: false,
-    //     controls_title: 'Choose a location:',
-    //     locations: LocsB,
-    //     map_options: {
-    //         scrollwheel: false,
-    //         set_center: [45.9, 10.9]
-    //     },
-    //     afterCreateMarker: function(index, location, marker) {
-    //         $(window).scroll( function() { 
-    //             var scrolled_val = $(document).scrollTop().valueOf();
-    //             if (scrolled_val < 1027) {
-    //                 console.log(scrolled_val);
-    //                 if (marker.lat == -26.243254) {
-    //                     google.maps.event.trigger(marker, 'click');
-    //                 }
-    //             } else {
-    //                 console.log(scrolled_val);
-    //                 setCenter({lat: 42.346268, lng: -71.095764});
-    //             }
-    //         });
-    //     },
-    //     afterShow: function(index, location, marker) {
-    //         // console.log(marker);
-    //     }
-    // }).Load();
+    var moreContent = '<div id="content">'+
+        '<div id="siteNotice">'+
+        '</div>'+
+        '<h3 id="firstHeading" class="firstHeading">Freedom Struggle</h1>'+
+        '<div id="bodyContent">'+
+        '<p><img src="/youth.png" width=100 align="left" style="margin-right:10px;" /><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
+        'sandstone rock formation in the southern part of the '+
+        'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+
+        'south west of the nearest large town, Alice Springs; 450&#160;km '+
+        '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major '+
+        'features of the Uluru - Kata Tjuta National Park. Uluru is '+
+        'sacred to the Pitjantjatjara and Yankunytjatjara, the '+
+        'Aboriginal people of the area. It has many springs, waterholes, '+
+        'rock caves and ancient paintings. Uluru is listed as a World '+
+        'Heritage Site.</p>'+
+        '<p><a href="#" id="click-me-too" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>'+
+        '</div>'+
+        '</div>';
 });
 
     var LocsB = [
@@ -87,8 +71,7 @@ $( document ).ready(function() {
             title: 'Event 2',
             icon: '/green-pin.png',
             html: [
-                '<h3>Content<h3>',
-                '<p>Lorem Ipsum</p>'
+                'moreContent'
             ].join(''),
             zoom: 8
         },
@@ -162,9 +145,9 @@ function myMap() {
   // Info Window Content
   var infoWindowContent = [
       ['<div class="info_content">' +
-      '<h3>London Eye</h3>' +
+      '<h3>London Eye</h3>' + '<p><a href="#" id="click-me" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' + 
       '<p>The London Eye is a giant Ferris wheel situated on the banks of the River Thames. The entire structure is 135 metres (443 ft) tall and the wheel has a diameter of 120 metres (394 ft).</p>' +        '</div>'],
-      ['<div class="info_content"><p><a href="#" id="click-me" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' +
+      ['<div class="info_content"><p><a href="#" id="click-me-too" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' +
       '<h3>Palace of Westminster</h3>' +
       '<p>The Palace of Westminster is the meeting place of the House of Commons and the House of Lords, the two houses of the Parliament of the United Kingdom. Commonly known as the Houses of Parliament after its tenants.</p>' +
       '</div>']
@@ -184,13 +167,11 @@ function myMap() {
     });
 
     markers[i].index = i;
-    // console.log(markers[0]);
-
-    // Allow each marker to have an info window    
+    // Allow each marker to have an info window on click
     google.maps.event.addListener(markers[i], 'click', (function(marker, i) {
       return function() {
         infoWindow.setContent(infoWindowContent[i][0]);
-        infoWindow.open(map, markers[this.index]);
+        infoWindow.open(map, markers[i]);
       }
     })(marker, i));
     // on scroll
@@ -207,12 +188,60 @@ function myMap() {
         infoWindow.open(map, markers[1]);
       }
     });
-    // allow 'click-me' to produce streetView map
+    // allow anchor tags to produce streetView maps
     google.maps.event.addListener(infoWindow, 'domready', function(){
       $("#click-me").on("click", function(e) {
         var modalMap = new google.maps.StreetViewPanorama(
           document.getElementById('modal-map'), {
           position: {lat: -26.243254, lng: 27.923966},
+          pov: {
+              heading: 34,
+              pitch: 10
+          },
+          enableCloseButton: true
+        });
+
+        modalMap.addListener('pano_changed', function() {
+            var panoCell = document.getElementById('pano-cell');
+            panoCell.innerHTML = modalMap.getPano();
+        });
+
+        modalMap.addListener('links_changed', function() {
+            var linksTable = document.getElementById('links_table');
+            while (linksTable.hasChildNodes()) {
+              linksTable.removeChild(linksTable.lastChild);
+            }
+            var links = modalMap.getLinks();
+            for (var i in links) {
+              var row = document.createElement('tr');
+              linksTable.appendChild(row);
+              var labelCell = document.createElement('td');
+              labelCell.innerHTML = '<b>Link: ' + i + '</b>';
+              var valueCell = document.createElement('td');
+              valueCell.innerHTML = links[i].description;
+              linksTable.appendChild(labelCell);
+              linksTable.appendChild(valueCell);
+            }
+          });
+        modalMap.addListener('position_changed', function() {
+            var positionCell = document.getElementById('position-cell');
+            positionCell.firstChild.nodeValue = modalMap.getPosition() + '';
+        });
+
+        modalMap.addListener('pov_changed', function() {
+            var headingCell = document.getElementById('heading-cell');
+            var pitchCell = document.getElementById('pitch-cell');
+            headingCell.firstChild.nodeValue = modalMap.getPov().heading + '';
+            pitchCell.firstChild.nodeValue = modalMap.getPov().pitch + '';
+        });
+      });
+    });
+
+    google.maps.event.addListener(infoWindow, 'domready', function(){
+      $("#click-me-too").on("click", function(e) {
+        var AnotherModalMap = new google.maps.StreetViewPanorama(
+          document.getElementById('modal-map-too'), {
+          position: {lat: 51.499633, lng: -0.124755},
           pov: {
               heading: 34,
               pitch: 10
