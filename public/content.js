@@ -182,7 +182,7 @@ function myMap() {
     // on scroll
     $(window).scroll( function() { 
       var scrolled_val = $(document).scrollTop().valueOf();
-      console.log(scrolled_val);
+      // console.log(scrolled_val);
       if (scrolled_val < 1027) {
         infoWindow.setContent(infoWindowContent[0][0]);
         map.setCenter(markers[0].getPosition());
