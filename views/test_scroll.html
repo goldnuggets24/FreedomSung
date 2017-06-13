@@ -9,6 +9,7 @@
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="/css/scroll.css" rel="stylesheet">
 <link rel="stylesheet" href="/css/leaflet.label.css" />
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.css">
 
 <style type="text/css">
   @font-face {
@@ -118,11 +119,13 @@
           </section>
         </div>
       </header>
-    <a href="" id="markerBtn" style="visibility: hidden;" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored modal__trigger" data-modal="#modal"></a> <!-- button modal hack -->
-    <div id="controls"></div>
-    <div id="pano"></div>
+      </div>
+    <main>
+      <a href="" id="markerBtn" style="visibility: hidden;" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored modal__trigger" data-modal="#modal"></a> <!-- button modal hack -->
+      <div id="controls"></div>
+      <div id="pano"></div>
     <!-- MODAL - Uses a transparent header that draws on top of the layout's background -->
-    <div id="modal" class="modal modal__bg" style="display: none;">
+<!--     <div id="modal" class="modal modal__bg" style="display: none;">
       <div class="modal__dialog">
         <div class="modal__content">
           <div class="modal__header">
@@ -154,7 +157,8 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
+    </main>
     <script src="/js/material-components-web.js"></script>
     <script src="https://material-components-web.appspot.com/assets/material-components-web.css.js"></script>
 <!--     <link rel="stylesheet" href="/css/materialize.css"> -->
@@ -172,7 +176,49 @@
     <script src="/js/maplace.js"></script>
     <script src="/js/timeline2.js"></script>
     <script src="/js/scroll2.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.js"></script>
     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js"></script>
     <script src="/js/material-modal.js"></script>
+    <footer class="mdl-mini-footer">
+      <div class="carousel"
+   data-flickity='{ "lazyLoad": true }'>
+  <div class="carousel-cell">
+    <img class="carousel-cell-image"
+      data-flickity-lazyload="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/tulip.jpg" alt="tulip" />
+  </div>
+  <div class="carousel-cell">
+    <img class="carousel-cell-image"
+      data-flickity-lazyload="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/grapes.jpg" alt="grapes" />
+  </div>
+  <div class="carousel-cell">
+    <img class="carousel-cell-image"
+      data-flickity-lazyload="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/raspberries.jpg" alt="raspberries" />
+  </div>
+  <div class="carousel-cell">
+    <img class="carousel-cell-image"
+      data-flickity-lazyload="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/wolf.jpg" alt="wolf" />
+  </div>
+  <div class="carousel-cell">
+    <img class="carousel-cell-image"
+      data-flickity-lazyload="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/shore.jpg" alt="sea" />
+  </div>
+  <div class="carousel-cell">
+    <img class="carousel-cell-image"
+      data-flickity-lazyload="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/leaf-droplets.jpg" alt="leaf droplets" />
+  </div>
+  <div class="carousel-cell">
+    <img class="carousel-cell-image"
+      data-flickity-lazyload="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/gulls.jpg" alt="gulls" />
+  </div>
+  <div class="carousel-cell">
+    <img class="carousel-cell-image"
+      data-flickity-lazyload="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/touch-screen.jpg" alt="touch screen" />
+  </div>
+  <div class="carousel-cell">
+    <img class="carousel-cell-image"
+      data-flickity-lazyload="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/van.jpg" alt="van" />
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

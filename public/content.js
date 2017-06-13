@@ -1,8 +1,13 @@
 $( document ).ready(function() {
-    mdc.autoInit();
-    // tap to content on event popup
-    $('.tap-target').tapTarget('open');
-    $('.tap-target').tapTarget('close');
+  mdc.autoInit();
+  $('.main-carousel').flickity({
+    cellAlign: 'left',
+    contain: true,
+    wrapAround: true
+  }); 
+  // tap to content on event popup
+  $('.tap-target').tapTarget('open');
+  $('.tap-target').tapTarget('close');
     // navigation drawer
     var drawerEl = document.querySelector('.mdc-persistent-drawer');
         var MDCPersistentDrawer = mdc.drawer.MDCPersistentDrawer;
