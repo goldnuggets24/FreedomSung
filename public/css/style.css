@@ -58,15 +58,19 @@ h5 {
         border: 0px solid #999;
       }
 
-.mdl-mini-footer {
+footer.mdl-mini-footer {
     position: fixed;
     bottom: 0;
+    background: #2f2c2c;
+    padding: 4px;
     width: 100%;
     z-index: 1;
+    border: 1px solid #ddd;
+    opacity: 0;
 }
 
 .carousel {
-  background: #FAFAFA;
+  background: #2d1c1c;
 }
 
 .carousel-cell {
