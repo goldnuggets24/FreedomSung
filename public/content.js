@@ -60,91 +60,52 @@ $( document ).ready(function() {
         '</div>';
 });
 
-    var LocsB = [
-        {
-            lat: -26.243254,
-            lon: 27.923966,
-            title: 'Event 1',
-            html: [
-                'contentString'
-            ].join(''),
-            zoom: 8
-        },
-        {
-            lat: -26.673235,
-            lon: 27.8040497,
-            title: 'Event 2',
-            icon: '/green-pin.png',
-            html: [
-                'moreContent'
-            ].join(''),
-            zoom: 8
-        },
-        {
-            lat: -26.19284,
-            lon: 28.06601,
-            icon: '/blue-pin.png',
-            title: 'Event 3',
-            html: [
-                '<h3>Content<h3>',
-                '<p>Lorem Ipsum</p>'
-            ].join(''),
-            zoom: 4
-        },
-        {
-            lat: -26.2676604,
-            lon: 27.8606672,
-            icon: '/red-pin.png',
-            title: 'Event 4',
-            html: [
-                '<h3>Content<h3>',
-                '<p>Lorem Ipsum</p>'
-            ].join(''),
-            zoom: 6
-        }
-    ];
-
-    var styles = {
-        'MapBox': [{
-            featureType: 'all',
-            stylers: [
-                { invert_lightness: 'false' }
-            ]
-        }],
-        'Greyscale': [{
-            featureType: 'all',
-            stylers: [
-                { saturation: -100 },
-                { gamma: 0.50 }
-            ]
-        }]
-    }
-
 function myMap() {
   var map;
   var bounds = new google.maps.LatLngBounds();
   var mapCanvas = document.getElementById("gmap-list");
   var mapOptions = {
-    center: new google.maps.LatLng(51.508742, -0.120850),
-    zoom: 7,
+    center: new google.maps.LatLng(-26.20192, 28.05097),
+    zoom: 4,
+    styles: styles,
     panControl: true,
-    zoomControl: false,
+    zoomControl: true,
     mapTypeControl: false,
     scaleControl: false,
     scrollwheel: false,
     streetViewControl: true,
     overviewMapControl: true,
-    rotateControl: true   
+    rotateControl: true,
+    mapTypeId: 'roadmap'
   };
-  // var mapOptions = {
-  //       mapTypeId: 'roadmap'
-  //   };
-
   var map = new google.maps.Map(mapCanvas, mapOptions);
   // Multiple Markers
   var markers = [
-      ['Orlando East March', 51.503454,-0.119562],
-      ['Palace of Westminster, London', 51.499633,-0.124755]
+      ['Local Government Elections Workshop', -26.20192,28.05097],
+      ['Orlando East March', -26.243254,27.923966],
+      ['Protea South March', -26.284604,27.8435],
+      ['Alex People\'s Inspection', -26.1057789,28.0644572],
+      ['SCR March', -26.2515141,27.854085],
+      ['Vaal March', -26.607459,27.840795],
+      ['Heroes Day',-26.2575162,27.9332975],
+      ['Abahlali Solidarity March',-26.286488 ,27.847106],
+      ['Nersa Hearings',-26.0023427,28.1310076],
+      ['Dennis Brutus Memorial',-26.20192,28.05097],
+      ['Visit to Itereleng',-25.75207,28.196714],
+      ['Vaal March',-26.6753884,27.9284722],
+      ['Sharpeville Memorial',-26.6857113,27.8709334],
+      ['POWA Book Launch',-26.2028558,28.0312015],
+      ['Vaal March to Arcelor Mittal',-26.673235,27.8040497],
+      ['Visit to CDP',-26.19284,28.06601],
+      ['World Cup March',-26.25105,27.95678],
+      ['Youth Day',-26.262313,27.882917],
+      ['Jozi Regional Housing March',-26.204407,28.037939],
+      ['Schubart Park Anti-Xenophobia Event',-25.7453693,28.1823943],
+      ['Quagga Evictions',-25.7699538,28.1183756],
+      ['Soweto March',-26.2676604,27.8606672],
+      ['Silent March',-26.19289,28.034651],
+      ['SCR Meeting',-26.2416663,27.9475],
+      ['SECC March',-26.2663774,27.8754511]
   ];
                         
   // Info Window Content
@@ -160,7 +121,6 @@ function myMap() {
 
   // Display multiple markers on a map
   var infoWindow = new google.maps.InfoWindow(), marker, i;
-
   // Loop through our array of markers & place each one on the map  
   for( i = 0; i < markers.length; i++ ) {
     var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
@@ -264,8 +224,8 @@ function myMap() {
     map.fitBounds(bounds);
   }
   // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
-  var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
-    this.setZoom(14);
-    google.maps.event.removeListener(boundsListener);
-  });
+  // var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+  //   this.setZoom(14);
+  //   google.maps.event.removeListener(boundsListener);
+  // });
 }
