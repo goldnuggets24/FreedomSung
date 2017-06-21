@@ -1,5 +1,5 @@
 // MapBox API integration
-L.mapbox.accessToken = 'pk.eyJ1Ijoib2pvbGFvIiwiYSI6IlVMbWRBRDAifQ.fGYcIjLhkNO5xFAUcXNtmw';
+L.mapbox.accessToken = 'pk.eyJ1IjoiZ29sZG51Z2dldHMyNCIsImEiOiJjaXZvOGxwN2swMWZ5Mm9wNWh6c28ya2QxIn0.2iRf87DRtYMGIYAPw0P5bg';
  
 // color: examples.map-i86nkdio
 // grey: examples.map-20v6611k
@@ -10,6 +10,8 @@ L.mapbox.accessToken = 'pk.eyJ1Ijoib2pvbGFvIiwiYSI6IlVMbWRBRDAifQ.fGYcIjLhkNO5xF
 var map = L.map('map', {
     zoomControl: true
 }).setView([-26.204407 + 8,28.037939 + 30], 4);
+
+L.mapbox.styleLayer('mapbox://styles/mapbox/emerald-v8').addTo(map);
 
 var scrollTop = 0;
 
@@ -27,7 +29,7 @@ if (map.tap) map.tap.disable();
 var pos_y = $(window).height() * 0.15 + 450;
 $('#cityname').css("top", pos_y+"px");
 
-var base_layer = L.mapbox.tileLayer('examples.map-2k9d7u0c');
+var base_layer = L.mapbox.tileLayer('mapbox.streets');
 base_layer.setOpacity(1);
 base_layer.addTo(map);
 
@@ -195,9 +197,9 @@ onscroll = function() {
 
     centerLayer.addTo(map);
     // map.removeLayer(markerLayer);
-    map.removeLayer(cityLayer);
+    // map.removeLayer(cityLayer);
 
-    map.setView([-26.204407 + 8,28.037939 + 30], 4);
+    // map.setView([-26.204407 + 8,28.037939 + 30], 4);
 
     $('#h1').css({"visibility":"visible"});
     $('#h2').css({"visibility":"visible"});
@@ -219,10 +221,10 @@ onscroll = function() {
     $('#notes').css({"visibility":"hidden"});
     $('#cityname').css({"visibility":"hidden"});
 
-    tooltip.style("visibility", "hidden");
-    bg_city.style('visibility', 'hidden');
-    bg_timeline.style("visibility", "hidden");
-    stateLine.style('visibility', 'hidden');
+    // tooltip.style("visibility", "hidden");
+    // bg_city.style('visibility', 'hidden');
+    // bg_timeline.style("visibility", "hidden");
+    // stateLine.style('visibility', 'hidden');
 
     date.style("visibility", "hidden");
     eventname = 'test';
@@ -237,7 +239,7 @@ onscroll = function() {
 
     if(change == 0) {
       tempMarker.setLatLng([-26.20192,28.05097 ]);
-      map.setView([-26.20192,28.05097], 13);  
+      // map.setView([-26.20192,28.05097], 13);  
 
       change = 1;
     }
