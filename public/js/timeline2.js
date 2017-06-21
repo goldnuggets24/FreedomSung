@@ -181,7 +181,7 @@ function updateTimeline(d) {
 	dot.style("visibility", "visible");
 	events.style("visibility", "visible");
 
-	events.each(function(e) {
+	events.each(function(e, i) {
 		var distance = Math.abs( d3.select(this).attr("cy") - mouseY );
 		if(distance < 1.2) {
 
@@ -219,8 +219,8 @@ function updateTimeline(d) {
 				// });
 
 				openImg(e);
-				// var infoWindow = new google.maps.InfoWindow({content: e.event});
-				// infoWindow.open(map, markers[1]);
+				var infoWindow = new google.maps.InfoWindow({content: e.event});
+				infoWindow.open(map, markers[i]);
 				googleMap.setCenter(new google.maps.LatLng(e.start_lat, e.start_lon));
 				console.log(e);
 
