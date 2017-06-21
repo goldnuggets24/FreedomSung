@@ -29,7 +29,6 @@ function myMap() {
   var mapCanvas = document.getElementById("gmap-list");
   var mapOptions = {
     center: new google.maps.LatLng(-26.204407, 28.037939),
-    zoom: 4,
     styles: styles,
     panControl: true,
     zoomControl: true,
@@ -146,7 +145,7 @@ function myMap() {
 
     // Automatically center the map fitting all markers on the screen
     // map.fitBounds(bounds);
-    googleMap.setZoom(13);
+    googleMap.setZoom(15);
   }
   // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
   // var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
