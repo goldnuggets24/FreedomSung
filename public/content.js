@@ -59,7 +59,7 @@ function myMap() {
     // Allow each marker to have an info window on click
     google.maps.event.addListener(markers[i], 'click', (function(marker, i) {
       return function() {
-        infoWindow.setContent(infoWindowContent[i][0]);
+        infoWindow.setContent(markers[i].title);
         infoWindow.open(map, markers[i]);
       }
     })(marker, i));

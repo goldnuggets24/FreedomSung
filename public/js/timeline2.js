@@ -219,8 +219,8 @@ function updateTimeline(d) {
 				// });
 
 				openImg(e);
-				var infoWindow = new google.maps.InfoWindow({content: 'Borderline Personality Disorder'});
-				infoWindow.open(map, markers[1]);
+				// var infoWindow = new google.maps.InfoWindow({content: e.event});
+				// infoWindow.open(map, markers[1]);
 				googleMap.setCenter(new google.maps.LatLng(e.start_lat, e.start_lon));
 				console.log(e);
 
