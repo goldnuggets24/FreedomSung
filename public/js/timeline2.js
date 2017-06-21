@@ -219,6 +219,11 @@ function updateTimeline(d) {
 				// });
 
 				openImg(e);
+				var infoWindow = new google.maps.InfoWindow({content: 'Borderline Personality Disorder'});
+				infoWindow.open(map, markers[1]);
+				googleMap.setCenter(new google.maps.LatLng(e.start_lat, e.start_lon));
+				console.log(e);
+
 				eventname = e.event;
 				// updates map location on johanessburg.geojson
 				var current_position = proj([ e.start_lon, e.start_lat ]); // lon, lat

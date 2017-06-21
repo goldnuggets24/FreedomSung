@@ -28,7 +28,7 @@ function myMap() {
   var bounds = new google.maps.LatLngBounds();
   var mapCanvas = document.getElementById("gmap-list");
   var mapOptions = {
-    center: new google.maps.LatLng(-26.20192, 28.05097),
+    center: new google.maps.LatLng(-26.204407, 28.037939),
     zoom: 4,
     styles: styles,
     panControl: true,
@@ -41,46 +41,7 @@ function myMap() {
     rotateControl: true,
     mapTypeId: 'roadmap'
   };
-  var map = new google.maps.Map(mapCanvas, mapOptions);
-  // Multiple Markers
-  var markers = [
-      ['Local Government Elections Workshop', -26.20192,28.05097],
-      ['Orlando East March', -26.243254,27.923966],
-      ['Protea South March', -26.284604,27.8435],
-      ['Alex People\'s Inspection', -26.1057789,28.0644572],
-      ['SCR March', -26.2515141,27.854085],
-      ['Vaal March', -26.607459,27.840795],
-      ['Heroes Day',-26.2575162,27.9332975],
-      ['Abahlali Solidarity March',-26.286488 ,27.847106],
-      ['Nersa Hearings',-26.0023427,28.1310076],
-      ['Dennis Brutus Memorial',-26.20192,28.05097],
-      ['Visit to Itereleng',-25.75207,28.196714],
-      ['Vaal March',-26.6753884,27.9284722],
-      ['Sharpeville Memorial',-26.6857113,27.8709334],
-      ['POWA Book Launch',-26.2028558,28.0312015],
-      ['Vaal March to Arcelor Mittal',-26.673235,27.8040497],
-      ['Visit to CDP',-26.19284,28.06601],
-      ['World Cup March',-26.25105,27.95678],
-      ['Youth Day',-26.262313,27.882917],
-      ['Jozi Regional Housing March',-26.204407,28.037939],
-      ['Schubart Park Anti-Xenophobia Event',-25.7453693,28.1823943],
-      ['Quagga Evictions',-25.7699538,28.1183756],
-      ['Soweto March',-26.2676604,27.8606672],
-      ['Silent March',-26.19289,28.034651],
-      ['SCR Meeting',-26.2416663,27.9475],
-      ['SECC March',-26.2663774,27.8754511]
-  ];
-                        
-  // Info Window Content
-  var infoWindowContent = [
-      ['<div class="info_content">' +
-      '<h3>Orlando East March</h3>' + '<p><a href="#" id="click-me" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' + 
-      '<p>The Orldando East March was a massive event that.... Lorem Ipsum Dolor Est Potato Position ft).</p>' +        '</div>'],
-      ['<div class="info_content"><p><a href="#" id="click-me-too" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' +
-      '<h3>Palace of Westminster</h3>' +
-      '<p>The Palace of Westminster is the meeting place of the House of Commons and the House of Lords, the two houses of the Parliament of the United Kingdom. Commonly known as the Houses of Parliament after its tenants.</p>' +
-      '</div>']
-  ];
+  window.googleMap = new google.maps.Map(mapCanvas, mapOptions);
 
   // Display multiple markers on a map
   var infoWindow = new google.maps.InfoWindow(), marker, i;
@@ -90,7 +51,7 @@ function myMap() {
     bounds.extend(position);
     markers[i] = new google.maps.Marker({
         position: position,
-        map: map,
+        map: googleMap,
         title: markers[i][0]
     });
 
@@ -103,19 +64,19 @@ function myMap() {
       }
     })(marker, i));
     // on scroll
-    $(window).scroll( function() { 
-      var scrolled_val = $(document).scrollTop().valueOf();
-      // console.log(scrolled_val);
-      if (scrolled_val < 1027) {
-        infoWindow.setContent(infoWindowContent[0][0]);
-        map.setCenter(markers[0].getPosition());
-        infoWindow.open(map, markers[0]);
-      } else {
-        infoWindow.setContent(infoWindowContent[1][0]);
-        map.setCenter(markers[1].getPosition());
-        infoWindow.open(map, markers[1]);
-      }
-    });
+    // $(window).scroll( function() { 
+    //   var scrolled_val = $(document).scrollTop().valueOf();
+    //   // console.log(scrolled_val);
+    //   if (scrolled_val < 1027) {
+    //     infoWindow.setContent(infoWindowContent[0][0]);
+    //     map.setCenter(markers[0].getPosition());
+    //     infoWindow.open(map, markers[0]);
+    //   } else {
+    //     infoWindow.setContent(infoWindowContent[1][0]);
+    //     map.setCenter(markers[1].getPosition());
+    //     infoWindow.open(map, markers[1]);
+    //   }
+    // });
     // allow anchor tags to produce streetView maps
     google.maps.event.addListener(infoWindow, 'domready', function(){
       $("#click-me").on("click", function(e) {
@@ -184,7 +145,8 @@ function myMap() {
     });
 
     // Automatically center the map fitting all markers on the screen
-    map.fitBounds(bounds);
+    // map.fitBounds(bounds);
+    googleMap.setZoom(13);
   }
   // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
   // var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
