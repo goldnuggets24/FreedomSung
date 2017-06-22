@@ -204,6 +204,7 @@ function updateTimeline(d) {
 				// marker.properties['marker-color'] = '#ff8888';
 				
 				map.setView([e.start_lat, e.start_lon], 14); // 16, 9 
+				googleMap.setZoom(14); 
 
 				// var t = 0.06;
 
@@ -219,9 +220,11 @@ function updateTimeline(d) {
 				// });
 
 				openImg(e);
+
 				var infoWindow = new google.maps.InfoWindow({content: e.event});
-				infoWindow.open(map, markers[i]);
-				googleMap.setCenter(new google.maps.LatLng(e.start_lat, e.start_lon));
+				// console.log(markers[i]);
+				google.maps.event.trigger(markers[i], 'click')
+				googleMap.setCenter(markers[i].getPosition());
 				console.log(e);
 
 				eventname = e.event;
@@ -229,6 +232,9 @@ function updateTimeline(d) {
 				var current_position = proj([ e.start_lon, e.start_lat ]); // lon, lat
 				current.attr("transform", "translate("+ current_position +")");
 				current2.attr("transform", "translate("+ current_position +")");
+				// remove any open infowindows when moving to a new location on the map
+					
+				// infoWindow.close();
 			}
 		} else {
 			d3.select(this).attr("x1", width/2 - 7);

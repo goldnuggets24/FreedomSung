@@ -31,7 +31,7 @@ function myMap() {
     center: new google.maps.LatLng(-26.204407, 28.037939),
     styles: styles,
     panControl: true,
-    zoomControl: true,
+    zoomControl: false,
     mapTypeControl: false,
     scaleControl: false,
     scrollwheel: false,
@@ -43,7 +43,6 @@ function myMap() {
   window.googleMap = new google.maps.Map(mapCanvas, mapOptions);
 
   // Display multiple markers on a map
-  var infoWindow = new google.maps.InfoWindow(), marker, i;
   // Loop through our array of markers & place each one on the map  
   for( i = 0; i < markers.length; i++ ) {
     var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
@@ -55,6 +54,7 @@ function myMap() {
     });
 
     markers[i].index = i;
+    var infoWindow = new google.maps.InfoWindow(), marker, i;
     // Allow each marker to have an info window on click
     google.maps.event.addListener(markers[i], 'click', (function(marker, i) {
       return function() {
@@ -126,7 +126,7 @@ function myMap() {
         });
       });
     });
-
+    // Experimenting with street view instance
     google.maps.event.addListener(infoWindow, 'domready', function(){
       $("#click-me-too").on("click", function(e) {
         $('.mdl-mini-footer').fadeTo('slow', 1);
@@ -145,7 +145,7 @@ function myMap() {
 
     // Automatically center the map fitting all markers on the screen
     // map.fitBounds(bounds);
-    googleMap.setZoom(15);
+    googleMap.setZoom(14);
   }
   // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
   // var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
