@@ -171,7 +171,7 @@ function hideTimeline() {
 
 var eventname = 'test';
 // Called by scroll when icon is clicked
-function updateTimeline(d) {
+function updateTimeline(d, i) {
 	if(d<smallScale) {  d = smallScale; } 
 	if(d>largeScale) { d = largeScale; }
 
@@ -224,9 +224,11 @@ function updateTimeline(d) {
 				var infoWindow = new google.maps.InfoWindow({content: e.event});
 				// console.log(markers[i]);
 				google.maps.event.trigger(markers[i], 'click')
-				googleMap.setCenter(markers[i].getPosition());
-				// console.log(e);
-
+				googleMap.panTo(markers[i].getPosition());
+				// compensate for Google Maps weird height issue
+				$('body').css("margin-top", i * 26);
+				console.log(e);
+				console.log(i);
 				eventname = e.event;
 				// updates map location on johanessburg.geojson
 				var current_position = proj([ e.start_lon, e.start_lat ]); // lon, lat
