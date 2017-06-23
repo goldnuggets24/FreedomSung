@@ -1,4 +1,4 @@
-  var markers = [
+  window.markers = [
       ['Local Government Elections Workshop', -26.20192,28.05097],
       ['Orlando East March', -26.243254,27.923966],
       ['Protea South March', -26.284604,27.8435],

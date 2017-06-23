@@ -225,7 +225,7 @@ function updateTimeline(d) {
 				// console.log(markers[i]);
 				google.maps.event.trigger(markers[i], 'click')
 				googleMap.setCenter(markers[i].getPosition());
-				console.log(e);
+				// console.log(e);
 
 				eventname = e.event;
 				// updates map location on johanessburg.geojson

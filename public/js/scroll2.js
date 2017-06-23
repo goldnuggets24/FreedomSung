@@ -61,9 +61,9 @@ var tempMarker = L.circle([ -26.20192, 28.05097 ], circleRadius, {
 }).addTo(cityLayer);
 
 function ready(error, data, city) {
-	data.forEach(function(d) {
-		Init(d);
-	});
+  data.forEach(function(d) {
+    Init(d);
+  });
 
   makeTimeline(data, city);
 
@@ -99,8 +99,8 @@ function ready(error, data, city) {
 }
 
 function Init(d) {
-	var lat = d.start_lat;
-	var lon = d.start_lon;
+  var lat = d.start_lat;
+  var lon = d.start_lon;
 
   // var marker = L.circle([ lat, lon ], circleRadius/8, {
   //     color: '#FFEB3B',

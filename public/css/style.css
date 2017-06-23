@@ -7,11 +7,15 @@
  * URL: http://blacktie.co
  */
 
-/*html, body {
+html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-  }*/
+  }
+
+body {
+  height: auto;
+}
 
 h5 {
 	margin: 24px 0 10px;
@@ -34,10 +38,10 @@ h5 {
 }
   
  #map, #gmap-list {
-    float: left;
-    height: 100%;
+/*    float: left;*/
+    height: 1900px;
     width: 100%;
-    overflow: visible;
+/*    overflow: visible;*/
 }
  
  #modal-map, #modal-map-too {

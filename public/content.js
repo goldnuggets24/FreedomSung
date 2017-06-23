@@ -1,37 +1,37 @@
-$( document ).ready(function() {
-  mdc.autoInit();
-  $('.main-carousel').flickity({
-    cellAlign: 'left',
-    contain: true,
-    wrapAround: true
-  }); 
-  // tap to content on event popup
-  $('.tap-target').tapTarget('open');
-  $('.tap-target').tapTarget('close');
-    // navigation drawer
-  var drawerEl = document.querySelector('.mdc-persistent-drawer');
-      var MDCPersistentDrawer = mdc.drawer.MDCPersistentDrawer;
-      var drawer = new MDCPersistentDrawer(drawerEl);
-      document.querySelector('.demo-menu').addEventListener('click', function() {
-        drawer.open = !drawer.open;
-      });
-      drawerEl.addEventListener('MDCPersistentDrawer:open', function() {
-        console.log('Received MDCPersistentDrawer:open');
-      });
-      drawerEl.addEventListener('MDCPersistentDrawer:close', function() {
-        console.log('Received MDCPersistentDrawer:close');
-      });
-  });
+// $( document ).ready(function() {
+//   mdc.autoInit();
+//   $('.main-carousel').flickity({
+//     cellAlign: 'left',
+//     contain: true,
+//     wrapAround: true
+//   }); 
+//   // tap to content on event popup
+//   $('.tap-target').tapTarget('open');
+//   $('.tap-target').tapTarget('close');
+//     // navigation drawer
+//   var drawerEl = document.querySelector('.mdc-persistent-drawer');
+//       var MDCPersistentDrawer = mdc.drawer.MDCPersistentDrawer;
+//       var drawer = new MDCPersistentDrawer(drawerEl);
+//       document.querySelector('.demo-menu').addEventListener('click', function() {
+//         drawer.open = !drawer.open;
+//       });
+//       drawerEl.addEventListener('MDCPersistentDrawer:open', function() {
+//         console.log('Received MDCPersistentDrawer:open');
+//       });
+//       drawerEl.addEventListener('MDCPersistentDrawer:close', function() {
+//         console.log('Received MDCPersistentDrawer:close');
+//       });
+//   });
 
 function myMap() {
   var map;
-  var bounds = new google.maps.LatLngBounds();
+  window.bounds = new google.maps.LatLngBounds();
   var mapCanvas = document.getElementById("gmap-list");
   var mapOptions = {
-    center: new google.maps.LatLng(-26.204407, 28.037939),
-    styles: styles,
+    center: new google.maps.LatLng(-26.1047789,28.002457199999993, 13),
     panControl: true,
     zoomControl: false,
+    disableAutoPan: false,
     mapTypeControl: false,
     scaleControl: false,
     scrollwheel: false,
@@ -42,8 +42,7 @@ function myMap() {
   };
   window.googleMap = new google.maps.Map(mapCanvas, mapOptions);
 
-  // Display multiple markers on a map
-  // Loop through our array of markers & place each one on the map  
+  // Loop through our array of markers & place each one on Google map  
   for( i = 0; i < markers.length; i++ ) {
     var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
     bounds.extend(position);
@@ -54,11 +53,12 @@ function myMap() {
     });
 
     markers[i].index = i;
+
     var infoWindow = new google.maps.InfoWindow(), marker, i;
     // Allow each marker to have an info window on click
     google.maps.event.addListener(markers[i], 'click', (function(marker, i) {
       return function() {
-        infoWindow.setContent(markers[i].title);
+        infoWindow.setContent(markers[i].title + ' - ' + markers[i].position.lat() + ',' + markers[i].position.lng());
         infoWindow.open(map, markers[i]);
       }
     })(marker, i));
@@ -145,7 +145,7 @@ function myMap() {
 
     // Automatically center the map fitting all markers on the screen
     // map.fitBounds(bounds);
-    googleMap.setZoom(14);
+    googleMap.setZoom(15);
   }
   // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
   // var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
