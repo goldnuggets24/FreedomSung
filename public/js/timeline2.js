@@ -225,7 +225,7 @@ function updateTimeline(d, i) {
 				// console.log(markers[i]);
 				google.maps.event.trigger(markers[i], 'click')
 				googleMap.panTo(markers[i].getPosition());
-				// compensate for Google Maps weird height issue
+				// compensate for Google Maps height issue, move this to JSON
 				$('body').css("margin-top", i * 26);
 				console.log(e);
 				console.log(i);

@@ -44,7 +44,7 @@ h5 {
 /*    overflow: visible;*/
 }
  
- #modal-map, #modal-map-too {
+ #modal-map, #modal-map-too, #local-government-elections-workshop-pano, #orlando-east-march-pano, #protea-south-march-pano {
     width: 40%;
     height: 100%;
     position: static !important;

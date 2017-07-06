@@ -62,84 +62,87 @@ function myMap() {
         infoWindow.open(map, markers[i]);
       }
     })(marker, i));
-    // on scroll
-    // $(window).scroll( function() { 
-    //   var scrolled_val = $(document).scrollTop().valueOf();
-    //   // console.log(scrolled_val);
-    //   if (scrolled_val < 1027) {
-    //     infoWindow.setContent(infoWindowContent[0][0]);
-    //     map.setCenter(markers[0].getPosition());
-    //     infoWindow.open(map, markers[0]);
-    //   } else {
-    //     infoWindow.setContent(infoWindowContent[1][0]);
-    //     map.setCenter(markers[1].getPosition());
-    //     infoWindow.open(map, markers[1]);
-    //   }
-    // });
     // allow anchor tags to produce streetView maps
-    google.maps.event.addListener(infoWindow, 'domready', function(){
-      $("#click-me").on("click", function(e) {
-        $('.mdl-mini-footer').fadeTo('slow', 1);
-        var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
+    google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
+      $("#" + markers[0].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
+        // $('.mdl-mini-footer').fadeTo('slow', 1);
+        // var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
         var modalMap = new google.maps.StreetViewPanorama(
-          document.getElementById('modal-map'), {
-          position: {lat: -26.243254, lng: 27.923966},
+          document.getElementById(markers[0].title.replace(/ +/g, '-').toLowerCase() + '-pano'), {
+          position: {lat: markers[0].position.lat(), lng: markers[0].position.lng()}, 
           pov: {
               heading: 34,
               pitch: 10
           },
+          disableDefaultUI: true,
           enableCloseButton: true
         });
+        // USE below later for adding events and images to pano view of maps
+        // modalMap.addListener('pano_changed', function() {
+        //     var panoCell = document.getElementById('pano-cell');
+        //     panoCell.innerHTML = modalMap.getPano();
+        // });
 
-        modalMap.addListener('pano_changed', function() {
-            var panoCell = document.getElementById('pano-cell');
-            panoCell.innerHTML = modalMap.getPano();
-        });
+        // modalMap.addListener('links_changed', function() {
+        //     var linksTable = document.getElementById('links_table');
+        //     while (linksTable.hasChildNodes()) {
+        //       linksTable.removeChild(linksTable.lastChild);
+        //     }
+        //     var links = modalMap.getLinks();
+        //     for (var i in links) {
+        //       var row = document.createElement('tr');
+        //       linksTable.appendChild(row);
+        //       var labelCell = document.createElement('td');
+        //       labelCell.innerHTML = '<b>Link: ' + i + '</b>';
+        //       var valueCell = document.createElement('td');
+        //       valueCell.innerHTML = links[i].description;
+        //       linksTable.appendChild(labelCell);
+        //       linksTable.appendChild(valueCell);
+        //     }
+        //   });
+        // modalMap.addListener('position_changed', function() {
+        //     var positionCell = document.getElementById('position-cell');
+        //     positionCell.firstChild.nodeValue = modalMap.getPosition() + '';
+        // });
 
-        modalMap.addListener('links_changed', function() {
-            var linksTable = document.getElementById('links_table');
-            while (linksTable.hasChildNodes()) {
-              linksTable.removeChild(linksTable.lastChild);
-            }
-            var links = modalMap.getLinks();
-            for (var i in links) {
-              var row = document.createElement('tr');
-              linksTable.appendChild(row);
-              var labelCell = document.createElement('td');
-              labelCell.innerHTML = '<b>Link: ' + i + '</b>';
-              var valueCell = document.createElement('td');
-              valueCell.innerHTML = links[i].description;
-              linksTable.appendChild(labelCell);
-              linksTable.appendChild(valueCell);
-            }
-          });
-        modalMap.addListener('position_changed', function() {
-            var positionCell = document.getElementById('position-cell');
-            positionCell.firstChild.nodeValue = modalMap.getPosition() + '';
-        });
-
-        modalMap.addListener('pov_changed', function() {
-            var headingCell = document.getElementById('heading-cell');
-            var pitchCell = document.getElementById('pitch-cell');
-            headingCell.firstChild.nodeValue = modalMap.getPov().heading + '';
-            pitchCell.firstChild.nodeValue = modalMap.getPov().pitch + '';
-        });
+        // modalMap.addListener('pov_changed', function() {
+        //     var headingCell = document.getElementById('heading-cell');
+        //     var pitchCell = document.getElementById('pitch-cell');
+        //     headingCell.firstChild.nodeValue = modalMap.getPov().heading + '';
+        //     pitchCell.firstChild.nodeValue = modalMap.getPov().pitch + '';
+        // });
       });
     });
-    // Experimenting with street view instance
-    google.maps.event.addListener(infoWindow, 'domready', function(){
-      $("#click-me-too").on("click", function(e) {
-        $('.mdl-mini-footer').fadeTo('slow', 1);
-        var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
-        var AnotherModalMap = new google.maps.StreetViewPanorama(
-          document.getElementById('modal-map-too'), {
-          position: {lat: 51.499633, lng: -0.124755},
+
+    google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
+      $("#" + markers[1].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
+        // $('.mdl-mini-footer').fadeTo('slow', 1);
+        // var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
+        var modalMap = new google.maps.StreetViewPanorama(
+          document.getElementById(markers[1].title.replace(/ +/g, '-').toLowerCase() + '-pano'), {
+          position: {lat: markers[1].position.lat(), lng: markers[1].position.lng()}, 
           pov: {
               heading: 34,
               pitch: 10
           },
+          disableDefaultUI: true,
           enableCloseButton: true
         });
+
+      });
+    });
+    google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
+      $("#" + markers[2].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
+        // $('.mdl-mini-footer').fadeTo('slow', 1);
+        // var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
+        var protea = new google.maps.Map(
+          document.getElementById(markers[2].title.replace(/ +/g, '-').toLowerCase() + '-pano'), {
+          center: {lat: markers[2].position.lat(), lng: markers[2].position.lng()}, 
+          zoom: 18,
+          mapTypeId: 'satellite'
+        });
+        protea.setTilt(45);
+
       });
     });
 
@@ -147,7 +150,7 @@ function myMap() {
     // map.fitBounds(bounds);
     googleMap.setZoom(15);
   }
-  // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
+  // Override map zoom level once our fitBounds function runs (Make sure it only runs once)
   // var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
   //   this.setZoom(14);
   //   google.maps.event.removeListener(boundsListener);
