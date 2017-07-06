@@ -66,6 +66,7 @@ function myMap() {
     google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
       $("#" + markers[0].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
         $('.mdl-mini-footer').fadeTo('slow', 1);
+        $('#h1').slideUp( 300 ).delay( 1000 ).fadeIn(900);
         var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
         var modalMap = new google.maps.StreetViewPanorama(
           document.getElementById(markers[0].title.replace(/ +/g, '-').toLowerCase() + '-pano'), {

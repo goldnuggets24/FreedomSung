@@ -36,6 +36,11 @@ h5 {
     background: #fff;
     padding: 10px;
 }
+
+#h1 {
+  z-index: 3;
+  font-family: 'Open Sans', sans-serif;
+}
   
  #map, #gmap-list {
 /*    float: left;*/
