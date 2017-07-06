@@ -21,6 +21,10 @@ h5 {
 	margin: 24px 0 10px;
 }
 
+h3 {
+  margin: 4px 0;
+}
+
 #bg_intro {
 	color: #000000;
 	padding: 10px;
@@ -40,6 +44,7 @@ h5 {
 #h1 {
   z-index: 3;
   font-family: 'Open Sans', sans-serif;
+  display: none;
 }
   
  #map, #gmap-list {
@@ -84,7 +89,7 @@ footer.mdl-mini-footer {
 }
 
 .carousel-cell {
-  width: 25%;
+  width: 12%;
   height: 100px;
   margin-right: 10px;
   background: #333;
