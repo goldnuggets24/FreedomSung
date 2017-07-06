@@ -1,7 +1,7 @@
 var infoWindowContent = [
       ['<div class="info_content">' +
       '<h3>Local Government Elections Workshop</h3>' + '<p><a href="#" id="local-government-elections-workshop" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' + 
-      '<p>It was a massive event that.... Lorem Ipsum Dolor Est Potato Position ft).</p></div>'],
+      '<p>This event is described as follows ....</p></div>'],
       ['<div class="info_content">' +
       '<h3>Orlando East March</h3>' + '<p><a href="#" id="orlando-east-march" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' + 
       '<p>It was a massive event that.... Lorem Ipsum Dolor Est Potato Position ft).</p></div>'],

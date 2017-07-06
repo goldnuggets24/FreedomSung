@@ -75,6 +75,7 @@ footer.mdl-mini-footer {
 
 .carousel {
   background: #2d1c1c;
+  height: 100px;
 }
 
 .carousel-cell {
