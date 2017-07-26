@@ -2,7 +2,7 @@
       ['Local Government Elections Workshop', -26.20192,28.05097],
       ['Orlando East March', -26.243254,27.923966],
       ['Protea South March', -26.284604,27.8435],
-      ['Alex People\'s Inspection', -26.1057789,28.0644572],
+      ['Alex Peoples Inspection', -26.1057789,28.0644572],
       ['SCR March', -26.2515141,27.854085],
       ['Vaal March', -26.607459,27.840795],
       ['Heroes Day',-26.2575162,27.9332975],

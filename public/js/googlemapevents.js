@@ -59,8 +59,8 @@ function myMap() {
     // Orlando East March
     google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
       $("#" + markers[1].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
-        // $('.mdl-mini-footer').fadeTo('slow', 1);
-        // var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
+        $('.mdl-mini-footer').fadeTo('slow', 1);
+        var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
         var modalMap = new google.maps.StreetViewPanorama(
           document.getElementById(markers[1].title.replace(/ +/g, '-').toLowerCase() + '-pano'), {
           position: {lat: markers[1].position.lat(), lng: markers[1].position.lng()}, 
@@ -90,16 +90,72 @@ function myMap() {
 
     // Alex People's Inspection
     google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
-      $("#" + markers[3].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
+      $("#" + markers[3].title.replace("'","").replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
         $('.mdl-mini-footer').fadeTo('slow', 1);
         var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
-        var protea = new google.maps.Map(
-          document.getElementById(markers[3].title.replace(/ +/g, '-').toLowerCase() + '-pano'), {
+        var alex = new google.maps.Map(
+          document.getElementById('alex-peoples-inspection-pano'), {
           center: {lat: markers[3].position.lat(), lng: markers[3].position.lng()}, 
           zoom: 18,
           mapTypeId: 'satellite'
         });
-        protea.setTilt(45);
+        alex.setTilt(45);
+      });
+    });
+    // SCR March
+    google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
+      $("#" + markers[4].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
+        $('.mdl-mini-footer').fadeTo('slow', 1);
+        var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
+        var scr = new google.maps.Map(
+          document.getElementById(markers[4].title.replace(/ +/g, '-').toLowerCase() + '-pano'), {
+          center: {lat: markers[4].position.lat(), lng: markers[4].position.lng()}, 
+          zoom: 18,
+          mapTypeId: 'satellite'
+        });
+        scr.setTilt(45);
+      });
+    });
+    // Vaal March
+    google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
+      $("#" + markers[5].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
+        $('.mdl-mini-footer').fadeTo('slow', 1);
+        var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
+        var vaal = new google.maps.Map(
+          document.getElementById(markers[5].title.replace(/ +/g, '-').toLowerCase() + '-pano'), {
+          center: {lat: markers[5].position.lat(), lng: markers[5].position.lng()}, 
+          zoom: 18,
+          mapTypeId: 'satellite'
+        });
+        vaal.setTilt(45);
+      });
+    });
+    // Heroes Day
+    google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
+      $("#" + markers[6].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
+        $('.mdl-mini-footer').fadeTo('slow', 1);
+        var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
+        var heroes = new google.maps.Map(
+          document.getElementById(markers[6].title.replace(/ +/g, '-').toLowerCase() + '-pano'), {
+          center: {lat: markers[6].position.lat(), lng: markers[6].position.lng()}, 
+          zoom: 18,
+          mapTypeId: 'satellite'
+        });
+        heroes.setTilt(45);
+      });
+    });
+    // Abahlali Solidarity March
+    google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
+      $("#" + markers[7].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
+        $('.mdl-mini-footer').fadeTo('slow', 1);
+        var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
+        var abahlali = new google.maps.Map(
+          document.getElementById(markers[7].title.replace(/ +/g, '-').toLowerCase() + '-pano'), {
+          center: {lat: markers[7].position.lat(), lng: markers[7].position.lng()}, 
+          zoom: 18,
+          mapTypeId: 'satellite'
+        });
+        abahlali.setTilt(45);
       });
     });
 
