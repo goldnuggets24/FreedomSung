@@ -9,7 +9,7 @@
 
 html, body {
     height: 100%;
-    margin: 0;
+    margin: 0 !important;
     padding: 0;
   }
 
@@ -110,6 +110,18 @@ footer.mdl-mini-footer {
 .carousel-cell-image.flickity-lazyerror {
   opacity: 1;
 }
+
+#close {
+  z-index: 999;
+  top: 0;
+  right: 10px;
+  position: absolute;
+  background: black;
+  width: 50px;
+  height: 50px;
+  color: #fff;
+}
+
 /* 
   .demo-layout-transparent {
   background: url('../assets/demos/transparent.jpg') center / cover;

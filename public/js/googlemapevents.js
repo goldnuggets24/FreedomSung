@@ -1,4 +1,9 @@
 function myMap() {
+  // allow map to disable on click
+  $('#close').on('click', function(){
+    $('#alex-peoples-inspection-pano').hide();
+  });
+
   var map;
   window.bounds = new google.maps.LatLngBounds();
   var mapCanvas = document.getElementById("gmap-list");
@@ -93,6 +98,7 @@ function myMap() {
       $("#" + markers[3].title.replace("'","").replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
         $('.mdl-mini-footer').fadeTo('slow', 1);
         var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
+        $('#alex-peoples-inspection-pano').show();
         var alex = new google.maps.Map(
           document.getElementById('alex-peoples-inspection-pano'), {
           center: {lat: markers[3].position.lat(), lng: markers[3].position.lng()}, 
