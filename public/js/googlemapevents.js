@@ -49,7 +49,7 @@ function myMap() {
         $('.mdl-mini-footer').fadeTo('slow', 1);
         $('#h1').slideUp( 300 ).delay( 1000 ).fadeIn(900);
         var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
-        var modalMap = new google.maps.StreetViewPanorama(
+        var local = new google.maps.StreetViewPanorama(
           document.getElementById(markers[0].title.replace(/ +/g, '-').toLowerCase() + '-pano'), {
           position: {lat: markers[0].position.lat(), lng: markers[0].position.lng()}, 
           pov: {
@@ -66,7 +66,7 @@ function myMap() {
       $("#" + markers[1].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
         $('.mdl-mini-footer').fadeTo('slow', 1);
         var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
-        var modalMap = new google.maps.StreetViewPanorama(
+        var orlando = new google.maps.StreetViewPanorama(
           document.getElementById(markers[1].title.replace(/ +/g, '-').toLowerCase() + '-pano'), {
           position: {lat: markers[1].position.lat(), lng: markers[1].position.lng()}, 
           pov: {
@@ -162,6 +162,62 @@ function myMap() {
           mapTypeId: 'satellite'
         });
         abahlali.setTilt(45);
+      });
+    });
+    // Nersa Hearings
+    google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
+      $("#" + markers[8].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
+        $('.mdl-mini-footer').fadeTo('slow', 1);
+        var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
+        var nersa = new google.maps.Map(
+          document.getElementById(markers[8].title.replace(/ +/g, '-').toLowerCase() + '-pano'), {
+          center: {lat: markers[8].position.lat(), lng: markers[8].position.lng()}, 
+          zoom: 18,
+          mapTypeId: 'satellite'
+        });
+        nersa.setTilt(45);
+      });
+    });
+    // Dennis
+    google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
+      $("#" + markers[9].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
+        $('.mdl-mini-footer').fadeTo('slow', 1);
+        var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
+        var dennis = new google.maps.Map(
+          document.getElementById(markers[9].title.replace(/ +/g, '-').toLowerCase() + '-pano'), {
+          center: {lat: markers[9].position.lat(), lng: markers[9].position.lng()}, 
+          zoom: 18,
+          mapTypeId: 'satellite'
+        });
+        dennis.setTilt(45);
+      });
+    });
+    // Itereleng
+    google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
+      $("#" + markers[10].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
+        $('.mdl-mini-footer').fadeTo('slow', 1);
+        var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
+        var itereleng = new google.maps.Map(
+          document.getElementById(markers[10].title.replace(/ +/g, '-').toLowerCase() + '-pano'), {
+          center: {lat: markers[10].position.lat(), lng: markers[10].position.lng()}, 
+          zoom: 18,
+          mapTypeId: 'satellite'
+        });
+        itereleng.setTilt(45);
+      });
+    });
+    // Vaal 2
+    google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
+      $("#" + markers[11].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
+        $('.mdl-mini-footer').fadeTo('slow', 1);
+        var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
+        var vaaltwo = new google.maps.Map(
+          document.getElementById(markers[11].title.replace(/ +/g, '-').toLowerCase() + '-pano'), {
+          center: {lat: markers[11].position.lat(), lng: markers[11].position.lng()}, 
+          zoom: 18,
+          mapTypeId: 'satellite'
+        });
+        vaaltwo.setTilt(45);
       });
     });
 
