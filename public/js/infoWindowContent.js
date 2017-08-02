@@ -17,80 +17,80 @@ var infoWindowContent = [
       '<p>The Palace of Westminster is the meeting place of the House of Commons and the House of Lords, the two houses of the Parliament of the United Kingdom. Commonly known as the Houses of Parliament after its tenants.</p>' +
       '</div>'],
       ['<div class="info_content"><p><a href="#" id="click-me-too" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' +
-      '<h3>Palace of Westminster</h3>' +
+      '<h3>Vaal March</h3>' +
       '<p>The Palace of Westminster is the meeting place of the House of Commons and the House of Lords, the two houses of the Parliament of the United Kingdom. Commonly known as the Houses of Parliament after its tenants.</p>' +
       '</div>'],
       ['<div class="info_content">' +
-      '<h3>Orlando East March</h3>' + '<p><a href="#" id="click-me" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' + 
+      '<h3>Heroes Day</h3>' + '<p><a href="#" id="click-me" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' + 
       '<p>The Orldando East March was a massive event that.... Lorem Ipsum Dolor Est Potato Position ft).</p>' +        '</div>'],
       ['<div class="info_content"><p><a href="#" id="click-me-too" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' +
-      '<h3>Palace of Westminster</h3>' +
+      '<h3>Abahlali Solidarity March</h3>' +
       '<p>The Palace of Westminster is the meeting place of the House of Commons and the House of Lords, the two houses of the Parliament of the United Kingdom. Commonly known as the Houses of Parliament after its tenants.</p>' +
       '</div>'],
       ['<div class="info_content"><p><a href="#" id="click-me-too" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' +
-      '<h3>Palace of Westminster</h3>' +
+      '<h3>Nersa Hearings</h3>' +
       '<p>The Palace of Westminster is the meeting place of the House of Commons and the House of Lords, the two houses of the Parliament of the United Kingdom. Commonly known as the Houses of Parliament after its tenants.</p>' +
       '</div>'],
       ['<div class="info_content"><p><a href="#" id="click-me-too" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' +
-      '<h3>Palace of Westminster</h3>' +
+      '<h3>Dennis Brutus Memorial</h3>' +
       '<p>The Palace of Westminster is the meeting place of the House of Commons and the House of Lords, the two houses of the Parliament of the United Kingdom. Commonly known as the Houses of Parliament after its tenants.</p>' +
       '</div>'],
       ['<div class="info_content"><p><a href="#" id="click-me-too" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' +
-      '<h3>Palace of Westminster</h3>' +
+      '<h3>Visit to Itereleng</h3>' +
       '<p>The Palace of Westminster is the meeting place of the House of Commons and the House of Lords, the two houses of the Parliament of the United Kingdom. Commonly known as the Houses of Parliament after its tenants.</p>' +
       '</div>'],
       ['<div class="info_content"><p><a href="#" id="click-me-too" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' +
-      '<h3>Palace of Westminster</h3>' +
+      '<h3>Vaal March</h3>' +
       '<p>The Palace of Westminster is the meeting place of the House of Commons and the House of Lords, the two houses of the Parliament of the United Kingdom. Commonly known as the Houses of Parliament after its tenants.</p>' +
       '</div>'],
       ['<div class="info_content">' +
-      '<h3>Orlando East March</h3>' + '<p><a href="#" id="click-me" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' + 
+      '<h3>Sharpeville Memorial</h3>' + '<p><a href="#" id="click-me" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' + 
       '<p>The Orldando East March was a massive event that.... Lorem Ipsum Dolor Est Potato Position ft).</p>' +        '</div>'],
       ['<div class="info_content"><p><a href="#" id="click-me-too" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' +
-      '<h3>Palace of Westminster</h3>' +
+      '<h3>POWA Book Launch</h3>' +
       '<p>The Palace of Westminster is the meeting place of the House of Commons and the House of Lords, the two houses of the Parliament of the United Kingdom. Commonly known as the Houses of Parliament after its tenants.</p>' +
       '</div>'],
       ['<div class="info_content"><p><a href="#" id="click-me-too" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' +
-      '<h3>Palace of Westminster</h3>' +
+      '<h3>Vaal March to Arcelor Mittal</h3>' +
       '<p>The Palace of Westminster is the meeting place of the House of Commons and the House of Lords, the two houses of the Parliament of the United Kingdom. Commonly known as the Houses of Parliament after its tenants.</p>' +
       '</div>'],
       ['<div class="info_content"><p><a href="#" id="click-me-too" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' +
-      '<h3>Palace of Westminster</h3>' +
+      '<h3>Visit to CDP</h3>' +
       '<p>The Palace of Westminster is the meeting place of the House of Commons and the House of Lords, the two houses of the Parliament of the United Kingdom. Commonly known as the Houses of Parliament after its tenants.</p>' +
       '</div>'],
       ['<div class="info_content"><p><a href="#" id="click-me-too" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' +
-      '<h3>Palace of Westminster</h3>' +
+      '<h3>World Cup March</h3>' +
       '<p>The Palace of Westminster is the meeting place of the House of Commons and the House of Lords, the two houses of the Parliament of the United Kingdom. Commonly known as the Houses of Parliament after its tenants.</p>' +
       '</div>'],
       ['<div class="info_content"><p><a href="#" id="click-me-too" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' +
-      '<h3>Palace of Westminster</h3>' +
+      '<h3>Youth Day</h3>' +
       '<p>The Palace of Westminster is the meeting place of the House of Commons and the House of Lords, the two houses of the Parliament of the United Kingdom. Commonly known as the Houses of Parliament after its tenants.</p>' +
       '</div>'],
       ['<div class="info_content">' +
-      '<h3>Orlando East March</h3>' + '<p><a href="#" id="click-me" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' + 
+      '<h3>Jozi Regional Housing March</h3>' + '<p><a href="#" id="click-me" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' + 
       '<p>The Orldando East March was a massive event that.... Lorem Ipsum Dolor Est Potato Position ft).</p>' +        '</div>'],
       ['<div class="info_content"><p><a href="#" id="click-me-too" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' +
-      '<h3>Palace of Westminster</h3>' +
+      '<h3>Schubart Park Anti-Xenophobia Event</h3>' +
       '<p>The Palace of Westminster is the meeting place of the House of Commons and the House of Lords, the two houses of the Parliament of the United Kingdom. Commonly known as the Houses of Parliament after its tenants.</p>' +
       '</div>'],
       ['<div class="info_content"><p><a href="#" id="click-me-too" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' +
-      '<h3>Palace of Westminster</h3>' +
+      '<h3>Quagga Evictions</h3>' +
       '<p>The Palace of Westminster is the meeting place of the House of Commons and the House of Lords, the two houses of the Parliament of the United Kingdom. Commonly known as the Houses of Parliament after its tenants.</p>' +
       '</div>'],
       ['<div class="info_content"><p><a href="#" id="click-me-too" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' +
-      '<h3>Palace of Westminster</h3>' +
+      '<h3>Soweto March</h3>' +
       '<p>The Palace of Westminster is the meeting place of the House of Commons and the House of Lords, the two houses of the Parliament of the United Kingdom. Commonly known as the Houses of Parliament after its tenants.</p>' +
       '</div>'],
       ['<div class="info_content"><p><a href="#" id="click-me-too" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' +
-      '<h3>Palace of Westminster</h3>' +
+      '<h3>Silent March</h3>' +
       '<p>The Palace of Westminster is the meeting place of the House of Commons and the House of Lords, the two houses of the Parliament of the United Kingdom. Commonly known as the Houses of Parliament after its tenants.</p>' +
       '</div>'],
       ['<div class="info_content"><p><a href="#" id="click-me-too" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' +
-      '<h3>Palace of Westminster</h3>' +
+      '<h3>SCR Meeting</h3>' +
       '<p>The Palace of Westminster is the meeting place of the House of Commons and the House of Lords, the two houses of the Parliament of the United Kingdom. Commonly known as the Houses of Parliament after its tenants.</p>' +
       '</div>'],
       ['<div class="info_content">' +
-      '<h3>Orlando East March</h3>' + '<p><a href="#" id="click-me" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' + 
+      '<h3>SECC March</h3>' + '<p><a href="#" id="click-me" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' + 
       '<p>The Orldando East March was a massive event that.... Lorem Ipsum Dolor Est Potato Position ft).</p>' +        '</div>'],
       ['<div class="info_content"><p><a href="#" id="click-me-too" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' +
       '<h3>Palace of Westminster</h3>' +

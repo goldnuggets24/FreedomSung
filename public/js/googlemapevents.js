@@ -221,6 +221,34 @@ function myMap() {
         vaaltwo.setTilt(45);
       });
     });
+    // Sharpeville
+    google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
+      $("#" + markers[12].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
+        $('.mdl-mini-footer').fadeTo('slow', 1);
+        var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
+        var sharpeville = new google.maps.Map(
+          document.getElementById(markers[12].title.replace(/ +/g, '-').toLowerCase() + '-pano'), {
+          center: {lat: markers[12].position.lat(), lng: markers[12].position.lng()}, 
+          zoom: 18,
+          mapTypeId: 'satellite'
+        });
+        sharpeville.setTilt(45);
+      });
+    });
+    // POWA Book Launch
+    google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
+      $("#" + markers[13].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
+        $('.mdl-mini-footer').fadeTo('slow', 1);
+        var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
+        var powa = new google.maps.Map(
+          document.getElementById(markers[13].title.replace(/ +/g, '-').toLowerCase() + '-pano'), {
+          center: {lat: markers[13].position.lat(), lng: markers[13].position.lng()}, 
+          zoom: 18,
+          mapTypeId: 'satellite'
+        });
+        powa.setTilt(45);
+      });
+    });
 
     googleMap.setZoom(15);
   }

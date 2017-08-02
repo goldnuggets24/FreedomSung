@@ -1,3 +1,4 @@
+// Grab images and place inside of the media crawl per event
 function imageRetrieval(folder) {
 	var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
 	var dir = "/" + folder + "/";
