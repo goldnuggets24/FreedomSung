@@ -58,7 +58,7 @@ function myMap() {
           disableDefaultUI: true,
           enableCloseButton: true
         });
-        imageRetrieval('local');
+        imageRetrieval('apconference030610');
 
       });
     });
