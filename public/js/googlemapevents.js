@@ -193,6 +193,7 @@ function myMap() {
           mapTypeId: 'satellite'
         });
         dennis.setTilt(45);
+        imageRetrieval('dennisbrutusmemorial012310');
       });
     });
     // Itereleng
