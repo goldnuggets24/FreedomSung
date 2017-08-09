@@ -77,6 +77,7 @@ function myMap() {
           disableDefaultUI: true,
           enableCloseButton: true
         });
+        imageRetrieval('orlandoeastmarch111309');
       });
     });
     // Protea South March
@@ -107,6 +108,7 @@ function myMap() {
           mapTypeId: 'satellite'
         });
         alex.setTilt(45);
+        imageRetrieval('alexpeoplesinspection111909');
       });
     });
     // SCR March
