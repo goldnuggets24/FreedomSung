@@ -225,8 +225,6 @@ function updateTimeline(d, i) {
 				// console.log(markers[i]);
 				google.maps.event.trigger(markers[i], 'click')
 				googleMap.panTo(markers[i].getPosition());
-				// compensate for Google Maps height issue, pulling from event_final2.csv
-				console.log(e.GoogleLink);
 				$('body').css('margin-top', Number(e.Position));
 				eventname = e.event;
 				// updates map location on johanessburg.geojson
