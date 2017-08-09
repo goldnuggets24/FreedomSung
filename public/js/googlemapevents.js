@@ -92,6 +92,7 @@ function myMap() {
           mapTypeId: 'satellite'
         });
         protea.setTilt(45);
+        imageRetrieval('proteasouthmarch111509');
       });
     });
 
@@ -123,6 +124,7 @@ function myMap() {
           mapTypeId: 'satellite'
         });
         scr.setTilt(45);
+        imageRetrieval('scrmarch112409');
       });
     });
     // Vaal March
@@ -137,6 +139,7 @@ function myMap() {
           mapTypeId: 'satellite'
         });
         vaal.setTilt(45);
+        imageRetrieval('vaalmarch022210');
       });
     });
     // Heroes Day
@@ -151,6 +154,7 @@ function myMap() {
           mapTypeId: 'satellite'
         });
         heroes.setTilt(45);
+        imageRetrieval('heroesday112809');
       });
     });
     // Abahlali Solidarity March
@@ -165,6 +169,7 @@ function myMap() {
           mapTypeId: 'satellite'
         });
         abahlali.setTilt(45);
+        imageRetrieval('courtcasesolidarity021710');
       });
     });
     // Nersa Hearings
@@ -179,6 +184,7 @@ function myMap() {
           mapTypeId: 'satellite'
         });
         nersa.setTilt(45);
+        imageRetrieval('nersahearings012110');
       });
     });
     // Dennis
@@ -208,6 +214,7 @@ function myMap() {
           mapTypeId: 'satellite'
         });
         itereleng.setTilt(45);
+        imageRetrieval('visittoitereleng012510');
       });
     });
     // Vaal 2
@@ -222,6 +229,7 @@ function myMap() {
           mapTypeId: 'satellite'
         });
         vaaltwo.setTilt(45);
+        imageRetrieval('vaalmarchtoarcelormittal051110');
       });
     });
     // Sharpeville
@@ -236,6 +244,7 @@ function myMap() {
           mapTypeId: 'satellite'
         });
         sharpeville.setTilt(45);
+        imageRetrieval('sharpevillememorial032110');
       });
     });
     // POWA Book Launch
@@ -250,6 +259,7 @@ function myMap() {
           mapTypeId: 'satellite'
         });
         powa.setTilt(45);
+        imageRetrieval('sharpevillememorial032110');
       });
     });
 
