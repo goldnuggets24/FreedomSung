@@ -146,8 +146,11 @@ footer.mdl-mini-footer {
   right: 10px;
   position: absolute;
   background: #ccc;
-  color: #fff;
   display: none;
+}
+
+#close a {
+  color: #000;
 }
 
 /* 

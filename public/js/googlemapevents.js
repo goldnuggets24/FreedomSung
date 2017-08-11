@@ -2,8 +2,8 @@ function myMap() {
   // allow map to disable on click
   $('#close').on('click', function(){
     $('#alex-peoples-inspection-pano').hide();
-    $('#local-government-elections-workshop-pano').hide();
     $('#close, #carousel').fadeOut(1000);
+    $('#local-government-elections-workshop-pano').html('').removeAttr('style');
   });
 
   var map;
@@ -60,7 +60,7 @@ function myMap() {
         disableDefaultUI: true,
         enableCloseButton: true
       });
-      $('#close').fadeIn(2000);
+      $('#close, .carousel').fadeIn(2000);
       imageRetrieval('apconference030610');
 
     });
