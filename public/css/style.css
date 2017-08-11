@@ -53,7 +53,37 @@ h3 {
 /*    overflow: visible;*/
 }
  
- #modal-map, #modal-map-too, #local-government-elections-workshop-pano, #orlando-east-march-pano, #protea-south-march-pano, #alex-peoples-inspection-pano {
+#modal-map, 
+#modal-map-too,
+#local-government-elections-workshop-pano,
+#orlando-east-march-pano, 
+#protea-south-march-pano, 
+#alex-peoples-inspection-pano, 
+#local-government-elections-workshop,
+#orlando-east-march,
+#protea-south-march,
+#alex-peoples-inspection,
+#scr-march,
+#vaal-march,
+#heroes-day,
+#abahlali-solidarity-march,
+#nersa-hearings,
+#dennis-brutus-memorial,
+#visit-to-itereleng,
+#vaal-march-two,
+#sharpeville-memorial,
+#powa-book-launch,
+#vaal-march-to-arcelor-mittal,
+#visit-to-cdp,
+#world-cup-march,
+#youth-day,
+#jozi-regional-housing-march,
+#schubart-park-anti-xenophobia-event,
+#quagga-evictions,
+#soweto-march,
+#silent-march,
+#scr-meeting,
+#secc-march {
     width: 40%;
     height: 100%;
     position: static !important;
