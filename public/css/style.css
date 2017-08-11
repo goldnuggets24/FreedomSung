@@ -142,7 +142,7 @@ footer.mdl-mini-footer {
 
 #close {
   z-index: 999;
-  top: 0;
+  top: 4px;
   right: 10px;
   position: absolute;
   background: #ccc;
