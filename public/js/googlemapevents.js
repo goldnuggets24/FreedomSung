@@ -4,16 +4,10 @@ function myMap() {
     $('#alex-peoples-inspection-pano').hide();
     $('#close, #carousel').fadeOut(1000);
     $('#local-government-elections-workshop-pano').html('').removeAttr('style');
-    $('#local-government-elections-workshop-pano').html('').removeAttr('style');
     $('#orlando-east-march-pano').html('').removeAttr('style');
     $('#protea-south-march-pano').html('').removeAttr('style');
     $('#alex-peoples-inspection-pano').html('').removeAttr('style');
     $('#src-march-pano').html('').removeAttr('style');
-    $('#local-government-elections-workshop-pano').html('').removeAttr('style');
-    $('#orlando-east-march-pano').html('').removeAttr('style');
-    $('#protea-south-march-pano').html('').removeAttr('style');
-    $('#alex-peoples-inspection-pano').html('').removeAttr('style');
-    $('#scr-march-pano').html('').removeAttr('style');
     $('#vaal-march-pano').html('').removeAttr('style');
     $('#heroes-day-pano').html('').removeAttr('style');
     $('#abahlali-solidarity-march-pano').html('').removeAttr('style');
@@ -88,9 +82,9 @@ function myMap() {
             pitch: 10
         },
         disableDefaultUI: true,
-        enableCloseButton: true
+        enableCloseButton: false
       });
-      $('#close, .carousel').fadeIn(2000);
+      $('#close, .carousel').fadeIn(1200);
       imageRetrieval('apconference030610');
 
     });
@@ -108,8 +102,9 @@ function myMap() {
             pitch: 10
         },
         disableDefaultUI: true,
-        enableCloseButton: true
+        enableCloseButton: false
       });
+      $('#close, .carousel').fadeIn(1200);
       imageRetrieval('orlandoeastmarch111309');
     });
   });
@@ -125,6 +120,7 @@ function myMap() {
         mapTypeId: 'satellite'
       });
       protea.setTilt(45);
+      $('#close, .carousel').fadeIn(1200);
       imageRetrieval('proteasouthmarch111509');
     });
   });
@@ -142,6 +138,7 @@ function myMap() {
         mapTypeId: 'satellite'
       });
       alex.setTilt(45);
+      $('#close, .carousel').fadeIn(1200);
       imageRetrieval('alexpeoplesinspection111909');
     });
   });
@@ -157,6 +154,7 @@ function myMap() {
         mapTypeId: 'satellite'
       });
       scr.setTilt(45);
+      $('#close, .carousel').fadeIn(1200);
       imageRetrieval('scrmarch112409');
     });
   });
@@ -172,6 +170,7 @@ function myMap() {
         mapTypeId: 'satellite'
       });
       vaal.setTilt(45);
+      $('#close, .carousel').fadeIn(1200);
       imageRetrieval('vaalmarch112709');
     });
   });
@@ -187,6 +186,7 @@ function myMap() {
         mapTypeId: 'satellite'
       });
       heroes.setTilt(45);
+      $('#close, .carousel').fadeIn(1200);
       imageRetrieval('heroesday112809');
     });
   });
@@ -202,6 +202,7 @@ function myMap() {
         mapTypeId: 'satellite'
       });
       abahlali.setTilt(45);
+      $('#close, .carousel').fadeIn(1200);
       imageRetrieval('abahlalisolidaritymarch120509');
     });
   });
@@ -217,6 +218,7 @@ function myMap() {
         mapTypeId: 'satellite'
       });
       nersa.setTilt(45);
+      $('#close, .carousel').fadeIn(1200);
       imageRetrieval('nersahearings012110');
     });
   });
@@ -232,6 +234,7 @@ function myMap() {
         mapTypeId: 'satellite'
       });
       dennis.setTilt(45);
+      $('#close, .carousel').fadeIn(1200);
       imageRetrieval('dennisbrutusmemorial012310');
     });
   });
@@ -247,6 +250,7 @@ function myMap() {
         mapTypeId: 'satellite'
       });
       itereleng.setTilt(45);
+      $('#close, .carousel').fadeIn(1200);
       imageRetrieval('visittoitereleng012510');
     });
   });
@@ -262,6 +266,7 @@ function myMap() {
         mapTypeId: 'satellite'
       });
       vaaltwo.setTilt(45);
+      $('#close, .carousel').fadeIn(1200);
       imageRetrieval('vaalmarch022210');
     });
   });
@@ -277,6 +282,7 @@ function myMap() {
         mapTypeId: 'satellite'
       });
       sharpeville.setTilt(45);
+      $('#close, .carousel').fadeIn(1200);
       imageRetrieval('sharpevillememorial032110');
     });
   });
@@ -292,6 +298,7 @@ function myMap() {
         mapTypeId: 'satellite'
       });
       powa.setTilt(45);
+      $('#close, .carousel').fadeIn(1200);
       imageRetrieval('sharpevillememorial032110');
     });
   });
@@ -307,6 +314,7 @@ function myMap() {
         mapTypeId: 'satellite'
       });
       powa.setTilt(45);
+      $('#close, .carousel').fadeIn(1200);
       imageRetrieval('vaalmarchtoarcelormittal051110');
     });
   });
@@ -322,6 +330,7 @@ function myMap() {
         mapTypeId: 'satellite'
       });
       cdp.setTilt(45);
+      $('#close, .carousel').fadeIn(1200);
       imageRetrieval('vaalmarchtoarcelormittal051110');
     });
   });
@@ -337,6 +346,7 @@ function myMap() {
         mapTypeId: 'satellite'
       });
       wcm.setTilt(45);
+      $('#close, .carousel').fadeIn(1200);
       imageRetrieval('worldcupmarch061110');
     });
   });
@@ -352,6 +362,7 @@ function myMap() {
         mapTypeId: 'satellite'
       });
       youth.setTilt(45);
+      $('#close, .carousel').fadeIn(1200);
       imageRetrieval('worldcupmarch061110');
     });
   });
@@ -367,6 +378,7 @@ function myMap() {
         mapTypeId: 'satellite'
       });
       jozi.setTilt(45);
+      $('#close, .carousel').fadeIn(1200);
       imageRetrieval('joziregionalhousingmarch062510');
     });
   });
@@ -382,6 +394,7 @@ function myMap() {
         mapTypeId: 'satellite'
       });
       schubart.setTilt(45);
+      $('#close, .carousel').fadeIn(1200);
       imageRetrieval('schubartparkanti-xenophobiaevent071110');
     });
   });
@@ -397,6 +410,7 @@ function myMap() {
         mapTypeId: 'satellite'
       });
       quagga.setTilt(45);
+      $('#close, .carousel').fadeIn(1200);
       imageRetrieval('quaggaevictions080310');
     });
   });
@@ -412,6 +426,7 @@ function myMap() {
         mapTypeId: 'satellite'
       });
       soweto.setTilt(45);
+      $('#close, .carousel').fadeIn(1200);
       imageRetrieval('sowetomarch091510');
     });
   });
@@ -427,6 +442,7 @@ function myMap() {
         mapTypeId: 'satellite'
       });
       silent.setTilt(45);
+      $('#close, .carousel').fadeIn(1200);
       imageRetrieval('silentmarchfxi101910');
     });
   });
