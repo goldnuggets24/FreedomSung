@@ -85,7 +85,7 @@ h3 {
 #scr-meeting-pano,
 #secc-march-pano {
     width: 40%;
-    height: 100%;
+    height: 60%;
     position: static !important;
     float:left;
     z-index: 999999;

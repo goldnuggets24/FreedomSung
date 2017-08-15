@@ -187,13 +187,13 @@ var change = 0;
 
 onscroll = function() {
   scrollTop = document.documentElement.scrollTop || document.body.scrollTop;  
-
+  console.log(scrollTop);
   if (scrollTop < 80) {
 
     change = 0;
 
     base_layer.setOpacity(1);
-    hideTimeline();
+    // hideTimeline();
 
     centerLayer.addTo(map);
     // map.removeLayer(markerLayer);

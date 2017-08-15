@@ -223,7 +223,7 @@ function updateTimeline(d, i) {
 
 				var infoWindow = new google.maps.InfoWindow({content: e.event});
 				// console.log(markers[i]);
-				google.maps.event.trigger(markers[i], 'click')
+				google.maps.event.trigger(markers[i], 'click');
 				googleMap.panTo(markers[i].getPosition());
 				$('body').css('margin-top', Number(e.Position));
 				eventname = e.event;

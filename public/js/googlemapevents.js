@@ -1,34 +1,41 @@
+function backToMap(marker, shit) {
+  $('#close, #carousel').fadeOut(900);
+  $('#alex-peoples-inspection-pano').hide();
+  $('#local-government-elections-workshop-pano').html('').removeAttr('style');
+  $('#orlando-east-march-pano').html('').removeAttr('style');
+  $('#protea-south-march-pano').html('').removeAttr('style');
+  $('#alex-peoples-inspection-pano').html('').removeAttr('style');
+  $('#src-march-pano').html('').removeAttr('style');
+  $('#vaal-march-pano').html('').removeAttr('style');
+  $('#heroes-day-pano').html('').removeAttr('style');
+  $('#abahlali-solidarity-march-pano').html('').removeAttr('style');
+  $('#nersa-hearings-pano').html('').removeAttr('style');
+  $('#dennis-brutus-memorial-pano').html('').removeAttr('style');
+  $('#visit-to-itereleng-pano').html('').removeAttr('style');
+  $('#vaal-march-two-pano').html('').removeAttr('style');
+  $('#sharpeville-memorial-pano').html('').removeAttr('style');
+  $('#powa-book-launch-pano').html('').removeAttr('style');
+  $('#vaal-march-to-arcelor-mittal-pano').html('').removeAttr('style');
+  $('#visit-to-cdp-pano').html('').removeAttr('style');
+  $('#world-cup-march-pano').html('').removeAttr('style');
+  $('#youth-day-pano').html('').removeAttr('style');
+  $('#jozi-regional-housing-march-pano').html('').removeAttr('style');
+  $('#schubart-park-anti-xenophobia-event-pano').html('').removeAttr('style');
+  $('#quagga-evictions-pano').html('').removeAttr('style');
+  $('#soweto-march-pano').html('').removeAttr('style');
+  $('#silent-march-pano').html('').removeAttr('style');
+  $('#scr-meeting-pano').html('').removeAttr('style');
+  $('#secc-march-pano').html('').removeAttr('style');
+
+  setTimeout(function(){
+    google.maps.event.trigger(markers[marker], 'click');
+    $('body').scrollTop(shit); // Updates Timeline
+    googleMap.setCenter(markers[marker].position);
+  }, 1000);
+}
+
 function myMap() {
   // allow map to disable on click
-  $('#close').on('click', function(){
-    $('#alex-peoples-inspection-pano').hide();
-    $('#close, #carousel').fadeOut(1000);
-    $('#local-government-elections-workshop-pano').html('').removeAttr('style');
-    $('#orlando-east-march-pano').html('').removeAttr('style');
-    $('#protea-south-march-pano').html('').removeAttr('style');
-    $('#alex-peoples-inspection-pano').html('').removeAttr('style');
-    $('#src-march-pano').html('').removeAttr('style');
-    $('#vaal-march-pano').html('').removeAttr('style');
-    $('#heroes-day-pano').html('').removeAttr('style');
-    $('#abahlali-solidarity-march-pano').html('').removeAttr('style');
-    $('#nersa-hearings-pano').html('').removeAttr('style');
-    $('#dennis-brutus-memorial-pano').html('').removeAttr('style');
-    $('#visit-to-itereleng-pano').html('').removeAttr('style');
-    $('#vaal-march-two-pano').html('').removeAttr('style');
-    $('#sharpeville-memorial-pano').html('').removeAttr('style');
-    $('#powa-book-launch-pano').html('').removeAttr('style');
-    $('#vaal-march-to-arcelor-mittal-pano').html('').removeAttr('style');
-    $('#visit-to-cdp-pano').html('').removeAttr('style');
-    $('#world-cup-march-pano').html('').removeAttr('style');
-    $('#youth-day-pano').html('').removeAttr('style');
-    $('#jozi-regional-housing-march-pano').html('').removeAttr('style');
-    $('#schubart-park-anti-xenophobia-event-pano').html('').removeAttr('style');
-    $('#quagga-evictions-pano').html('').removeAttr('style');
-    $('#soweto-march-pano').html('').removeAttr('style');
-    $('#silent-march-pano').html('').removeAttr('style');
-    $('#scr-meeting-pano').html('').removeAttr('style');
-    $('#secc-march-pano').html('').removeAttr('style');
-  });
 
   var map;
   window.bounds = new google.maps.LatLngBounds();
@@ -86,6 +93,11 @@ function myMap() {
       });
       $('#close, .carousel').fadeIn(1200);
       imageRetrieval('apconference030610');
+      
+      $('#close').one('click', function(){
+        backToMap(0, 88);
+        alert(0);
+      });
 
     });
   });
@@ -106,6 +118,12 @@ function myMap() {
       });
       $('#close, .carousel').fadeIn(1200);
       imageRetrieval('orlandoeastmarch111309');
+
+      $('#close').one('click', function(){
+        backToMap(1, 250);
+        alert(1);
+      });
+
     });
   });
   // Protea South March
@@ -398,7 +416,7 @@ function myMap() {
       imageRetrieval('schubartparkanti-xenophobiaevent071110');
     });
   });
-  // Schubart
+  // Quagga
   google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
     $("#" + markers[20].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
@@ -449,4 +467,5 @@ function myMap() {
 
   googleMap.setZoom(15);
   }
+  // SCRR  and SECC left off for now, pending media
 }
