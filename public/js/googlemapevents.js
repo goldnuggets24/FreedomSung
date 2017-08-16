@@ -1,39 +1,3 @@
-function backToMap(marker, shit) {
-  $('#close, #carousel').fadeOut(900);
-  $('#alex-peoples-inspection-pano').hide();
-  $('#local-government-elections-workshop-pano').html('').removeAttr('style');
-  $('#orlando-east-march-pano').html('').removeAttr('style');
-  $('#protea-south-march-pano').html('').removeAttr('style');
-  $('#alex-peoples-inspection-pano').html('').removeAttr('style');
-  $('#src-march-pano').html('').removeAttr('style');
-  $('#vaal-march-pano').html('').removeAttr('style');
-  $('#heroes-day-pano').html('').removeAttr('style');
-  $('#abahlali-solidarity-march-pano').html('').removeAttr('style');
-  $('#nersa-hearings-pano').html('').removeAttr('style');
-  $('#dennis-brutus-memorial-pano').html('').removeAttr('style');
-  $('#visit-to-itereleng-pano').html('').removeAttr('style');
-  $('#vaal-march-two-pano').html('').removeAttr('style');
-  $('#sharpeville-memorial-pano').html('').removeAttr('style');
-  $('#powa-book-launch-pano').html('').removeAttr('style');
-  $('#vaal-march-to-arcelor-mittal-pano').html('').removeAttr('style');
-  $('#visit-to-cdp-pano').html('').removeAttr('style');
-  $('#world-cup-march-pano').html('').removeAttr('style');
-  $('#youth-day-pano').html('').removeAttr('style');
-  $('#jozi-regional-housing-march-pano').html('').removeAttr('style');
-  $('#schubart-park-anti-xenophobia-event-pano').html('').removeAttr('style');
-  $('#quagga-evictions-pano').html('').removeAttr('style');
-  $('#soweto-march-pano').html('').removeAttr('style');
-  $('#silent-march-pano').html('').removeAttr('style');
-  $('#scr-meeting-pano').html('').removeAttr('style');
-  $('#secc-march-pano').html('').removeAttr('style');
-
-  setTimeout(function(){
-    google.maps.event.trigger(markers[marker], 'click');
-    $('body').scrollTop(shit); // Updates Timeline
-    googleMap.setCenter(markers[marker].position);
-  }, 1000);
-}
-
 function myMap() {
   // allow map to disable on click
 
@@ -96,7 +60,6 @@ function myMap() {
       
       $('#close').one('click', function(){
         backToMap(0, 88);
-        alert(0);
       });
 
     });
@@ -118,10 +81,8 @@ function myMap() {
       });
       $('#close, .carousel').fadeIn(1200);
       imageRetrieval('orlandoeastmarch111309');
-
       $('#close').one('click', function(){
         backToMap(1, 250);
-        alert(1);
       });
 
     });
@@ -140,6 +101,9 @@ function myMap() {
       protea.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
       imageRetrieval('proteasouthmarch111509');
+      $('#close').one('click', function(){
+        backToMap(2, 260);
+      });
     });
   });
 
@@ -158,6 +122,9 @@ function myMap() {
       alex.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
       imageRetrieval('alexpeoplesinspection111909');
+      $('#close').one('click', function(){
+        backToMap(3, 275);
+      });
     });
   });
   // SCR March
@@ -174,6 +141,9 @@ function myMap() {
       scr.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
       imageRetrieval('scrmarch112409');
+      $('#close').one('click', function(){
+        backToMap(4, 296);
+      });
     });
   });
   // Vaal March
@@ -190,6 +160,9 @@ function myMap() {
       vaal.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
       imageRetrieval('vaalmarch112709');
+      $('#close').one('click', function(){
+        backToMap(5, 307);
+      });
     });
   });
   // Heroes Day
@@ -206,6 +179,9 @@ function myMap() {
       heroes.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
       imageRetrieval('heroesday112809');
+      $('#close').one('click', function(){
+        backToMap(6, 314);
+      });
     });
   });
   // Abahlali Solidarity March
@@ -222,6 +198,9 @@ function myMap() {
       abahlali.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
       imageRetrieval('abahlalisolidaritymarch120509');
+      $('#close').one('click', function(){
+        backToMap(7, 341);
+      });
     });
   });
   // Nersa Hearings
@@ -238,6 +217,9 @@ function myMap() {
       nersa.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
       imageRetrieval('nersahearings012110');
+      $('#close').one('click', function(){
+        backToMap(8, 533);
+      });
     });
   });
   // Dennis
@@ -254,6 +236,9 @@ function myMap() {
       dennis.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
       imageRetrieval('dennisbrutusmemorial012310');
+      $('#close').one('click', function(){
+        backToMap(9, 543);
+      });
     });
   });
   // Itereleng
@@ -270,6 +255,9 @@ function myMap() {
       itereleng.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
       imageRetrieval('visittoitereleng012510');
+      $('#close').one('click', function(){
+        backToMap(10, 551);
+      });
     });
   });
   // Vaal 2
@@ -286,6 +274,9 @@ function myMap() {
       vaaltwo.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
       imageRetrieval('vaalmarch022210');
+      $('#close').one('click', function(){
+        backToMap(11, 663);
+      });
     });
   });
   // Sharpeville
@@ -302,6 +293,9 @@ function myMap() {
       sharpeville.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
       imageRetrieval('sharpevillememorial032110');
+      $('#close').one('click', function(){
+        backToMap(12, 769);
+      });
     });
   });
   // POWA Book Launch
@@ -318,6 +312,9 @@ function myMap() {
       powa.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
       imageRetrieval('sharpevillememorial032110');
+      $('#close').one('click', function(){
+        backToMap(13, 832);
+      });
     });
   });
     // Vaal March to Arcelor Mittal
@@ -334,6 +331,9 @@ function myMap() {
       powa.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
       imageRetrieval('vaalmarchtoarcelormittal051110');
+      $('#close').one('click', function(){
+        backToMap(14, 980);
+      });
     });
   });
   // Visit to CDP
@@ -350,6 +350,9 @@ function myMap() {
       cdp.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
       imageRetrieval('vaalmarchtoarcelormittal051110');
+      $('#close').one('click', function(){
+        backToMap(15, 1072);
+      });
     });
   });
   // World Cup March
@@ -366,6 +369,9 @@ function myMap() {
       wcm.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
       imageRetrieval('worldcupmarch061110');
+      $('#close').one('click', function(){
+        backToMap(16, 1112);
+      });
     });
   });
   // Youth Day
@@ -382,6 +388,9 @@ function myMap() {
       youth.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
       imageRetrieval('worldcupmarch061110');
+      $('#close').one('click', function(){
+        backToMap(17, 1124);
+      });
     });
   });
   // Jozi
@@ -398,6 +407,9 @@ function myMap() {
       jozi.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
       imageRetrieval('joziregionalhousingmarch062510');
+      $('#close').one('click', function(){
+        backToMap(18, 1161);
+      });
     });
   });
   // Schubart
@@ -414,6 +426,9 @@ function myMap() {
       schubart.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
       imageRetrieval('schubartparkanti-xenophobiaevent071110');
+      $('#close').one('click', function(){
+        backToMap(19, 1228);
+      });
     });
   });
   // Quagga
@@ -430,6 +445,9 @@ function myMap() {
       quagga.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
       imageRetrieval('quaggaevictions080310');
+      $('#close').one('click', function(){
+        backToMap(20, 1317);
+      });
     });
   });
   // Soweto
@@ -446,6 +464,9 @@ function myMap() {
       soweto.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
       imageRetrieval('sowetomarch091510');
+      $('#close').one('click', function(){
+        backToMap(21, 1489);
+      });
     });
   });
   // Silent March
@@ -462,6 +483,9 @@ function myMap() {
       silent.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
       imageRetrieval('silentmarchfxi101910');
+      $('#close').one('click', function(){
+        backToMap(22, 1639);
+      });
     });
   });
 
