@@ -1,5 +1,6 @@
 // Grab images and place inside of the media crawl per event
-function imageRetrieval(folder) {
+function imageRetrieval(folder, number) {
+	$('#title').slideUp( 300 ).html(markers[number].title).delay( 1000 ).fadeIn(900);
 	var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
 	var dir = "https://s3-us-west-2.amazonaws.com/" + folder + "/";
 	var node = document.getElementsByClassName('flickity-slider');

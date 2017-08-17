@@ -186,8 +186,7 @@ function Init(d) {
 var change = 0;
 
 onscroll = function() {
-  scrollTop = document.documentElement.scrollTop || document.body.scrollTop;  
-  console.log(scrollTop);
+  scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
   if (scrollTop < 80) {
 
     change = 0;

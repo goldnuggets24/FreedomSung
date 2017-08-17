@@ -1,6 +1,6 @@
 function backToMap(marker, position) {
-  $('#close, #carousel').fadeOut(900);
-  $('#alex-peoples-inspection-pano').hide();
+  $('#close, #carousel, #title').fadeOut(500);
+  $('#alex-peoples-inspection-pano').html('').removeAttr('style');
   $('#local-government-elections-workshop-pano').html('').removeAttr('style');
   $('#orlando-east-march-pano').html('').removeAttr('style');
   $('#protea-south-march-pano').html('').removeAttr('style');

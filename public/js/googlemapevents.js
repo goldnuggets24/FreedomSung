@@ -44,7 +44,6 @@ function myMap() {
   google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
     $("#" + markers[0].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
-      $('#h1').slideUp( 300 ).delay( 1000 ).fadeIn(900);
       var local = new google.maps.StreetViewPanorama(
         document.getElementById(markers[0].title.replace(/ +/g, '-').toLowerCase() + '-pano'), {
         position: {lat: markers[0].position.lat(), lng: markers[0].position.lng()}, 
@@ -56,8 +55,7 @@ function myMap() {
         enableCloseButton: false
       });
       $('#close, .carousel').fadeIn(1200);
-      imageRetrieval('apconference030610');
-      
+      imageRetrieval('apconference030610', 0);
       $('#close').one('click', function(){
         backToMap(0, 88);
       });
@@ -80,7 +78,7 @@ function myMap() {
         enableCloseButton: false
       });
       $('#close, .carousel').fadeIn(1200);
-      imageRetrieval('orlandoeastmarch111309');
+      imageRetrieval('orlandoeastmarch111309', 1);
       $('#close').one('click', function(){
         backToMap(1, 250);
       });
@@ -100,7 +98,7 @@ function myMap() {
       });
       protea.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
-      imageRetrieval('proteasouthmarch111509');
+      imageRetrieval('proteasouthmarch111509', 2);
       $('#close').one('click', function(){
         backToMap(2, 260);
       });
@@ -121,7 +119,7 @@ function myMap() {
       });
       alex.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
-      imageRetrieval('alexpeoplesinspection111909');
+      imageRetrieval('alexpeoplesinspection111909', 3);
       $('#close').one('click', function(){
         backToMap(3, 275);
       });
@@ -140,7 +138,7 @@ function myMap() {
       });
       scr.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
-      imageRetrieval('scrmarch112409');
+      imageRetrieval('scrmarch112409', 4);
       $('#close').one('click', function(){
         backToMap(4, 296);
       });
@@ -159,7 +157,7 @@ function myMap() {
       });
       vaal.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
-      imageRetrieval('vaalmarch112709');
+      imageRetrieval('vaalmarch112709', 5);
       $('#close').one('click', function(){
         backToMap(5, 307);
       });
@@ -178,7 +176,7 @@ function myMap() {
       });
       heroes.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
-      imageRetrieval('heroesday112809');
+      imageRetrieval('heroesday112809', 6);
       $('#close').one('click', function(){
         backToMap(6, 314);
       });
@@ -197,7 +195,7 @@ function myMap() {
       });
       abahlali.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
-      imageRetrieval('abahlalisolidaritymarch120509');
+      imageRetrieval('abahlalisolidaritymarch120509', 7);
       $('#close').one('click', function(){
         backToMap(7, 341);
       });
@@ -208,15 +206,18 @@ function myMap() {
     $("#" + markers[8].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
       var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
-      var nersa = new google.maps.Map(
+      var nersa = new google.maps.StreetViewPanorama(
         document.getElementById(markers[8].title.replace(/ +/g, '-').toLowerCase() + '-pano'), {
-        center: {lat: markers[8].position.lat(), lng: markers[8].position.lng()}, 
-        zoom: 18,
-        mapTypeId: 'satellite'
+        position: {lat: markers[8].position.lat(), lng: markers[8].position.lng()}, 
+        pov: {
+            heading: 34,
+            pitch: 10
+        },
+        disableDefaultUI: true,
+        enableCloseButton: false
       });
-      nersa.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
-      imageRetrieval('nersahearings012110');
+      imageRetrieval('nersahearings012110', 8);
       $('#close').one('click', function(){
         backToMap(8, 533);
       });
@@ -227,15 +228,18 @@ function myMap() {
     $("#" + markers[9].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
       var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
-      var dennis = new google.maps.Map(
+      var dennis = new google.maps.StreetViewPanorama(
         document.getElementById(markers[9].title.replace(/ +/g, '-').toLowerCase() + '-pano'), {
-        center: {lat: markers[9].position.lat(), lng: markers[9].position.lng()}, 
-        zoom: 18,
-        mapTypeId: 'satellite'
+        position: {lat: markers[9].position.lat(), lng: markers[9].position.lng()}, 
+        pov: {
+            heading: 34,
+            pitch: 10
+        },
+        disableDefaultUI: true,
+        enableCloseButton: false
       });
-      dennis.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
-      imageRetrieval('dennisbrutusmemorial012310');
+      imageRetrieval('dennisbrutusmemorial012310', 9);
       $('#close').one('click', function(){
         backToMap(9, 543);
       });
@@ -246,15 +250,18 @@ function myMap() {
     $("#" + markers[10].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
       var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
-      var itereleng = new google.maps.Map(
+      var itereleng = new google.maps.StreetViewPanorama(
         document.getElementById(markers[10].title.replace(/ +/g, '-').toLowerCase() + '-pano'), {
-        center: {lat: markers[10].position.lat(), lng: markers[10].position.lng()}, 
-        zoom: 18,
-        mapTypeId: 'satellite'
+        position: {lat: markers[10].position.lat(), lng: markers[10].position.lng()}, 
+        pov: {
+            heading: 34,
+            pitch: 10
+        },
+        disableDefaultUI: true,
+        enableCloseButton: false
       });
-      itereleng.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
-      imageRetrieval('visittoitereleng012510');
+      imageRetrieval('visittoitereleng012510', 10);
       $('#close').one('click', function(){
         backToMap(10, 551);
       });
@@ -265,15 +272,18 @@ function myMap() {
     $("#" + markers[11].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
       var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
-      var vaaltwo = new google.maps.Map(
+      var vaaltwo = new google.maps.StreetViewPanorama(
         document.getElementById(markers[11].title.replace(/ +/g, '-').toLowerCase() + '-pano'), {
-        center: {lat: markers[11].position.lat(), lng: markers[11].position.lng()}, 
-        zoom: 18,
-        mapTypeId: 'satellite'
+        position: {lat: markers[11].position.lat(), lng: markers[11].position.lng()}, 
+        pov: {
+            heading: 34,
+            pitch: 10
+        },
+        disableDefaultUI: true,
+        enableCloseButton: false
       });
-      vaaltwo.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
-      imageRetrieval('vaalmarch022210');
+      imageRetrieval('vaalmarch022210', 11);
       $('#close').one('click', function(){
         backToMap(11, 663);
       });
@@ -284,15 +294,18 @@ function myMap() {
     $("#" + markers[12].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
       var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
-      var sharpeville = new google.maps.Map(
+      var sharpeville = new google.maps.StreetViewPanorama(
         document.getElementById(markers[12].title.replace(/ +/g, '-').toLowerCase() + '-pano'), {
-        center: {lat: markers[12].position.lat(), lng: markers[12].position.lng()}, 
-        zoom: 18,
-        mapTypeId: 'satellite'
+        position: {lat: markers[12].position.lat(), lng: markers[12].position.lng()}, 
+        pov: {
+            heading: 34,
+            pitch: 10
+        },
+        disableDefaultUI: true,
+        enableCloseButton: false
       });
-      sharpeville.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
-      imageRetrieval('sharpevillememorial032110');
+      imageRetrieval('sharpevillememorial032110', 12);
       $('#close').one('click', function(){
         backToMap(12, 769);
       });
@@ -303,15 +316,18 @@ function myMap() {
     $("#" + markers[13].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
       var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
-      var powa = new google.maps.Map(
+      var orlando = new google.maps.StreetViewPanorama(
         document.getElementById(markers[13].title.replace(/ +/g, '-').toLowerCase() + '-pano'), {
-        center: {lat: markers[13].position.lat(), lng: markers[13].position.lng()}, 
-        zoom: 18,
-        mapTypeId: 'satellite'
+        position: {lat: markers[13].position.lat(), lng: markers[13].position.lng()}, 
+        pov: {
+            heading: 34,
+            pitch: 10
+        },
+        disableDefaultUI: true,
+        enableCloseButton: false
       });
-      powa.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
-      imageRetrieval('sharpevillememorial032110');
+      imageRetrieval('sharpevillememorial032110', 13);
       $('#close').one('click', function(){
         backToMap(13, 832);
       });
@@ -322,15 +338,18 @@ function myMap() {
     $("#" + markers[14].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
       var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
-      var powa = new google.maps.Map(
+      var vaaltoarcelor = new google.maps.StreetViewPanorama(
         document.getElementById(markers[14].title.replace(/ +/g, '-').toLowerCase() + '-pano'), {
-        center: {lat: markers[14].position.lat(), lng: markers[14].position.lng()}, 
-        zoom: 18,
-        mapTypeId: 'satellite'
+        position: {lat: markers[14].position.lat(), lng: markers[14].position.lng()}, 
+        pov: {
+            heading: 34,
+            pitch: 10
+        },
+        disableDefaultUI: true,
+        enableCloseButton: false
       });
-      powa.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
-      imageRetrieval('vaalmarchtoarcelormittal051110');
+      imageRetrieval('vaalmarchtoarcelormittal051110', 14);
       $('#close').one('click', function(){
         backToMap(14, 980);
       });
@@ -341,15 +360,18 @@ function myMap() {
     $("#" + markers[15].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
       var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
-      var cdp = new google.maps.Map(
+      var cdp = new google.maps.StreetViewPanorama(
         document.getElementById(markers[15].title.replace(/ +/g, '-').toLowerCase() + '-pano'), {
-        center: {lat: markers[15].position.lat(), lng: markers[15].position.lng()}, 
-        zoom: 18,
-        mapTypeId: 'satellite'
+        position: {lat: markers[15].position.lat(), lng: markers[15].position.lng()}, 
+        pov: {
+            heading: 34,
+            pitch: 10
+        },
+        disableDefaultUI: true,
+        enableCloseButton: false
       });
-      cdp.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
-      imageRetrieval('vaalmarchtoarcelormittal051110');
+      imageRetrieval('visitwithm031810', 15);
       $('#close').one('click', function(){
         backToMap(15, 1072);
       });
@@ -368,7 +390,7 @@ function myMap() {
       });
       wcm.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
-      imageRetrieval('worldcupmarch061110');
+      imageRetrieval('worldcupmarch061110', 16);
       $('#close').one('click', function(){
         backToMap(16, 1112);
       });
@@ -379,15 +401,18 @@ function myMap() {
     $("#" + markers[17].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
       var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
-      var youth = new google.maps.Map(
+      var youth = new google.maps.StreetViewPanorama(
         document.getElementById(markers[17].title.replace(/ +/g, '-').toLowerCase() + '-pano'), {
-        center: {lat: markers[17].position.lat(), lng: markers[17].position.lng()}, 
-        zoom: 18,
-        mapTypeId: 'satellite'
+        position: {lat: markers[17].position.lat(), lng: markers[17].position.lng()}, 
+        pov: {
+            heading: 34,
+            pitch: 10
+        },
+        disableDefaultUI: true,
+        enableCloseButton: false
       });
-      youth.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
-      imageRetrieval('worldcupmarch061110');
+      imageRetrieval('worldcupmarch061110', 17);
       $('#close').one('click', function(){
         backToMap(17, 1124);
       });
@@ -398,15 +423,18 @@ function myMap() {
     $("#" + markers[18].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
       var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
-      var jozi = new google.maps.Map(
+      var jozi = new google.maps.StreetViewPanorama(
         document.getElementById(markers[18].title.replace(/ +/g, '-').toLowerCase() + '-pano'), {
-        center: {lat: markers[18].position.lat(), lng: markers[18].position.lng()}, 
-        zoom: 18,
-        mapTypeId: 'satellite'
+        position: {lat: markers[18].position.lat(), lng: markers[18].position.lng()}, 
+        pov: {
+            heading: 34,
+            pitch: 10
+        },
+        disableDefaultUI: true,
+        enableCloseButton: false
       });
-      jozi.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
-      imageRetrieval('joziregionalhousingmarch062510');
+      imageRetrieval('joziregionalhousingmarch062510', 18);
       $('#close').one('click', function(){
         backToMap(18, 1161);
       });
@@ -417,15 +445,18 @@ function myMap() {
     $("#" + markers[19].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
       var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
-      var schubart = new google.maps.Map(
+      var schubart = new google.maps.StreetViewPanorama(
         document.getElementById(markers[19].title.replace(/ +/g, '-').toLowerCase() + '-pano'), {
-        center: {lat: markers[19].position.lat(), lng: markers[19].position.lng()}, 
-        zoom: 18,
-        mapTypeId: 'satellite'
+        position: {lat: markers[19].position.lat(), lng: markers[19].position.lng()}, 
+        pov: {
+            heading: 34,
+            pitch: 10
+        },
+        disableDefaultUI: true,
+        enableCloseButton: false
       });
-      schubart.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
-      imageRetrieval('schubartparkanti-xenophobiaevent071110');
+      imageRetrieval('schubartparkanti-xenophobiaevent071110', 19);
       $('#close').one('click', function(){
         backToMap(19, 1228);
       });
@@ -436,15 +467,18 @@ function myMap() {
     $("#" + markers[20].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
       var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
-      var quagga = new google.maps.Map(
+      var quagga = new google.maps.StreetViewPanorama(
         document.getElementById(markers[20].title.replace(/ +/g, '-').toLowerCase() + '-pano'), {
-        center: {lat: markers[20].position.lat(), lng: markers[20].position.lng()}, 
-        zoom: 18,
-        mapTypeId: 'satellite'
+        position: {lat: markers[20].position.lat(), lng: markers[20].position.lng()}, 
+        pov: {
+            heading: 34,
+            pitch: 10
+        },
+        disableDefaultUI: true,
+        enableCloseButton: false
       });
-      quagga.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
-      imageRetrieval('quaggaevictions080310');
+      imageRetrieval('quaggaevictions080310', 20);
       $('#close').one('click', function(){
         backToMap(20, 1317);
       });
@@ -463,7 +497,7 @@ function myMap() {
       });
       soweto.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
-      imageRetrieval('sowetomarch091510');
+      imageRetrieval('sowetomarch091510', 21);
       $('#close').one('click', function(){
         backToMap(21, 1489);
       });
@@ -474,15 +508,18 @@ function myMap() {
     $("#" + markers[22].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
       var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
-      var silent = new google.maps.Map(
+      var silent = new google.maps.StreetViewPanorama(
         document.getElementById(markers[22].title.replace(/ +/g, '-').toLowerCase() + '-pano'), {
-        center: {lat: markers[22].position.lat(), lng: markers[22].position.lng()}, 
-        zoom: 18,
-        mapTypeId: 'satellite'
+        position: {lat: markers[22].position.lat(), lng: markers[22].position.lng()}, 
+        pov: {
+            heading: 34,
+            pitch: 10
+        },
+        disableDefaultUI: true,
+        enableCloseButton: false
       });
-      silent.setTilt(45);
       $('#close, .carousel').fadeIn(1200);
-      imageRetrieval('silentmarchfxi101910');
+      imageRetrieval('silentmarchfxi101910', 22);
       $('#close').one('click', function(){
         backToMap(22, 1639);
       });

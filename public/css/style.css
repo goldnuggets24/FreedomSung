@@ -140,6 +140,17 @@ footer.mdl-mini-footer {
   opacity: 1;
 }
 
+#title {
+  z-index: 999;
+  top: 55px;
+  left: 8%;
+  position: absolute;
+  background: #ccc;
+  display: none;
+  background: none;
+  font-family: avenir, helvetica, sans-serif;
+}
+
 #close {
   z-index: 999;
   top: 4px;
