@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<script type="text/javascript" src="https://blackrockdigital.github.io/startbootstrap-simple-sidebar/vendor/jquery/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Media</title>
+
+    <!-- Custom styles for this template -->
+    <link href="https://blackrockdigital.github.io/startbootstrap-simple-sidebar/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'></script>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/css/scroll.css" rel="stylesheet">
+	<link rel="stylesheet" href="/css/leaflet.label.css" />
+	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.css">
+	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://blackrockdigital.github.io/startbootstrap-simple-sidebar/css/simple-sidebar.css" />
+	<script type="text/javascript" src="/js/isotope.pkgd.min.js"></script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+		<div id="container" style="width:100%;" class="photos clearfix">
+    
+		  <div class="photo">
+		    <a href="#" title="Stanley by Dave DeSandro, on Flickr"><img src="http://farm5.static.flickr.com/4113/5013039951_3a47ccd509.jpg" alt="Stanley"></a>
+		  </div>
+
+		  <div class="photo">
+		    <a href="#" title="Officer by Dave DeSandro, on Flickr"><img src="http://farm5.static.flickr.com/4131/5013039885_0d16ac87bc.jpg" alt="Officer"></a>
+		  </div>
+
+		  <div class="photo">
+		    <a href="#" title="Tony by Dave DeSandro, on Flickr"><img src="http://farm5.static.flickr.com/4086/5013039583_26717f6e89.jpg" alt="Tony"></a>
+		  </div>
+
+		  <div class="photo">
+		    <a href="#" title="Kendra by Dave DeSandro, on Flickr"><img src="http://farm5.static.flickr.com/4146/5013646070_f1f44b1939.jpg" alt="Kendra"></a>
+		  </div>
+
+		  <div class="photo">
+		    <a href="#" title="Giraffe by Dave DeSandro, on Flickr"><img src="http://farm5.static.flickr.com/4144/5013039541_17f2579e33.jpg" alt="Giraffe"></a>
+		  </div>
+
+		  <div class="photo">
+		    <a href="#" title="Gavin by Dave DeSandro, on Flickr"><img src="http://farm5.static.flickr.com/4153/5013039741_d860fb640b.jpg" alt="Gavin"></a>
+		  </div>
+
+		  <div class="photo">
+		    <a href="#" title="Anita by Dave DeSandro, on Flickr"><img src="http://farm5.static.flickr.com/4113/5013039697_a15e41fcd8.jpg" alt="Anita"></a>
+		  </div>
+
+		  <div class="photo">
+		    <a href="#" title="Take My Portrait by Dave DeSandro, on Flickr"><img src="http://farm5.static.flickr.com/4124/5013646314_c7eaf84918.jpg" alt="Take My Portrait"></a>
+		  </div>
+
+		  <div class="photo">
+		    <a href="#" title="Wonder by Dave DeSandro, on Flickr"><img src="http://farm5.static.flickr.com/4089/5013040075_bac12ff74e.jpg" alt="Wonder"></a>
+		  </div>
+    
+			</div>
+		</div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <h1>Media</h1>
+                <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
+                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle</a>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $(document).ready(function(){
+		var $container = $('#container');
+		$container.isotope({
+			itemSelector : '.photo',
+			masonryHorizontal: {
+				columnWidth: 50
+			}
+		});
+
+	    $("#menu-toggle").click(function(e) {
+	        e.preventDefault();
+	        $("#wrapper").toggleClass("toggled");
+	    });
+	    // click on photo brings large photo to center screen
+		$('.photo img').on('click', function() {
+			$('#page-content-wrapper').html('<img src="'+this.src+'"/>');
+		});
+	});
+    </script>
+
+    <style type="text/css">
+    	.photos .photo {
+  width: 100px;
+  margin: 5px;
+  float: left;
+}
+
+.photos .photo img {
+  display: block;
+  width: 100%;
+}
+
+#content {
+  margin-left: 210px;
+}
+
+#content {
+  height: 100%;
+}
+
+#wrapper.toggled #sidebar-wrapper {width: 238px;}
+
+/**** Docs ****/
+
+#content {
+  max-width: 640px;
+}
+
+#content a:hover {
+  border-bottom: 1px dotted;
+}
+    </style>
+
+
+</body>
+
+</html>

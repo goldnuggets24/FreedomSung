@@ -89,6 +89,8 @@ app.get('/freedom', routes.freedom);
 app.get('/test', routes.test);
 
 
+app.get('/media', routes.media);
+
 // //new astronaut routes
 // app.get('/create',routes.astroForm); //display form
 // app.post('/create',routes.createAstro); //form POST submits here

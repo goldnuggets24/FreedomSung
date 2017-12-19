@@ -2,9 +2,18 @@ var infoWindowContent = [
       ['<div class="info_content">' +
       '<h3>Local Government Elections Workshop</h3>' + 
       '<p>This event is described as follows ....</p>' + '<p><a href="#" id="local-government-elections-workshop" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' + '</div>'],
-      ['<div class="info_content">' +
-      '<h3>Orlando East March</h3>' + '<p><a href="#" id="orlando-east-march" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' + 
-      '<p>It was a massive event that.... Lorem Ipsum Dolor Est Pota Position...</p></div>'],
+      ['<div id="iw-container">' +
+                    '<div class="iw-title">Orlando East March</div>' +
+                    '<div class="iw-content">' +
+                      '<img src="http://maps.marnoto.com/en/5wayscustomizeinfowindow/images/vistalegre.jpg" alt="Porcelain Factory of Vista Alegre" height="115" width="83">' +
+                      '<p>Orlando Residents Association held a nonpartisan protest on this day—the intention was not to advance the aims of any political organization...</p>' +
+                      '<button class="iw-subTitle btn">Learn More</button>' +
+                      '<div class="iw-subTitle">More Info</div>' +
+                      '<p><a href="#">Click Here</a><br>'+
+                      'Or Click <a href="#">Here</a></p>'+
+                    '</div>' +
+                    '<div class="iw-bottom-gradient"></div>' +
+                  '</div>'],
       ['<div class="info_content">' +
       '<h3>Protea South March</h3>' + '<p><a href="#" id="protea-south-march" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' + 
       '<p>It was a massive event that.... Lorem Ipsum Dolor Est Position ft).</p></div>'],

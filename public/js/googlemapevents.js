@@ -15,7 +15,7 @@ function myMap() {
     streetViewControl: true,
     overviewMapControl: true,
     rotateControl: true,
-    mapTypeId: 'roadmap',
+    mapTypeId: 'satellite',
     styles: styles
   };
   window.googleMap = new google.maps.Map(mapCanvas, mapOptions);
@@ -27,7 +27,17 @@ function myMap() {
     markers[i] = new google.maps.Marker({
         position: position,
         map: googleMap,
-        title: markers[i][0]
+        title: markers[i][0],
+        label: markers[i][0],
+        icon: {
+          url: 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png', // yellow markers
+        labelOrigin: new google.maps.Point(20, 50)
+        },
+        label: {
+          text: markers[i][0],
+          color: 'white',
+          fontSize: '12px'
+        }
     });
 
     markers[i].index = i;
@@ -62,8 +72,39 @@ function myMap() {
 
     });
   });
+
+
   // Orlando East March
   google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
+    // Reference to the DIV that wraps the bottom of infowindow
+    var iwOuter = $('.gm-style-iw');
+    var iwBackground = iwOuter.prev();
+    // Removes background shadow DIV
+    iwBackground.children(':nth-child(2)').css({'display' : 'none'});
+    // Removes white background DIV
+    iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+    // Moves the infowindow 115px to the right.
+    iwOuter.parent().parent().css({left: '115px'});
+    // Moves the shadow of the arrow 76px to the left margin.
+    iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    // Moves the arrow 76px to the left margin.
+    iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    // Changes the desired tail shadow color.
+    iwBackground.children(':nth-child(3)').find('div').children().css({'border':'1px solid #000', 'background': 'rgba(0,0,0,0.45)', 'box-shadow': 'rgba(0,0,0,0.45) 0px 1px 6px', 'z-index' : '1'});
+    // Reference to the div that groups the close button elements.
+    var iwCloseBtn = iwOuter.next();
+    iwOuter.css({background: 'rgba(0,0,0,0.45)', color: '#fff'});
+    // Apply the desired effect to the close button
+    iwCloseBtn.css({opacity: '1', width: '23px', height: '23px', right: '38px', top: '3px', border: '5px solid rgba(0,0,0,0.45)', 'border-radius': '13px', 'box-shadow': '0 0 5px #3990B9'});
+    // If the content of infowindow not exceed the set maximum height, then the gradient is removed.
+    if($('.iw-content').height() < 140){
+      $('.iw-bottom-gradient').css({display: 'none'});
+    }
+
+    iwCloseBtn.mouseout(function(){
+      $(this).css({opacity: '1'});
+    });
+
     $("#" + markers[1].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
       var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );

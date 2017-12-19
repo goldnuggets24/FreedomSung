@@ -43,6 +43,11 @@ exports.test = function(req, res) {
 	res.render('test_scroll.html');
 }
 
+exports.media = function(req, res) {
+	console.log("media page requested");
+	res.render('media.html');
+}
+
 exports.pass_fail = function(req, res) {
 	console.log("received data form submission");
 	// console.log(req.body);
