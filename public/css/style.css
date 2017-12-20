@@ -237,20 +237,20 @@ body {
   border: 1px solid rgba(0,0,0,0.45);
   border-radius: 2px 2px 10px 10px;
 }
-#iw-container {
+.iw-container {
   margin-bottom: 10px;
 }
-#iw-container .iw-title {
+.iw-container .iw-title {
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 22px;
   font-weight: 400;
   padding: 10px;
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.45);
   color: white;
   margin: 0;
   border-radius: 2px 2px 0 0;
 }
-#iw-container .iw-content {
+.iw-container .iw-content {
   font-size: 13px;
   line-height: 18px;
   font-weight: 400;
@@ -267,6 +267,11 @@ body {
 .iw-subTitle {
   font-size: 16px;
 }
+.iw-subTitle.btn {
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+}
+
 .iw-bottom-gradient {
   position: absolute;
   width: 326px;

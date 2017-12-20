@@ -73,7 +73,6 @@ function myMap() {
     });
   });
 
-
   // Orlando East March
   google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
     // Reference to the DIV that wraps the bottom of infowindow
@@ -100,7 +99,6 @@ function myMap() {
     if($('.iw-content').height() < 140){
       $('.iw-bottom-gradient').css({display: 'none'});
     }
-
     iwCloseBtn.mouseout(function(){
       $(this).css({opacity: '1'});
     });
@@ -128,6 +126,23 @@ function myMap() {
   });
   // Protea South March
   google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
+    var iwOuter = $('.gm-style-iw');
+    var iwBackground = iwOuter.prev();
+    iwBackground.children(':nth-child(2)').css({'display' : 'none'});
+    iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+    iwOuter.parent().parent().css({left: '115px'});
+    iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').find('div').children().css({'border':'1px solid #000', 'background': 'rgba(0,0,0,0.45)', 'box-shadow': 'rgba(0,0,0,0.45) 0px 1px 6px', 'z-index' : '1'});
+    var iwCloseBtn = iwOuter.next();
+    iwOuter.css({background: 'rgba(0,0,0,0.45)', color: '#fff'});
+    iwCloseBtn.css({opacity: '1', width: '23px', height: '23px', right: '38px', top: '3px', border: '5px solid rgba(0,0,0,0.45)', 'border-radius': '13px', 'box-shadow': '0 0 5px #3990B9'});
+    if($('.iw-content').height() < 140){
+      $('.iw-bottom-gradient').css({display: 'none'});
+    }
+    iwCloseBtn.mouseout(function(){
+      $(this).css({opacity: '1'});
+    });
     $("#" + markers[2].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
       var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
@@ -148,6 +163,20 @@ function myMap() {
 
   // Alex People's Inspection
   google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
+    var iwOuter = $('.gm-style-iw');
+    var iwBackground = iwOuter.prev();
+    iwBackground.children(':nth-child(2)').css({'display' : 'none'});
+    iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+    iwOuter.parent().parent().css({left: '115px'});
+    iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').find('div').children().css({'border':'1px solid #000', 'background': 'rgba(0,0,0,0.45)', 'box-shadow': 'rgba(0,0,0,0.45) 0px 1px 6px', 'z-index' : '1'});
+    var iwCloseBtn = iwOuter.next();
+    iwOuter.css({background: 'rgba(0,0,0,0.45)', color: '#fff'});
+    iwCloseBtn.css({opacity: '1', width: '23px', height: '23px', right: '38px', top: '3px', border: '5px solid rgba(0,0,0,0.45)', 'border-radius': '13px', 'box-shadow': '0 0 5px #3990B9'});
+    if($('.iw-content').height() < 140){
+      $('.iw-bottom-gradient').css({display: 'none'});
+    }
     $("#" + markers[3].title.replace("'","").replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
       var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
@@ -168,6 +197,20 @@ function myMap() {
   });
   // SCR March
   google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
+    var iwOuter = $('.gm-style-iw');
+    var iwBackground = iwOuter.prev();
+    iwBackground.children(':nth-child(2)').css({'display' : 'none'});
+    iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+    iwOuter.parent().parent().css({left: '115px'});
+    iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').find('div').children().css({'border':'1px solid #000', 'background': 'rgba(0,0,0,0.45)', 'box-shadow': 'rgba(0,0,0,0.45) 0px 1px 6px', 'z-index' : '1'});
+    var iwCloseBtn = iwOuter.next();
+    iwOuter.css({background: 'rgba(0,0,0,0.45)', color: '#fff'});
+    iwCloseBtn.css({opacity: '1', width: '23px', height: '23px', right: '38px', top: '3px', border: '5px solid rgba(0,0,0,0.45)', 'border-radius': '13px', 'box-shadow': '0 0 5px #3990B9'});
+    if($('.iw-content').height() < 140){
+      $('.iw-bottom-gradient').css({display: 'none'});
+    }
     $("#" + markers[4].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
       var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
@@ -187,6 +230,20 @@ function myMap() {
   });
   // Vaal March
   google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
+    var iwOuter = $('.gm-style-iw');
+    var iwBackground = iwOuter.prev();
+    iwBackground.children(':nth-child(2)').css({'display' : 'none'});
+    iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+    iwOuter.parent().parent().css({left: '115px'});
+    iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').find('div').children().css({'border':'1px solid #000', 'background': 'rgba(0,0,0,0.45)', 'box-shadow': 'rgba(0,0,0,0.45) 0px 1px 6px', 'z-index' : '1'});
+    var iwCloseBtn = iwOuter.next();
+    iwOuter.css({background: 'rgba(0,0,0,0.45)', color: '#fff'});
+    iwCloseBtn.css({opacity: '1', width: '23px', height: '23px', right: '38px', top: '3px', border: '5px solid rgba(0,0,0,0.45)', 'border-radius': '13px', 'box-shadow': '0 0 5px #3990B9'});
+    if($('.iw-content').height() < 140){
+      $('.iw-bottom-gradient').css({display: 'none'});
+    }
     $("#" + markers[5].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
       var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
@@ -206,6 +263,20 @@ function myMap() {
   });
   // Heroes Day
   google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
+    var iwOuter = $('.gm-style-iw');
+    var iwBackground = iwOuter.prev();
+    iwBackground.children(':nth-child(2)').css({'display' : 'none'});
+    iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+    iwOuter.parent().parent().css({left: '115px'});
+    iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').find('div').children().css({'border':'1px solid #000', 'background': 'rgba(0,0,0,0.45)', 'box-shadow': 'rgba(0,0,0,0.45) 0px 1px 6px', 'z-index' : '1'});
+    var iwCloseBtn = iwOuter.next();
+    iwOuter.css({background: 'rgba(0,0,0,0.45)', color: '#fff'});
+    iwCloseBtn.css({opacity: '1', width: '23px', height: '23px', right: '38px', top: '3px', border: '5px solid rgba(0,0,0,0.45)', 'border-radius': '13px', 'box-shadow': '0 0 5px #3990B9'});
+    if($('.iw-content').height() < 140){
+      $('.iw-bottom-gradient').css({display: 'none'});
+    }
     $("#" + markers[6].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
       var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
@@ -225,6 +296,20 @@ function myMap() {
   });
   // Abahlali Solidarity March
   google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
+    var iwOuter = $('.gm-style-iw');
+    var iwBackground = iwOuter.prev();
+    iwBackground.children(':nth-child(2)').css({'display' : 'none'});
+    iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+    iwOuter.parent().parent().css({left: '115px'});
+    iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').find('div').children().css({'border':'1px solid #000', 'background': 'rgba(0,0,0,0.45)', 'box-shadow': 'rgba(0,0,0,0.45) 0px 1px 6px', 'z-index' : '1'});
+    var iwCloseBtn = iwOuter.next();
+    iwOuter.css({background: 'rgba(0,0,0,0.45)', color: '#fff'});
+    iwCloseBtn.css({opacity: '1', width: '23px', height: '23px', right: '38px', top: '3px', border: '5px solid rgba(0,0,0,0.45)', 'border-radius': '13px', 'box-shadow': '0 0 5px #3990B9'});
+    if($('.iw-content').height() < 140){
+      $('.iw-bottom-gradient').css({display: 'none'});
+    }
     $("#" + markers[7].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
       var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
@@ -244,6 +329,20 @@ function myMap() {
   });
   // Nersa Hearings
   google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
+    var iwOuter = $('.gm-style-iw');
+    var iwBackground = iwOuter.prev();
+    iwBackground.children(':nth-child(2)').css({'display' : 'none'});
+    iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+    iwOuter.parent().parent().css({left: '115px'});
+    iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').find('div').children().css({'border':'1px solid #000', 'background': 'rgba(0,0,0,0.45)', 'box-shadow': 'rgba(0,0,0,0.45) 0px 1px 6px', 'z-index' : '1'});
+    var iwCloseBtn = iwOuter.next();
+    iwOuter.css({background: 'rgba(0,0,0,0.45)', color: '#fff'});
+    iwCloseBtn.css({opacity: '1', width: '23px', height: '23px', right: '38px', top: '3px', border: '5px solid rgba(0,0,0,0.45)', 'border-radius': '13px', 'box-shadow': '0 0 5px #3990B9'});
+    if($('.iw-content').height() < 140){
+      $('.iw-bottom-gradient').css({display: 'none'});
+    }
     $("#" + markers[8].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
       var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
@@ -266,6 +365,20 @@ function myMap() {
   });
   // Dennis
   google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
+    var iwOuter = $('.gm-style-iw');
+    var iwBackground = iwOuter.prev();
+    iwBackground.children(':nth-child(2)').css({'display' : 'none'});
+    iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+    iwOuter.parent().parent().css({left: '115px'});
+    iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').find('div').children().css({'border':'1px solid #000', 'background': 'rgba(0,0,0,0.45)', 'box-shadow': 'rgba(0,0,0,0.45) 0px 1px 6px', 'z-index' : '1'});
+    var iwCloseBtn = iwOuter.next();
+    iwOuter.css({background: 'rgba(0,0,0,0.45)', color: '#fff'});
+    iwCloseBtn.css({opacity: '1', width: '23px', height: '23px', right: '38px', top: '3px', border: '5px solid rgba(0,0,0,0.45)', 'border-radius': '13px', 'box-shadow': '0 0 5px #3990B9'});
+    if($('.iw-content').height() < 140){
+      $('.iw-bottom-gradient').css({display: 'none'});
+    }
     $("#" + markers[9].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
       var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
@@ -288,6 +401,20 @@ function myMap() {
   });
   // Itereleng
   google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
+    var iwOuter = $('.gm-style-iw');
+    var iwBackground = iwOuter.prev();
+    iwBackground.children(':nth-child(2)').css({'display' : 'none'});
+    iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+    iwOuter.parent().parent().css({left: '115px'});
+    iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').find('div').children().css({'border':'1px solid #000', 'background': 'rgba(0,0,0,0.45)', 'box-shadow': 'rgba(0,0,0,0.45) 0px 1px 6px', 'z-index' : '1'});
+    var iwCloseBtn = iwOuter.next();
+    iwOuter.css({background: 'rgba(0,0,0,0.45)', color: '#fff'});
+    iwCloseBtn.css({opacity: '1', width: '23px', height: '23px', right: '38px', top: '3px', border: '5px solid rgba(0,0,0,0.45)', 'border-radius': '13px', 'box-shadow': '0 0 5px #3990B9'});
+    if($('.iw-content').height() < 140){
+      $('.iw-bottom-gradient').css({display: 'none'});
+    }
     $("#" + markers[10].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
       var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
@@ -310,6 +437,20 @@ function myMap() {
   });
   // Vaal 2
   google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
+    var iwOuter = $('.gm-style-iw');
+    var iwBackground = iwOuter.prev();
+    iwBackground.children(':nth-child(2)').css({'display' : 'none'});
+    iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+    iwOuter.parent().parent().css({left: '115px'});
+    iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').find('div').children().css({'border':'1px solid #000', 'background': 'rgba(0,0,0,0.45)', 'box-shadow': 'rgba(0,0,0,0.45) 0px 1px 6px', 'z-index' : '1'});
+    var iwCloseBtn = iwOuter.next();
+    iwOuter.css({background: 'rgba(0,0,0,0.45)', color: '#fff'});
+    iwCloseBtn.css({opacity: '1', width: '23px', height: '23px', right: '38px', top: '3px', border: '5px solid rgba(0,0,0,0.45)', 'border-radius': '13px', 'box-shadow': '0 0 5px #3990B9'});
+    if($('.iw-content').height() < 140){
+      $('.iw-bottom-gradient').css({display: 'none'});
+    }
     $("#" + markers[11].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
       var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
@@ -332,6 +473,20 @@ function myMap() {
   });
   // Sharpeville
   google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
+    var iwOuter = $('.gm-style-iw');
+    var iwBackground = iwOuter.prev();
+    iwBackground.children(':nth-child(2)').css({'display' : 'none'});
+    iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+    iwOuter.parent().parent().css({left: '115px'});
+    iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').find('div').children().css({'border':'1px solid #000', 'background': 'rgba(0,0,0,0.45)', 'box-shadow': 'rgba(0,0,0,0.45) 0px 1px 6px', 'z-index' : '1'});
+    var iwCloseBtn = iwOuter.next();
+    iwOuter.css({background: 'rgba(0,0,0,0.45)', color: '#fff'});
+    iwCloseBtn.css({opacity: '1', width: '23px', height: '23px', right: '38px', top: '3px', border: '5px solid rgba(0,0,0,0.45)', 'border-radius': '13px', 'box-shadow': '0 0 5px #3990B9'});
+    if($('.iw-content').height() < 140){
+      $('.iw-bottom-gradient').css({display: 'none'});
+    }
     $("#" + markers[12].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
       var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
@@ -354,6 +509,20 @@ function myMap() {
   });
   // POWA Book Launch
   google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
+    var iwOuter = $('.gm-style-iw');
+    var iwBackground = iwOuter.prev();
+    iwBackground.children(':nth-child(2)').css({'display' : 'none'});
+    iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+    iwOuter.parent().parent().css({left: '115px'});
+    iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').find('div').children().css({'border':'1px solid #000', 'background': 'rgba(0,0,0,0.45)', 'box-shadow': 'rgba(0,0,0,0.45) 0px 1px 6px', 'z-index' : '1'});
+    var iwCloseBtn = iwOuter.next();
+    iwOuter.css({background: 'rgba(0,0,0,0.45)', color: '#fff'});
+    iwCloseBtn.css({opacity: '1', width: '23px', height: '23px', right: '38px', top: '3px', border: '5px solid rgba(0,0,0,0.45)', 'border-radius': '13px', 'box-shadow': '0 0 5px #3990B9'});
+    if($('.iw-content').height() < 140){
+      $('.iw-bottom-gradient').css({display: 'none'});
+    }
     $("#" + markers[13].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
       var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
@@ -376,6 +545,20 @@ function myMap() {
   });
     // Vaal March to Arcelor Mittal
   google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
+    var iwOuter = $('.gm-style-iw');
+    var iwBackground = iwOuter.prev();
+    iwBackground.children(':nth-child(2)').css({'display' : 'none'});
+    iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+    iwOuter.parent().parent().css({left: '115px'});
+    iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').find('div').children().css({'border':'1px solid #000', 'background': 'rgba(0,0,0,0.45)', 'box-shadow': 'rgba(0,0,0,0.45) 0px 1px 6px', 'z-index' : '1'});
+    var iwCloseBtn = iwOuter.next();
+    iwOuter.css({background: 'rgba(0,0,0,0.45)', color: '#fff'});
+    iwCloseBtn.css({opacity: '1', width: '23px', height: '23px', right: '38px', top: '3px', border: '5px solid rgba(0,0,0,0.45)', 'border-radius': '13px', 'box-shadow': '0 0 5px #3990B9'});
+    if($('.iw-content').height() < 140){
+      $('.iw-bottom-gradient').css({display: 'none'});
+    }
     $("#" + markers[14].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
       var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
@@ -398,6 +581,20 @@ function myMap() {
   });
   // Visit to CDP
   google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
+    var iwOuter = $('.gm-style-iw');
+    var iwBackground = iwOuter.prev();
+    iwBackground.children(':nth-child(2)').css({'display' : 'none'});
+    iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+    iwOuter.parent().parent().css({left: '115px'});
+    iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').find('div').children().css({'border':'1px solid #000', 'background': 'rgba(0,0,0,0.45)', 'box-shadow': 'rgba(0,0,0,0.45) 0px 1px 6px', 'z-index' : '1'});
+    var iwCloseBtn = iwOuter.next();
+    iwOuter.css({background: 'rgba(0,0,0,0.45)', color: '#fff'});
+    iwCloseBtn.css({opacity: '1', width: '23px', height: '23px', right: '38px', top: '3px', border: '5px solid rgba(0,0,0,0.45)', 'border-radius': '13px', 'box-shadow': '0 0 5px #3990B9'});
+    if($('.iw-content').height() < 140){
+      $('.iw-bottom-gradient').css({display: 'none'});
+    }
     $("#" + markers[15].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
       var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
@@ -420,6 +617,20 @@ function myMap() {
   });
   // World Cup March
   google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
+    var iwOuter = $('.gm-style-iw');
+    var iwBackground = iwOuter.prev();
+    iwBackground.children(':nth-child(2)').css({'display' : 'none'});
+    iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+    iwOuter.parent().parent().css({left: '115px'});
+    iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').find('div').children().css({'border':'1px solid #000', 'background': 'rgba(0,0,0,0.45)', 'box-shadow': 'rgba(0,0,0,0.45) 0px 1px 6px', 'z-index' : '1'});
+    var iwCloseBtn = iwOuter.next();
+    iwOuter.css({background: 'rgba(0,0,0,0.45)', color: '#fff'});
+    iwCloseBtn.css({opacity: '1', width: '23px', height: '23px', right: '38px', top: '3px', border: '5px solid rgba(0,0,0,0.45)', 'border-radius': '13px', 'box-shadow': '0 0 5px #3990B9'});
+    if($('.iw-content').height() < 140){
+      $('.iw-bottom-gradient').css({display: 'none'});
+    }
     $("#" + markers[16].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
       var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
@@ -439,6 +650,20 @@ function myMap() {
   });
   // Youth Day
   google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
+    var iwOuter = $('.gm-style-iw');
+    var iwBackground = iwOuter.prev();
+    iwBackground.children(':nth-child(2)').css({'display' : 'none'});
+    iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+    iwOuter.parent().parent().css({left: '115px'});
+    iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').find('div').children().css({'border':'1px solid #000', 'background': 'rgba(0,0,0,0.45)', 'box-shadow': 'rgba(0,0,0,0.45) 0px 1px 6px', 'z-index' : '1'});
+    var iwCloseBtn = iwOuter.next();
+    iwOuter.css({background: 'rgba(0,0,0,0.45)', color: '#fff'});
+    iwCloseBtn.css({opacity: '1', width: '23px', height: '23px', right: '38px', top: '3px', border: '5px solid rgba(0,0,0,0.45)', 'border-radius': '13px', 'box-shadow': '0 0 5px #3990B9'});
+    if($('.iw-content').height() < 140){
+      $('.iw-bottom-gradient').css({display: 'none'});
+    }
     $("#" + markers[17].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
       var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
@@ -461,6 +686,20 @@ function myMap() {
   });
   // Jozi
   google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
+    var iwOuter = $('.gm-style-iw');
+    var iwBackground = iwOuter.prev();
+    iwBackground.children(':nth-child(2)').css({'display' : 'none'});
+    iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+    iwOuter.parent().parent().css({left: '115px'});
+    iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').find('div').children().css({'border':'1px solid #000', 'background': 'rgba(0,0,0,0.45)', 'box-shadow': 'rgba(0,0,0,0.45) 0px 1px 6px', 'z-index' : '1'});
+    var iwCloseBtn = iwOuter.next();
+    iwOuter.css({background: 'rgba(0,0,0,0.45)', color: '#fff'});
+    iwCloseBtn.css({opacity: '1', width: '23px', height: '23px', right: '38px', top: '3px', border: '5px solid rgba(0,0,0,0.45)', 'border-radius': '13px', 'box-shadow': '0 0 5px #3990B9'});
+    if($('.iw-content').height() < 140){
+      $('.iw-bottom-gradient').css({display: 'none'});
+    }
     $("#" + markers[18].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
       var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
@@ -483,6 +722,20 @@ function myMap() {
   });
   // Schubart
   google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
+    var iwOuter = $('.gm-style-iw');
+    var iwBackground = iwOuter.prev();
+    iwBackground.children(':nth-child(2)').css({'display' : 'none'});
+    iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+    iwOuter.parent().parent().css({left: '115px'});
+    iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').find('div').children().css({'border':'1px solid #000', 'background': 'rgba(0,0,0,0.45)', 'box-shadow': 'rgba(0,0,0,0.45) 0px 1px 6px', 'z-index' : '1'});
+    var iwCloseBtn = iwOuter.next();
+    iwOuter.css({background: 'rgba(0,0,0,0.45)', color: '#fff'});
+    iwCloseBtn.css({opacity: '1', width: '23px', height: '23px', right: '38px', top: '3px', border: '5px solid rgba(0,0,0,0.45)', 'border-radius': '13px', 'box-shadow': '0 0 5px #3990B9'});
+    if($('.iw-content').height() < 140){
+      $('.iw-bottom-gradient').css({display: 'none'});
+    }
     $("#" + markers[19].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
       var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
@@ -505,6 +758,20 @@ function myMap() {
   });
   // Quagga
   google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
+    var iwOuter = $('.gm-style-iw');
+    var iwBackground = iwOuter.prev();
+    iwBackground.children(':nth-child(2)').css({'display' : 'none'});
+    iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+    iwOuter.parent().parent().css({left: '115px'});
+    iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').find('div').children().css({'border':'1px solid #000', 'background': 'rgba(0,0,0,0.45)', 'box-shadow': 'rgba(0,0,0,0.45) 0px 1px 6px', 'z-index' : '1'});
+    var iwCloseBtn = iwOuter.next();
+    iwOuter.css({background: 'rgba(0,0,0,0.45)', color: '#fff'});
+    iwCloseBtn.css({opacity: '1', width: '23px', height: '23px', right: '38px', top: '3px', border: '5px solid rgba(0,0,0,0.45)', 'border-radius': '13px', 'box-shadow': '0 0 5px #3990B9'});
+    if($('.iw-content').height() < 140){
+      $('.iw-bottom-gradient').css({display: 'none'});
+    }
     $("#" + markers[20].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
       var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
@@ -527,6 +794,20 @@ function myMap() {
   });
   // Soweto
   google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
+    var iwOuter = $('.gm-style-iw');
+    var iwBackground = iwOuter.prev();
+    iwBackground.children(':nth-child(2)').css({'display' : 'none'});
+    iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+    iwOuter.parent().parent().css({left: '115px'});
+    iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').find('div').children().css({'border':'1px solid #000', 'background': 'rgba(0,0,0,0.45)', 'box-shadow': 'rgba(0,0,0,0.45) 0px 1px 6px', 'z-index' : '1'});
+    var iwCloseBtn = iwOuter.next();
+    iwOuter.css({background: 'rgba(0,0,0,0.45)', color: '#fff'});
+    iwCloseBtn.css({opacity: '1', width: '23px', height: '23px', right: '38px', top: '3px', border: '5px solid rgba(0,0,0,0.45)', 'border-radius': '13px', 'box-shadow': '0 0 5px #3990B9'});
+    if($('.iw-content').height() < 140){
+      $('.iw-bottom-gradient').css({display: 'none'});
+    }
     $("#" + markers[21].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
       var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
@@ -546,6 +827,20 @@ function myMap() {
   });
   // Silent March
   google.maps.event.addListener(infoWindow, 'domready', function(marker, i){
+    var iwOuter = $('.gm-style-iw');
+    var iwBackground = iwOuter.prev();
+    iwBackground.children(':nth-child(2)').css({'display' : 'none'});
+    iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+    iwOuter.parent().parent().css({left: '115px'});
+    iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+    iwBackground.children(':nth-child(3)').find('div').children().css({'border':'1px solid #000', 'background': 'rgba(0,0,0,0.45)', 'box-shadow': 'rgba(0,0,0,0.45) 0px 1px 6px', 'z-index' : '1'});
+    var iwCloseBtn = iwOuter.next();
+    iwOuter.css({background: 'rgba(0,0,0,0.45)', color: '#fff'});
+    iwCloseBtn.css({opacity: '1', width: '23px', height: '23px', right: '38px', top: '3px', border: '5px solid rgba(0,0,0,0.45)', 'border-radius': '13px', 'box-shadow': '0 0 5px #3990B9'});
+    if($('.iw-content').height() < 140){
+      $('.iw-bottom-gradient').css({display: 'none'});
+    }
     $("#" + markers[22].title.replace(/ +/g, '-').toLowerCase()).on("click", function(e) { // click-me ID should be different for every infoWindow / iterate through markers
       $('.mdl-mini-footer').fadeTo('slow', 1);
       var $carousel = $('.carousel').flickity().flickity('next').flickity( 'select', 2 );
