@@ -1,7 +1,13 @@
 var infoWindowContent = [
-      ['<div class="info_content">' +
-      '<h3>Orlando East March</h3>' + 
-      '<p>This event is described as follows ....</p>' + '<p><a href="#" id="local-government-elections-workshop" class="mdl-button mdl-js-button mdl-button--raised modal__trigger" data-modal="#modal">View this Event</a></p>' + '</div>'],
+      ['<div class="iw-container">' +
+                    '<div class="iw-title">Local Government Elections Workshop</div>' +
+                    '<div class="iw-content">' +
+                      '' +
+                      '<p>APF often held workshops for its affiliates to examine political currents...</p>' +
+                      '<button class="iw-subTitle btn">Learn More</button>' +
+                    '</div>' +
+                    '<div class="iw-bottom-gradient"></div>' +
+                  '</div>'],
       ['<div class="iw-container">' +
                     '<div class="iw-title">Orlando East March</div>' +
                     '<div class="iw-content">' +
@@ -16,6 +22,15 @@ var infoWindowContent = [
                     '<div class="iw-content">' +
                       '<img src="https://s3-us-west-2.amazonaws.com/proteasouthmarch111509/IMG_0387.jpg" alt="Porcelain Factory of Vista Alegre" height="115">' +
                       '<p>Protea South Landless People\'s Movement held a celebration of a court case victory...</p>' +
+                      '<button class="iw-subTitle btn">Learn More</button>' +
+                    '</div>' +
+                    '<div class="iw-bottom-gradient"></div>' +
+                  '</div>'],
+      ['<div class="iw-container">' +
+                    '<div class="iw-title">Alex Peoples Inspection</div>' +
+                    '<div class="iw-content">' +
+                      '<img src="https://s3-us-west-2.amazonaws.com/alexpeoplesinspection111909/IMG_0427.jpg" alt="Porcelain Factory of Vista Alegre" height="115">' +
+                      '<p>The Alexandra People\'s Inspection came in the wake of the Alexandra Renewal Project...</p>' +
                       '<button class="iw-subTitle btn">Learn More</button>' +
                     '</div>' +
                     '<div class="iw-bottom-gradient"></div>' +
