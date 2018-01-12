@@ -319,3 +319,9 @@ body { font-family: sans-serif; }
   display: block;
   width: 100%;
 }
+
+/*--- Media Page --- */
+
+#page-content-wrapper {padding: 0;}
+
+#page-content-wrapper img {height: 100%;}
