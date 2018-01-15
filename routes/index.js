@@ -9,6 +9,7 @@ var request = require('request'); // library to make requests to remote urls
 
 var moment = require("moment"); // date manipulation library
 var astronautModel = require("../models/astronaut.js"); //db model
+var infoWindowContent = require("../models/test.json");
 
 
 exports.index = function(req, res) {
@@ -325,6 +326,15 @@ exports.fail = function(req, res) {
 // 	})
 
 // }
+
+exports.media = function(req, res) {
+	res.locals = {
+		size: 'Tall',
+	};
+	return res.render('media', {
+      partials: {images: 'images'} 
+    });
+};
 
 // exports.updateAstro = function(req, res) {
 
