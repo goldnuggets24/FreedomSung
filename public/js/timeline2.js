@@ -222,7 +222,7 @@ function updateTimeline(d, i) {
 				openImg(e);
 
 				var infoWindow = new google.maps.InfoWindow({content: e.event});
-				// console.log(markers[i]);
+				console.log(markers[i]);
 				google.maps.event.trigger(markers[i], 'click');
 				googleMap.panTo(markers[i].getPosition());
 				$('body').css('margin-top', Number(e.Position));

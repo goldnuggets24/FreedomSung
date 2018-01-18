@@ -330,6 +330,7 @@ exports.fail = function(req, res) {
 exports.media = function(req, res) {
 	res.locals = {
 		size: 'Tall',
+		media: infoWindowContent
 	};
 	return res.render('media', {
       partials: {images: 'images'} 
