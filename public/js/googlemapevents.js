@@ -5,11 +5,7 @@ function myMap() {
   window.bounds = new google.maps.LatLngBounds();
   var mapCanvas = document.getElementById("gmap-list");
   var mapOptions = {
-    center: new google.maps.LatLng(-26.1047789,28.002457199999993, 13),
-    panControl: true,
-    zoomControl: false,
-    disableAutoPan: false,
-    mapTypeControl: false,
+    center: new google.maps.LatLng(-26.1047789,28.002457199999993,13),
     scaleControl: false,
     scrollwheel: false,
     streetViewControl: true,
@@ -31,7 +27,7 @@ function myMap() {
         label: markers[i][0],
         icon: {
           url: 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png', // yellow markers
-        labelOrigin: new google.maps.Point(20, 50)
+        labelOrigin: new google.maps.Point(20, 50) // label condition (remove or keep?)
         },
         label: {
           text: markers[i][0],

@@ -10,7 +10,7 @@
       ['Nersa Hearings',-26.0023427,28.1310076],
       ['Dennis Brutus Memorial',-26.20192,28.05097],
       ['Visit to Itereleng',-25.75207,28.196714],
-      ['Vaal March Two',-26.6753884,27.9284722],
+      ['Vaal March',-26.6753884,27.9284722],
       ['Sharpeville Memorial',-26.6857113,27.8709334],
       ['POWA Book Launch',-26.2028558,28.0312015],
       ['Vaal March to Arcelor Mittal',-26.673235,27.8040497],

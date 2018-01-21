@@ -331,3 +331,9 @@ body { font-family: sans-serif; }
 #wrapper .container-fluid {padding: 0 !important;}
 
 @media (min-width: 768px) { #wrapper.toggled {padding-left: 236px !important;}}
+
+.gm-style div div div {
+    font-size: 12px !important;
+    font-weight: bold !important;
+    letter-spacing: 2px !important;
+}

@@ -204,7 +204,7 @@ function updateTimeline(d, i) {
 				// marker.properties['marker-color'] = '#ff8888';
 				
 				map.setView([e.start_lat, e.start_lon], 14); // 16, 9 
-				googleMap.setZoom(14); 
+				googleMap.setZoom(13); 
 
 				// var t = 0.06;
 
@@ -222,7 +222,7 @@ function updateTimeline(d, i) {
 				openImg(e);
 
 				var infoWindow = new google.maps.InfoWindow({content: e.event});
-				console.log(markers[i]);
+				console.log(markers[i].index); // get index of current timeline node
 				google.maps.event.trigger(markers[i], 'click');
 				googleMap.panTo(markers[i].getPosition());
 				$('body').css('margin-top', Number(e.Position));
