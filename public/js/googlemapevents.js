@@ -1,7 +1,23 @@
-function myMap() {
-  // allow map to disable on click
+function CoordMapType(tileSize) {
+  this.tileSize = tileSize;
+}
 
-  var map;
+// customize satellite image background color
+CoordMapType.prototype.getTile = function(coord, zoom, ownerDocument) {
+  var div = ownerDocument.createElement('div');
+//  div.innerHTML = coord;
+  div.style.width = this.tileSize.width + 'px';
+  div.style.height = this.tileSize.height + 'px';
+  div.style.fontSize = '10';
+//  div.style.borderStyle = 'solid';
+//  div.style.borderWidth = '1px';
+//  div.style.borderColor = '#AAAAAA';
+  div.style.backgroundColor = '#333333';
+  div.style.opacity = 0.4;
+  return div;
+};
+
+function myMap() {
   window.bounds = new google.maps.LatLngBounds();
   var mapCanvas = document.getElementById("gmap-list");
   var mapOptions = {
@@ -861,4 +877,7 @@ function myMap() {
   googleMap.setZoom(15);
   }
   // SCRR  and SECC left off for now, pending media
+  googleMap.overlayMapTypes.insertAt(
+      0, new CoordMapType(new google.maps.Size(256, 256))
+  );
 }

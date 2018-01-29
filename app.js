@@ -23,7 +23,7 @@ app.configure(function(){
 
   // setup template engine - we're using Hogan-Express
   app.set('view engine', 'html');
-  // app.set('layout','layout');
+  //app.set('layout','layout');
   app.engine('html', require('hogan-express')); // https://github.com/vol4ok/hogan-express
 
   app.use(express.favicon());

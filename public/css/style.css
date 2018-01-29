@@ -322,18 +322,45 @@ body { font-family: sans-serif; }
 
 /*--- Media Page --- */
 
-#page-content-wrapper {padding: 0;}
+#page-content-wrapper {padding: 0 !important;}
 
 #page-content-wrapper img {width: 100%;}
 
-#page-content-wrapper {padding: 4px !important;}
-
 #wrapper .container-fluid {padding: 0 !important;}
 
-@media (min-width: 768px) { #wrapper.toggled {padding-left: 236px !important;}}
+@media (min-width: 768px) { #wrapper.toggled {padding-left: 220px !important;}}
+
+.gallery-pane-toggle-button-container {position: absolute; top: 0;}
 
 .gm-style div div div {
-    font-size: 12px !important;
+    font-size: 11px !important;
     font-weight: bold !important;
-    letter-spacing: 2px !important;
+    letter-spacing: 1px !important;
+    text-shadow: 0px 2px 0px rgb(31, 29, 29);
+}
+
+.gallery-pane-toggle-button {
+    width: 23px;
+    height: 48px;
+    cursor: pointer;
+    background: rgba(255,255,255,0.9) url(//maps.gstatic.com/tactile/unifiedviewer/close_arrow_2x.png) center/7px 10px no-repeat;
+    box-shadow: 0px 1px 4px rgba(0,0,0,0.3);
+}
+
+.toggle #menu-toggle {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.photos .photo {
+  width: 100px;
+  margin: 5px;
+  float: left;
+}
+
+.photos .photo img {
+  display: block;
+  width: 100%;
 }

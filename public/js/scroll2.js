@@ -186,6 +186,7 @@ function Init(d) {
 var change = 0;
 
 onscroll = function() {
+
   scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
   if (scrollTop < 80) {
 
@@ -275,7 +276,11 @@ onscroll = function() {
     $('#image').css({"visibility":"visible"});
     $('#pointing').css({"visibility":"visible"});
     $('#southAftica').css({"visibility":"visible"});
-  } 
+  }
+    if ($('#gm-style-iw').length > -1) {
+      $('#h2').css({"visibility":"hidden"});
+      console.log('here!');
+    } 
 };
 
 // Enlarge image

@@ -2,8 +2,7 @@
 <html lang="en">
 
 <head>
-	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -42,27 +41,30 @@
         <!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid">
-                <h1>{{size}} Show</h1>
+<!--                 <h1>{{size}} Show</h1> -->
                 <div class="slick-show">
 					{{> images}}
   				</div>
-<!--                 <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle</a> -->
+  				<div class="gallery-pane-toggle-button-container">
+  					<button class="gallery-pane-toggle-button" id="menu-toggle"><a href="#menu-toggle"></a></button>
+  				</div>
             </div>
         </div>
         <!-- /#page-content-wrapper -->
-
     </div>
     <!-- /#wrapper -->
 
-    <!-- Menu Toggle Script -->
     <script>
     $(document).ready(function(){
     	$('.slick-show').slick({ // Slick Slider initialization
-			arrows: false
+			arrows: false,
+			fade: false,
+			slidesToShow: 1,
+			autoplay: false
 		});
 		$('.slick-show').on('afterChange', function(slick, currentSlide){
 				console.log(currentSlide.currentSlide);
-			});
+		});
 		var $container = $('#container');
 		$container.isotope({
 			itemSelector : '.photo',
@@ -72,53 +74,17 @@
 		});
 
 	    $("#menu-toggle").click(function(e) {
-	        e.preventDefault();
-	        $("#wrapper").toggleClass("toggled");
+	    	$('.slick-show')[0].slick.refresh(); // resizes photo on toggle
+	        $("#wrapper").toggleClass("toggled toggle");
 	    });
 	    $(".isotope-item").click(function(){
 			var index = $(".isotope-item").index(this);
 			$('.slick-show').slick('slickGoTo', index, false);
 		});
-	    // click on photo brings large photo to center screen
-		// $('.photo img').on('click', function() {
-		// 	$('#page-content-wrapper').html('<img src="'+this.src+'"/>');
-		// });
 	});
     </script>
 
-    <style type="text/css">
-    	.photos .photo {
-  width: 100px;
-  margin: 5px;
-  float: left;
-}
-
-.photos .photo img {
-  display: block;
-  width: 100%;
-}
-
-#content {
-  margin-left: 210px;
-}
-
-#content {
-  height: 100%;
-}
-
-#wrapper.toggled #sidebar-wrapper {width: 238px;}
-
-/**** Docs ****/
-
-#content {
-  max-width: 640px;
-}
-
-#content a:hover {
-  border-bottom: 1px dotted;
-}
-    </style>
-
+    <style type="text/css"> #wrapper.toggled #sidebar-wrapper {width: 220px;}</style>
 
 </body>
 
