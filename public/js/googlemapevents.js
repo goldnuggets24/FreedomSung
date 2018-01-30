@@ -25,8 +25,9 @@ function myMap() {
     scaleControl: false,
     scrollwheel: false,
     streetViewControl: true,
-    overviewMapControl: true,
-    rotateControl: true,
+    overviewMapControl: false,
+    rotateControl: false,
+    mapTypeControl: false,
     mapTypeId: 'satellite',
     styles: styles
   };

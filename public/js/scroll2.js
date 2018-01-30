@@ -277,9 +277,8 @@ onscroll = function() {
     $('#pointing').css({"visibility":"visible"});
     $('#southAftica').css({"visibility":"visible"});
   }
-    if ($('#gm-style-iw').length > -1) {
+    if ($('.gm-style-iw').length > 0) {
       $('#h2').css({"visibility":"hidden"});
-      console.log('here!');
     } 
 };
 
