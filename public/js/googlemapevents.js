@@ -1,7 +1,6 @@
 function CoordMapType(tileSize) {
   this.tileSize = tileSize;
 }
-
 // customize satellite image background color
 CoordMapType.prototype.getTile = function(coord, zoom, ownerDocument) {
   var div = ownerDocument.createElement('div');
@@ -24,7 +23,7 @@ function myMap() {
     center: new google.maps.LatLng(-26.1047789,28.002457199999993,13),
     scaleControl: false,
     scrollwheel: false,
-    streetViewControl: true,
+    mapTypeControl: false,
     overviewMapControl: false,
     rotateControl: true,
     mapTypeId: 'satellite',
@@ -43,7 +42,7 @@ function myMap() {
         label: markers[i][0],
         icon: {
           url: 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png', // yellow markers
-        labelOrigin: new google.maps.Point(20, 50) // label condition (remove or keep?)
+        labelOrigin: new google.maps.Point(markers[i][3], markers[i][4]) // label condition (remove or keep?)
         },
         label: {
           text: markers[i][0],
@@ -94,12 +93,6 @@ function myMap() {
     iwBackground.children(':nth-child(2)').css({'display' : 'none'});
     // Removes white background DIV
     iwBackground.children(':nth-child(4)').css({'display' : 'none'});
-    // Moves the infowindow 115px to the right.
-    // iwOuter.parent().parent().css({left: '115px'});
-    // Moves the shadow of the arrow 76px to the left margin.
-    // iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
-    // Moves the arrow 76px to the left margin.
-    // iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
     // Changes the desired tail shadow color.
     iwBackground.children(':nth-child(3)').find('div').children().css({'border':'1px solid #000', 'background': 'rgba(0,0,0,0.45)', 'box-shadow': 'rgba(0,0,0,0.45) 0px 1px 6px', 'z-index' : '1'});
     // Reference to the div that groups the close button elements.
