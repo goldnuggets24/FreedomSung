@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -19,11 +18,13 @@
 	<link rel="stylesheet" href="/css/scroll.css" rel="stylesheet">
 	<link rel="stylesheet" href="/css/leaflet.label.css" />
 	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.css">
-	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="/css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="https://blackrockdigital.github.io/startbootstrap-simple-sidebar/css/simple-sidebar.css" />
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.js"></script>
 	<script type="text/javascript" src="/js/isotope.pkgd.min.js"></script>
 	<script type="text/javascript" src="/js/slick.js"></script>
+	<script type="text/javascript" src="/js/media.js"></script>
+	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 </head>
 
 <body style="height: 100%;">
@@ -54,38 +55,7 @@
     </div>
     <!-- /#wrapper -->
 
-    <script>
-    $(document).ready(function(){
-    	$('.slick-show').slick({ // Slick Slider initialization
-			arrows: false,
-			fade: false,
-			slidesToShow: 1,
-			autoplay: false
-		});
-		$('.slick-show').on('afterChange', function(slick, currentSlide){
-				console.log(currentSlide.currentSlide);
-		});
-		var $container = $('#container');
-		$container.isotope({
-			itemSelector : '.photo',
-			masonryHorizontal: {
-				columnWidth: 50
-			}
-		});
-
-	    $("#menu-toggle").click(function(e) {
-	    	$('.slick-show')[0].slick.refresh(); // resizes photo on toggle
-	        $("#wrapper").toggleClass("toggled toggle");
-	    });
-	    $(".isotope-item").click(function(){
-			var index = $(".isotope-item").index(this);
-			$('.slick-show').slick('slickGoTo', index, false);
-		});
-	});
-    </script>
-
     <style type="text/css"> #wrapper.toggled #sidebar-wrapper {width: 220px;}</style>
 
 </body>
-
 </html>
