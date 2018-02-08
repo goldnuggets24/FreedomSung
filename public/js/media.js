@@ -1,5 +1,4 @@
 $(window).on("load", function(){
-	setTimeout(function(){
 		var $container = $('#container');
 		$container.isotope({
 			itemSelector : '.photo',
@@ -7,7 +6,6 @@ $(window).on("load", function(){
 				columnWidth: 50
 			}
 		});
-	}, 2000);
 	$('.slick-show').slick({ // Slick Slider initialization
 		arrows: false,
 		fade: false,
