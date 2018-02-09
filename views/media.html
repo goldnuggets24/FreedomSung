@@ -11,6 +11,9 @@
     <link href="https://blackrockdigital.github.io/startbootstrap-simple-sidebar/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/slick.css">
 	<link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.0/slick-theme.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.0/slick.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" rel="stylesheet"/>
 <!-- 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'> -->
 	<link rel="stylesheet" href="/css/scroll.css" rel="stylesheet">
 	<link rel="stylesheet" href="/css/leaflet.label.css" />
@@ -27,7 +30,7 @@
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
 			<div id="container" style="width:100%;" class="photos clearfix">
-			  {{> images}}
+			  {{> mediaImagesThumb}}
 			</div>
 		</div>
         <!-- /#sidebar-wrapper -->
@@ -37,7 +40,7 @@
             <div class="container-fluid">
 <!--                 <h1>{{size}} Show</h1> -->
                 <div class="slick-show">
-					{{> images}}
+					{{> mediaImagesFull}}
   				</div>
   				<div class="gallery-pane-toggle-button-container">
   					<button class="gallery-pane-toggle-button" id="menu-toggle"><a href="#menu-toggle"></a></button>

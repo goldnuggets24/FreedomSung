@@ -49,6 +49,16 @@ exports.media = function(req, res) {
 	res.render('media.html');
 }
 
+// exports.mediaImagesThumb = function(req, res) {
+// 	console.log("media page requested");
+// 	res.render('mediaImagesThumb.html');
+// }
+
+// exports.mediaImagesFull = function(req, res) {
+// 	console.log("media page requested");
+// 	res.render('mediaImagesFull.html');
+// }
+
 exports.pass_fail = function(req, res) {
 	console.log("received data form submission");
 	// console.log(req.body);
@@ -333,7 +343,7 @@ exports.media = function(req, res) {
 		media: infoWindowContent
 	};
 	return res.render('media', {
-      partials: {images: 'images'} 
+      partials: {mediaImagesThumb: 'mediaImagesThumb', mediaImagesFull: 'mediaImagesFull'} 
     });
 };
 

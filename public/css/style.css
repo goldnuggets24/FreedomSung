@@ -364,3 +364,13 @@ body { font-family: sans-serif; }
   display: block;
   width: 100%;
 }
+
+.slick-prev { 
+    z-index: 100 !important;
+    left: 5px !important;
+}
+
+.slick-next {
+  z-index: 100 !important;
+  right: 5px !important;
+}

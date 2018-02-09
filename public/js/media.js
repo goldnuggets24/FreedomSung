@@ -7,7 +7,7 @@ $(window).on("load", function(){
 			}
 		});
 	$('.slick-show').slick({ // Slick Slider initialization
-		arrows: false,
+		arrows: true,
 		fade: false,
 		slidesToShow: 1,
 		autoplay: false
