@@ -372,5 +372,9 @@ body { font-family: sans-serif; }
 
 .slick-next {
   z-index: 100 !important;
-  right: 5px !important;
+  right: 10px !important;
 }
+
+.slick-prev:before, .slick-next:before {font-size: 28px !important;}
+
+body.media-body {background: #000; height: 100%;}

@@ -24,4 +24,18 @@ $(window).on("load", function(){
 		console.log(index);
 		$('.slick-show').slick('slickGoTo', index, false);
 	});
+	$(window).resize(function(){
+		// center image on browser resize
+		activeImage = $('.slick-active img');
+		i = activeImage.height();
+		w = $(window).height();
+		marginTop = (w - i) / 2;
+		activeImage.css('margin-top',marginTop);
+	});
+		// center image on page load
+		activeImage = $('.slick-active img');
+		i = activeImage.height();
+		w = $(window).height();
+		marginTop = (w - i) / 2;
+		activeImage.css('margin-top',marginTop);
 });
