@@ -23,19 +23,10 @@ $(window).on("load", function(){
 		var index = $(".photo").index(this);
 		console.log(index);
 		$('.slick-show').slick('slickGoTo', index, false);
+		centerImage();
 	});
 	$(window).resize(function(){
-		// center image on browser resize
-		activeImage = $('.slick-active img');
-		i = activeImage.height();
-		w = $(window).height();
-		marginTop = (w - i) / 2;
-		activeImage.css('margin-top',marginTop);
+		centerImage();
 	});
-		// center image on page load
-		activeImage = $('.slick-active img');
-		i = activeImage.height();
-		w = $(window).height();
-		marginTop = (w - i) / 2;
-		activeImage.css('margin-top',marginTop);
+	centerImage();
 });
