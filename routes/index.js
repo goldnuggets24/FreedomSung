@@ -9,8 +9,6 @@ var request = require('request'); // library to make requests to remote urls
 
 var moment = require("moment"); // date manipulation library
 var astronautModel = require("../models/astronaut.js"); //db model
-var infoWindowContent = require("../models/test.json");
-
 
 exports.index = function(req, res) {
 	console.log("main page requested");
@@ -328,6 +326,8 @@ exports.fail = function(req, res) {
 // }
 
 exports.media = function(req, res) {
+		var s3images = req.param("event");
+		var infoWindowContent = require("../models/" + s3images + ".json");
 	res.locals = {
 		size: 'Tall',
 		media: infoWindowContent
