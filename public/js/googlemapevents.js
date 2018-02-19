@@ -8,10 +8,10 @@ CoordMapType.prototype.getTile = function(coord, zoom, ownerDocument) {
   div.style.width = this.tileSize.width + 'px';
   div.style.height = this.tileSize.height + 'px';
   div.style.fontSize = '10';
-//  div.style.borderStyle = 'solid';
-//  div.style.borderWidth = '1px';
-//  div.style.borderColor = '#AAAAAA';
-  div.style.backgroundColor = '#333333';
+ div.style.borderStyle = 'solid';
+ div.style.borderWidth = '1px';
+ div.style.borderColor = '#AAAAAA';
+  // div.style.backgroundColor = '#333333';
   div.style.opacity = 0.4;
   return div;
 };

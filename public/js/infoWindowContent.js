@@ -31,7 +31,7 @@ var infoWindowContent = [
                     '<div class="iw-content">' +
                       '<img src="https://s3-us-west-2.amazonaws.com/alexpeoplesinspection111909/IMG_0427.jpg" alt="Porcelain Factory of Vista Alegre" height="115">' +
                       '<p>The Alexandra People\'s Inspection came in the wake of the Alexandra Renewal Project...</p>' +
-                      '<button class="iw-subTitle btn">Learn More</button>' +
+                      '<button class="iw-subTitle btn"><a href="/media?event=alex">Learn More</a></button>' +
                     '</div>' +
                     '<div class="iw-bottom-gradient"></div>' +
                   '</div>'],
