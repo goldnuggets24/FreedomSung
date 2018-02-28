@@ -268,8 +268,20 @@ body {
   font-size: 16px;
 }
 .iw-subTitle.btn {
-  background: rgba(0, 0, 0, 0.45);
   color: #fff;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #484f50;
+    border-color: #212525;
+      -webkit-transition: background-color 0.8s;
+          transition: background-color 0.8s;
+}
+
+.btn-primary:hover {
+    background-color: #000;
+    border-color: #aaa;
 }
 
 .iw-bottom-gradient {
