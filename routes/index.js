@@ -327,10 +327,13 @@ exports.fail = function(req, res) {
 
 exports.media = function(req, res) {
 		var s3images = req.param("event");
+		var id = req.param("id");
 		var infoWindowContent = require("../models/" + s3images + ".json");
+		var events = require("../public/event_final2.json"); // event names
 	res.locals = {
 		size: 'Tall',
-		media: infoWindowContent
+		media: infoWindowContent,
+		title: events[id]["event"]
 	};
 	return res.render('media', {
       partials: {mediaImagesThumb: 'mediaImagesThumb', mediaImagesFull: 'mediaImagesFull'} 

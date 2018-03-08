@@ -4,7 +4,7 @@ var infoWindowContent = [
                     '<div class="iw-content">' +
                       '' +
                       '<p>APF often held workshops for its affiliates to examine political currents...</p>' +
-                      '<a class="iw-subTitle btn btn-primary" href="/media?event=localgovernmentelectionsworkshop">Learn More</a>' +
+                      '<a class="iw-subTitle btn btn-primary" href="/media?event=localgovernmentelectionsworkshop&id=1">Learn More</a>' +
                     '</div>' +
                     '<div class="iw-bottom-gradient"></div>' +
                   '</div>'],
@@ -13,7 +13,7 @@ var infoWindowContent = [
                     '<div class="iw-content">' +
                       '<img src="https://s3-us-west-2.amazonaws.com/orlandoeastmarch111309/IMG_0292.jpg" alt="Porcelain Factory of Vista Alegre" height="115">' +
                       '<p>Orlando Residents Association held a nonpartisan protest on this day...</p>' +
-                      '<a class="iw-subTitle btn btn-primary" href="/media?event=orlandoeastmarch111309">Learn More</a>' +
+                      '<a class="iw-subTitle btn btn-primary" href="/media?event=orlandoeastmarch111309&id=2">Learn More</a>' +
                     '</div>' +
                     '<div class="iw-bottom-gradient"></div>' +
                   '</div>'],
@@ -22,7 +22,7 @@ var infoWindowContent = [
                     '<div class="iw-content">' +
                       '<img src="https://s3-us-west-2.amazonaws.com/proteasouthmarch111509/IMG_0387.jpg" alt="Porcelain Factory of Vista Alegre" height="115">' +
                       '<p>Protea South Landless People\'s Movement held a celebration of a court case victory...</p>' +
-                      '<a class="iw-subTitle btn btn-primary" href="/media?event=proteasouthmarch111509">Learn More</a>' +
+                      '<a class="iw-subTitle btn btn-primary" href="/media?event=proteasouthmarch111509&id=3">Learn More</a>' +
                     '</div>' +
                     '<div class="iw-bottom-gradient"></div>' +
                   '</div>'],

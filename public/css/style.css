@@ -24,6 +24,10 @@ h3 {
   margin: 4px 0;
 }
 
+#sidebar-wrapper {
+  padding-top: 90px;
+}
+
 #bg_intro {
 	color: #000000;
 	padding: 10px;
@@ -333,6 +337,8 @@ body { font-family: sans-serif; }
 }
 
 /*--- Media Page --- */
+
+.title {position: relative;}
 
 #page-content-wrapper {padding: 0 !important;}
 
