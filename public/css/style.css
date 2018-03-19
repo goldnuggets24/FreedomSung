@@ -24,10 +24,6 @@ h3 {
   margin: 4px 0;
 }
 
-#sidebar-wrapper {
-  padding-top: 90px;
-}
-
 #bg_intro {
 	color: #000000;
 	padding: 10px;
@@ -338,7 +334,28 @@ body { font-family: sans-serif; }
 
 /*--- Media Page --- */
 
-.title {position: relative;}
+.title {
+  position: relative;
+  left: 0;
+  font-size: 11px;
+  color: #fff;
+  float: left;
+  margin-top: 10px;
+}
+
+.btn.back {
+  float: left;
+  background: transparent url("//maps.gstatic.com/tactile/unifiedviewer/back-arrow-1.png") 13px 13px no-repeat;
+  background-size: 24px;
+  float: left;
+  width: 24px;
+  height: 24px;
+  padding: 13px 12px 13px 13px;
+  margin: 3px 12px 3px 11px;
+  box-sizing: content-box;
+  cursor: pointer;
+  margin: 0;
+}
 
 #page-content-wrapper {padding: 0 !important;}
 
