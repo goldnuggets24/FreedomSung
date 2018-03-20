@@ -128,7 +128,7 @@ var infoWindowContent = [
       ['<div class="iw-container">' +
               '<div class="iw-title">Vaal March to Arcelor Mittal</div>' +
               '<div class="iw-content">' +
-                '<img src="https://s3-us-west-2.amazonaws.com/vaalmarchtoarcelormittal051110/IMG_1130.jpg" alt="Porcelain Factory of Vista Alegre" height="115">' +
+                '<img src="https://s3-us-west-2.amazonaws.com/vaalmarchtoarcelormittal051110/IMG_1401.jpg" alt="Porcelain Factory of Vista Alegre" height="115">' +
                 '<p>Community affiliates across the Vaal Region held a demonstration at the west entrance ...</p>' +
                 '<a class="iw-subTitle btn btn-primary" href="/media?event=vaalmarchtoarcelormittal051110&id=14">Learn More</a>' +
               '</div>' +
