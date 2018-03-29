@@ -23,10 +23,10 @@ $(window).on("load", function(){
 		var index = $(".photo").index(this);
 		console.log(index);
 		$('.slick-show').slick('slickGoTo', index, false);
-		centerImage();
+		// centerImage();
 	});
 	$(window).resize(function(){
-		centerImage();
+		// centerImage();
 	});
-	centerImage();
+	// centerImage();
 });
