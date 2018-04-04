@@ -1,10 +1,10 @@
 $(window).on("load", function(){
-		var $container = $('#container');
-		$container.isotope({
-			itemSelector : '.photo',
-			masonryHorizontal: {
-				columnWidth: 50
-			}
+		var $grid = $('.grid').masonry({
+  itemSelector: '.grid-item',
+  horizontalOrder: true,
+  percentPosition: true,
+  fitWidth: true,
+  columnWidth: '.grid-sizer'
 		});
 	$('.slick-show').slick({ // Slick Slider initialization
 		arrows: true,
@@ -19,8 +19,8 @@ $(window).on("load", function(){
     	$('.slick-show')[0].slick.refresh(); // resizes photo on toggle
         $("#wrapper").toggleClass("toggled toggle");
     });
-    $(".photo").click(function(){
-		var index = $(".photo").index(this);
+    $(".grid-item").click(function(){
+		var index = $(".grid-item").index(this);
 		console.log(index);
 		$('.slick-show').slick('slickGoTo', index, false);
 		// centerImage();

@@ -7,6 +7,8 @@
  * URL: http://blacktie.co
  */
 
+ * { box-sizing: border-box; }
+
 html, body {
     height: 100%;
     padding: 0;
@@ -378,6 +380,8 @@ body { font-family: sans-serif; }
     text-shadow: 0px 2px 0px rgb(31, 29, 29);
 }
 
+/*Media Page*/
+
 .gallery-pane-toggle-button {
     width: 23px;
     height: 48px;
@@ -391,17 +395,6 @@ body { font-family: sans-serif; }
   -o-transform: scaleX(-1);
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
-}
-
-.photos .photo {
-  width: 100px;
-  margin: 5px;
-  float: left;
-}
-
-.photos .photo img {
-  display: block;
-  width: 100%;
 }
 
 .slick-prev { 
@@ -447,3 +440,35 @@ body.media-body {background: #000; height: 100%;}
   padding: 2px 0 24px 10%;
   color: #999;
 }
+
+#wrapper.toggled #sidebar-wrapper {width: 18% !important;}
+
+.grid {
+  background: #000;
+}
+
+/* clear fix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- .grid-item ---- */
+
+.grid-sizer,
+.grid-item {
+  width: 50%;
+}
+
+.grid-item {
+  float: left;
+}
+
+.grid-item img {
+  display: block;
+  max-width: 100%;
+}
+
+.grid-item:nth-child(10) { width: 100%; }
+.grid-item:nth-child(17) { width: 100%; }

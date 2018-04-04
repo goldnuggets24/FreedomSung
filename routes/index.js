@@ -331,8 +331,8 @@ exports.media = function(req, res) {
 		var infoWindowContent = require("../models/" + s3images + ".json");
 		var events = require("../public/event_final2.json"); // event names
 	res.locals = {
-		size: 'Tall',
 		media: infoWindowContent,
+		size: infoWindowContent["num"],
 		title: events[id]["event"]
 	};
 	return res.render('media', {

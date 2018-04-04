@@ -31,7 +31,8 @@
         <div id="sidebar-wrapper">
             <a href="#" onclick="history.back();" class="btn back"></a>
             <h2 class="title">{{ title }}</h2>
-			<div id="container" style="width:100%;" class="photos clearfix">
+			<div id="container" class="grid">
+                <div class="grid-sizer"></div>
 			  {{> mediaImagesThumb}}
 			</div>
 		</div>
@@ -52,9 +53,8 @@
         <!-- /#page-content-wrapper -->
     </div>
     <!-- /#wrapper -->
-
-    <style type="text/css"> #wrapper.toggled #sidebar-wrapper {width: 220px;}</style>
 	<script type="text/javascript" src="/js/isotope.pkgd.min.js"></script>
+    <script type="text/javascript" src="https://masonry.desandro.com/masonry.pkgd.js"></script>
 	<script type="text/javascript" src="/js/slick.js"></script>
 	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/js/media.js"></script>
