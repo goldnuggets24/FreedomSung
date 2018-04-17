@@ -17,6 +17,9 @@ queue()
 
 var parseDate = d3.time.format("%m/%d/%y").parse;
 
+
+
+
 function makeTimeline(error, data) {
 	data.forEach(function(d) {
 		d.start = parseDate(d.start);
