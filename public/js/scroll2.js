@@ -142,6 +142,7 @@ function Init(d) {
                             slideshowContent +
                       '</div>';
 
+
   marker.openPopup();
   marker.addTo(cityLayer);
   // marker.addTo(markerLayer);
