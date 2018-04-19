@@ -204,65 +204,74 @@ function makeTimeline(data, city) {
       return tooltip.style("visibility", "hidden");
     })
     .on("click", function(d, i,e) {
-      console.log(event);
- 
-      // if (event.clientY < smallScale) {
+         
+     // if (event.clientY < smallScale) {
       //   event.clientY = smallScale;
       // }
       // if (event.clientY > largeScale) {
       //   event.clientY = largeScale;
       // }
-      var a = scrollScale(event.pageX);
-      console.log('circle onclick',a);
+        var a = scrollScale(event.pageX);
+        console.log('circle onclick',a);
       // window.pageYOffset =event.clientY//
-      document.body.scrollTop= y(d.start) ;
-       mouseY =  y(d.start);
-     console.log("scrol onclic",scrolbybot);
-      dot.attr("cy",mouseY)
-      dot.style("visibility", "visible");
-      events.style("visibility", "visible");
+        document.body.scrollTop= y(d.start) ;
+         mouseY =  y(d.start);
+         console.log("scrol onclic",scrolbybot);
+        dot.attr("cy", mouseY);
+        dot.style("visibility", "visible");
+        events.style("visibility", "visible");
 
-      var distance = Math.abs(d3.select(this).attr("cy") - mouseY);
-      if (distance < 1.2) {
-        var t = mouseY + 102;
 
-        date.style("visibility", "visible");
-        // date.text(e.date);
-        date.style("top", t + "px").style("right", 90 + "px");
+         var wickedLocation =  new google.maps.LatLng(d.start_lat, d.start_lon);
 
-        $("#current_date").html(
-          '<span style="color:yellow">Date : <span><span style="color:white">' +
-            d.date +
-            "</span>"
-        );
+       // googleMap.setCenter(wickedLocation);
+        googleMap.setZoom(13);
+        openImg(e);
+        console.log(d.event);
+        var infoWindow = new google.maps.InfoWindow({ content: d.event });
+        // console.log(markers[i].index); // get index of current timeline node
+        google.maps.event.trigger(markers[i], "click");
+        googleMap.panTo(wickedLocation);
 
-        var ty = d3.select(this).attr("cy");
-        stateLine
-          .transition()
-          .duration(520)
-          .attr("y1", ty);
 
-        if (d.event != eventname) {
-          tempMarker.setLatLng([d.start_lat, d.start_lon]);
+      events.each(function(e, i) {
+     var distance = Math.abs(d3.select(this).attr("cy") - mouseY);
+    if (distance < 1.2) {
+      var t = mouseY + 102;
+      // tooltip.style("visibility", "visible");
 
-          map.setView([d.start_lat, d.start_lon], 14); // 16, 9
-          googleMap.setZoom(13);
-          openImg(d);
-          var infoWindow = new google.maps.InfoWindow({ content: d.event });
-          // console.log(markers[i].index); // get index of current timeline node
-          google.maps.event.trigger(markers[i], "click");
-          googleMap.panTo(markers[i].getPosition());
-          $("body").css("margin-top", Number(d.Position));
-          eventname = d.event;
-          // updates map location on johanessburg.geojson
-          var current_position = proj([d.start_lon, d.start_lat]); // lon, lat
-          current.attr("transform", "translate(" + current_position + ")");
-          current2.attr("transform", "translate(" + current_position + ")");
-        }
-      } else {
-        d3.select(this).attr("x1", width / 2 - 7);
-        d3.select(this).style("stroke-width", 1.2);
+      date.style("visibility", "visible");
+      // date.text(e.date);
+      date.style("top", t + "px").style("right", 90 + "px");
+
+      $("#current_date").html(
+        '<span style="color:yellow">Date : <span><span style="color:white">' +
+          e.date +
+          "</span>"
+      );
+
+      var ty = d3.select(this).attr("cy");
+      stateLine
+        .transition()
+        .duration(520)
+        .attr("y1", ty);
+
+      if (e.event != eventname) {
+        console.log('event',e);
+     
+        // updates map location on johanessburg.geojson
+        var current_position = proj([e.start_lon, e.start_lat]); // lon, lat
+        console.log("current_post",current_position);
+        current.attr("transform", "translate(" + current_position + ")");
+        current2.attr("transform", "translate(" + current_position + ")");
       }
+    } else {
+      d3.select(this).attr("x1", width / 2 - 7);
+      d3.select(this).style("stroke-width", 1.2);
+      // tooltip.style("visibility", "visible");
+    }
+    });
+     
     });
 
   var temp = width / 2 + 10;
@@ -296,7 +305,6 @@ function updateTimeline(d, i) {
 
   events.each(function(e, i) {
  
-
     var distance = Math.abs(d3.select(this).attr("cy") - mouseY);
     if (distance < 1.2) {
       var t = mouseY + 102;
@@ -339,17 +347,21 @@ function updateTimeline(d, i) {
         // });
 
         openImg(e);
-
+        console.log(e.event);
         var infoWindow = new google.maps.InfoWindow({ content: e.event });
         // console.log(markers[i].index); // get index of current timeline node
         google.maps.event.trigger(markers[i], "click");
         googleMap.panTo(markers[i].getPosition());
         $("body").css("margin-top", Number(e.Position));
         eventname = e.event;
+
         // updates map location on johanessburg.geojson
         var current_position = proj([e.start_lon, e.start_lat]); // lon, lat
+        console.log("current_post",current_position);
         current.attr("transform", "translate(" + current_position + ")");
         current2.attr("transform", "translate(" + current_position + ")");
+            //infoWindow.open(googleMap, markers[i]);
+
         // remove any open infowindows when moving to a new location on the map
 
         // infoWindow.close();
@@ -368,6 +380,8 @@ function openImg(d) {
   var slideshowContent;
 
   if (d.type == "pic") {
+      console.log("openImage", d );
+
     var temp_pic = "'" + d.pic + "'";
     slideshowContent =
       "<h3>" +
@@ -397,5 +411,24 @@ function openImg(d) {
 
   tempMarker.openPopup();
 }
+function showPopup(d) {
+  var slideshowContent;
 
+ var temp_pic = "'" + d.pic + "'";
+    slideshowContent =
+      "<h3>" +
+      d.event +
+      "</h3>" +
+      '<img src="' +
+      d.pic +
+      '"' +
+      ' style="cursor:pointer" ' +
+      'onclick="showImage(' +
+      temp_pic +
+      ');"' +
+      " />" +
+      '<div class="caption">' +
+      "</div>";
+ 
+}
 // tempMarker.setOpacity(0.3);
