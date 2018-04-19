@@ -222,6 +222,18 @@ function makeTimeline(data, city) {
         events.style("visibility", "visible");
 
 
+         var wickedLocation =  new google.maps.LatLng(d.start_lat, d.start_lon);
+
+       // googleMap.setCenter(wickedLocation);
+        googleMap.setZoom(13);
+        openImg(e);
+        console.log(d.event);
+        var infoWindow = new google.maps.InfoWindow({ content: d.event });
+        // console.log(markers[i].index); // get index of current timeline node
+        google.maps.event.trigger(markers[i], "click");
+        googleMap.panTo(wickedLocation);
+
+
       events.each(function(e, i) {
      var distance = Math.abs(d3.select(this).attr("cy") - mouseY);
     if (distance < 1.2) {
@@ -246,22 +258,7 @@ function makeTimeline(data, city) {
 
       if (e.event != eventname) {
         console.log('event',e);
-        tempMarker.setLatLng([e.start_lat, e.start_lon]);
-        // marker.properties['marker-color'] = '#ff8888';
-
-        //map.setView([e.start_lat, e.start_lon], 14); // 16, 9
-        var wickedLocation =  new google.maps.LatLng(e.start_lat, e.start_lon);
-
-        googleMap.setCenter(wickedLocation);
-        googleMap.setZoom(10);
-        openImg(e);
-        console.log(e.event);
-        var infoWindow = new google.maps.InfoWindow({ content: e.event });
-        // console.log(markers[i].index); // get index of current timeline node
-        google.maps.event.trigger(markers[i], "click");
-        googleMap.panTo(wickedLocation);
-        $("body").css("margin-top", Number(e.Position));
-        eventname = e.event;
+     
         // updates map location on johanessburg.geojson
         var current_position = proj([e.start_lon, e.start_lat]); // lon, lat
         console.log("current_post",current_position);
@@ -273,49 +270,8 @@ function makeTimeline(data, city) {
       d3.select(this).style("stroke-width", 1.2);
       // tooltip.style("visibility", "visible");
     }
-  });
-      //   var distance = Math.abs(d3.select(this).attr("cy") - mouseY);
-      //   if (distance < 1.2) {
-      //   var t = mouseY + 102;
-
-      //   date.style("visibility", "visible");
-      //   // date.text(e.date);
-      //   date.style("top", t + "px").style("right", 90 + "px");
-
-      //   $("#current_date").html(
-      //     '<span style="color:yellow">Date : <span><span style="color:white">' +
-      //       d.date +
-      //       "</span>"
-      //   );
-
-      //   var ty = d3.select(this).attr("cy");
-      //      stateLine
-      //     .transition()
-      //     .duration(520)
-      //     .attr("y1", ty);
-      //     if (d.event != eventname) {
-      //     tempMarker.setLatLng([d.start_lat, d.start_lon]);
-      //     map.setView([d.start_lat, d.start_lon], 14); // 16, 9
-      //     googleMap.setZoom(13);
-      //     openImg(d);
-      //     var infoWindow = new google.maps.InfoWindow({ content: d.event });
-      //     // console.log(markers[i].index); // get index of current timeline node
-      //     google.maps.event.trigger(markers[i], "click");
-      //     //googleMap.panTo(markers[i].getPosition());
-      //     $("body").css("margin-top", Number(d.Position));
-      //     eventname = d.event;
-      //     // updates map location on johanessburg.geojson
-      //     var current_position = proj([d.start_lon, d.start_lat]); // lon, lat
-      //     console.log("current_postion",current_position);
-      //     current.attr("transform", "translate(" + current_position + ")");
-      //     current2.attr("transform", "translate(" + current_position + ")");
-          
-      //   }
-      // } else {
-      //   d3.select(this).attr("x1", width / 2 - 7);
-      //   d3.select(this).style("stroke-width", 1.2);
-      // }
-
+    });
+     
     });
 
   var temp = width / 2 + 10;
