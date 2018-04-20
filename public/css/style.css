@@ -431,7 +431,7 @@ body.media-body {background: #000; height: 100%;}
 
 .slide__caption {
   bottom: 50px;
-  height: 0;
+  height: 63px;
   left: 0;
   position: absolute;
   width: 100%;

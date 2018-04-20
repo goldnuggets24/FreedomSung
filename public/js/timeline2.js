@@ -211,44 +211,46 @@ function makeTimeline(data, city) {
       // if (event.clientY > largeScale) {
       //   event.clientY = largeScale;
       // }
-        var a = scrollScale(event.pageX);
-        console.log('circle onclick',a);
-      // window.pageYOffset =event.clientY//
+
+        //scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        var move =$('line').attr('y1');
+
+       // var a = scrollScale(event.pageX);
+        //console.log('circle onclick',a);
+        var sbHeight =$(window).scrollTop();
+        // window.pageYOffset =event.clientY//
         document.body.scrollTop= y(d.start) ;
-         mouseY =  y(d.start);
-         console.log("scrol onclic",scrolbybot);
+        mouseY =  y(d.start);
+        console.log("scrol onclic",scrolbybot);
         dot.attr("cy", mouseY);
         dot.style("visibility", "visible");
         events.style("visibility", "visible");
+      
+        events.each(function(e, i) {
+         var distance = Math.abs(d3.select(this).attr("cy") - mouseY);
+        if (distance < 1.2) {
+         var t = mouseY + 102;
+      // tooltip.style("visibility", "visible");
 
-
-         var wickedLocation =  new google.maps.LatLng(d.start_lat, d.start_lon);
-
-       // googleMap.setCenter(wickedLocation);
+        var wickedLocation =  new google.maps.LatLng(e.start_lat, e.start_lon);
+         // googleMap.setCenter(wickedLocation);
         googleMap.setZoom(13);
         openImg(e);
-        console.log(d.event);
-        var infoWindow = new google.maps.InfoWindow({ content: d.event });
+        console.log(e.event);
+        var infoWindow = new google.maps.InfoWindow({ content: e.event });
         // console.log(markers[i].index); // get index of current timeline node
         google.maps.event.trigger(markers[i], "click");
         googleMap.panTo(wickedLocation);
 
+           date.style("visibility", "visible");
+          // date.text(e.date);
+         date.style("top", t + "px").style("right", 90 + "px");
 
-      events.each(function(e, i) {
-     var distance = Math.abs(d3.select(this).attr("cy") - mouseY);
-    if (distance < 1.2) {
-      var t = mouseY + 102;
-      // tooltip.style("visibility", "visible");
-
-      date.style("visibility", "visible");
-      // date.text(e.date);
-      date.style("top", t + "px").style("right", 90 + "px");
-
-      $("#current_date").html(
-        '<span style="color:yellow">Date : <span><span style="color:white">' +
-          e.date +
-          "</span>"
-      );
+            $("#current_date").html(
+             '<span style="color:yellow">Date : <span><span style="color:white">' +
+                e.date +
+                "</span>"
+             );
 
       var ty = d3.select(this).attr("cy");
       stateLine
@@ -256,6 +258,22 @@ function makeTimeline(data, city) {
         .duration(520)
         .attr("y1", ty);
 
+       //  if(ty<move){
+       //  var decrement=move-ty;
+       //  var decpercentage=decrement/move*100;
+       //  var total_move=sbHeight*decpercentage/100;
+       //  sbHeight=sbHeight-total_move;
+       //  window.scrollTo(0, sbHeight);
+       //  }else{
+       //    alert(ty);
+       //    alert(move);
+       //  var increment=ty-move;
+       //  alert(increment);
+       //  var incrementPercentage=increment/move*100;
+       //  var total_move=sbHeight*incrementPercentage/100;
+       //  sbHeight=sbHeight+total_move;
+       //  window.scrollTo(0, sbHeight);
+       // }
       if (e.event != eventname) {
         console.log('event',e);
      
