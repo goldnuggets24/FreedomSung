@@ -211,15 +211,21 @@ function makeTimeline(data, city) {
       // if (event.clientY > largeScale) {
       //   event.clientY = largeScale;
       // }
-        var a = scrollScale(event.pageX);
+      $('body').addClass('changeCursor');
+          var move =$('line').attr('y1');
+       var a = scrollScale(event.pageX);
         console.log('circle onclick',a);
-      // window.pageYOffset =event.clientY//
+        var sbHeight =$(window).scrollTop();
+        // window.pageYOffset =event.clientY//
         document.body.scrollTop= y(d.start) ;
          mouseY =  y(d.start);
          console.log("scrol onclic",scrolbybot);
         dot.attr("cy", mouseY);
         dot.style("visibility", "visible");
         events.style("visibility", "visible");
+
+
+
 
 
          var wickedLocation =  new google.maps.LatLng(d.start_lat, d.start_lon);
