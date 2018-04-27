@@ -223,7 +223,7 @@ function makeTimeline(data, city) {
 
        // var a = scrollScale(event.pageX);
         //console.log('circle onclick',a);
-        var sbHeight =$(window).scrollTop()
+
         // window.pageYOffset =event.clientY//
         document.body.scrollTop= y(d.start) ;
         mouseY =  y(d.start);
@@ -264,30 +264,22 @@ function makeTimeline(data, city) {
         .duration(520)
         .attr("y1", ty);
 
-       
-      //  var flag=1;
-
-      //  if(ty > move){
-      //   resultantfactor=ty-move;
-      //    flag=0;
-      //  }else{
-      //    resultantfactor=move-ty;
-      //  }
-      // percentage=resultantfactor/move;
-      // percentage=percentage*100;
-      //   var final_value;
-      //   if(flag){
-      //    final_value=(sbHeight*percentage)/100;
-      //    sbHeight=sbHeight+final_value;
-      //    window.scrollTo(0, sbHeight);
-      //    }else{
-      //    final_value=(sbHeight*percentage)/100;
-      //    sbHeight=sbHeight+final_value;
-      //    window.scrollTo(0, sbHeight);
-      //   }
-
-
-
+       //  if(ty<move){
+       //  var decrement=move-ty;
+       //  var decpercentage=decrement/move*100;
+       //  var total_move=sbHeight*decpercentage/100;
+       //  sbHeight=sbHeight-total_move;
+       //  window.scrollTo(0, sbHeight);
+       //  }else{
+       //    alert(ty);
+       //    alert(move);
+       //  var increment=ty-move;
+       //  alert(increment);
+       //  var incrementPercentage=increment/move*100;
+       //  var total_move=sbHeight*incrementPercentage/100;
+       //  sbHeight=sbHeight+total_move;
+       //  window.scrollTo(0, sbHeight);
+       // }
       if (e.event != eventname) {
         console.log('event',e);
      
