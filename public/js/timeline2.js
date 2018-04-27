@@ -197,7 +197,6 @@ function makeTimeline(data, city) {
      .on("mouseover", function(e) {
       var windowHeight=$( window ).height();
       var offset=$(this).offset();
-      debugger
       var hig = parseInt($(this).attr('cy')) + 100 + 'px' ;
       tooltip.style('top', hig);
       tooltip.text("Event : " + e.event + ", Date : " + e.date);
