@@ -70,8 +70,8 @@ function myMap() {
         title: markers[i][0],
         label: markers[i][0],
         icon: {
-          //url: markers_image[i], // yellow markers
-          url:'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
+          url: markers_image[i], // yellow markers
+          //url:'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
           scaledSize: new google.maps.Size(30, 30), // scaled size
           labelOrigin: new google.maps.Point(markers[i][3], markers[i][4]) // label condition (remove or keep?)
         },

@@ -151,6 +151,8 @@ function makeTimeline(data, city) {
       );
     });
 
+
+
   current2 = svg_city
     .append("circle")
     .attr("class", "circle")
@@ -189,14 +191,17 @@ function makeTimeline(data, city) {
     .attr("cy", function(d) {
       return y(d.start);
     })
-    
+    .attr("transform", function(d, i) {
+        return "translate(0,0)";
+    })
+
     .attr("r", 1.5)
     .style("fill", "#FFEB3B")
     .style("opacity", 0.9)
     .style("stroke", "rgba(0,0,0,0)")
     .style("stroke-width", 0)
     .style("visibility", "hidden")
-     .on("mouseover", function(e) {
+    .on("mouseover", function(e) {
        var windowHeight=parseInt($(window).height());
        var top=parseInt($('.new_svg').attr('height'));
        var result=windowHeight-top;
@@ -221,8 +226,9 @@ function makeTimeline(data, city) {
       // }
 
 
-        //scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-        var move =$('line').attr('y1');
+      var move =parseInt($('line').attr('y1'));
+
+       //scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 
        // var a = scrollScale(event.pageX);
         //console.log('circle onclick',a);
@@ -266,23 +272,30 @@ function makeTimeline(data, city) {
         .transition()
         .duration(520)
         .attr("y1", ty);
+        //  var heightofScroll=$(window).scrollTop();
+        //      ty=parseFloat(ty);
+        //      move=parseFloat(move);
+        //      if(ty<move){
+        //     var decrement=move-ty;
+        //     var decpercentage=decrement/move*100;
+        //     alert(decpercentage);
+        //     var total_move=heightofScroll*decpercentage/100;
+        //     heightofScroll=heightofScroll-total_move;
+        //     if(heightofScroll>=1696){
+        //       heightofScroll=1696;
+        //     }
+        //     window.scrollTo(0, heightofScroll);
+        //     }else{
 
-       //  if(ty<move){
-       //  var decrement=move-ty;
-       //  var decpercentage=decrement/move*100;
-       //  var total_move=sbHeight*decpercentage/100;
-       //  sbHeight=sbHeight-total_move;
-       //  window.scrollTo(0, sbHeight);
-       //  }else{
-       //    alert(ty);
-       //    alert(move);
-       //  var increment=ty-move;
-       //  alert(increment);
-       //  var incrementPercentage=increment/move*100;
-       //  var total_move=sbHeight*incrementPercentage/100;
-       //  sbHeight=sbHeight+total_move;
-       //  window.scrollTo(0, sbHeight);
-       // }
+        //     var increment=ty-move;
+        //     var incrementPercentage=increment/move*100;
+        //     var total_move=heightofScroll*incrementPercentage/100;
+        //     heightofScroll=heightofScroll+total_move;
+        //      if(heightofScroll>=1696){
+        //       heightofScroll=1696;
+        //     }
+        //     window.scrollTo(0, heightofScroll);
+        // }
       if (e.event != eventname) {
         console.log('event',e);
      
@@ -291,6 +304,8 @@ function makeTimeline(data, city) {
         console.log("current_post",current_position);
         current.attr("transform", "translate(" + current_position + ")");
         current2.attr("transform", "translate(" + current_position + ")");
+
+
       }
     } else {
       d3.select(this).attr("x1", width / 2 - 7);
