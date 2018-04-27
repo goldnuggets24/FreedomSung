@@ -190,7 +190,6 @@ onscroll = function() {
 
   scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
   if (scrollTop < 80) {
-
     change = 0;
 
     base_layer.setOpacity(1);

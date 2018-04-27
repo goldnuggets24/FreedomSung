@@ -193,7 +193,7 @@ var infoWindowContent = [
               '<div class="iw-content">' +
                 '<img src="https://s3-us-west-2.amazonaws.com/sowetomarch091510/IMG_2358.jpg" alt="Porcelain Factory of Vista Alegre" height="115">' +
                 '<p>In Dube, Soweto, Soweto Electricity Crisis Committee (SECC) and Soweto Concerned Residents (SCR) held a march ...</p>' +
-                '<a class="iw-subTitle btn btn-primary" href="/media?event=schubartparkanti-sowetomarch091510&id=21">Learn More</a>' +
+                '<a class="iw-subTitle btn btn-primary" href="/media?event=sowetomarch091510&id=21">Learn More</a>' +
               '</div>' +
               '<div class="iw-bottom-gradient"></div>' +
             '</div>'],

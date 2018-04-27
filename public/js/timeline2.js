@@ -22,7 +22,7 @@ var tooltip = d3
   .select("body")
   .append("div")
   .attr("id", "tooltip");
-tooltip.style("visibility", "hidden");
+  tooltip.style("visibility", "hidden");
 var date = d3
   .select("body")
   .append("div")
@@ -194,13 +194,18 @@ function makeTimeline(data, city) {
     .style("stroke", "rgba(0,0,0,0)")
     .style("stroke-width", 0)
     .style("visibility", "hidden")
-    .on("mouseover", function(e) {
-      // console.log('e on over',e);
+     .on("mouseover", function(e) {
+      var windowHeight=$( window ).height();
+      var offset=$(this).offset();
+      debugger
+      var hig = parseInt($(this).attr('cy')) + 100 + 'px' ;
+      tooltip.style('top', hig);
       tooltip.text("Event : " + e.event + ", Date : " + e.date);
       return tooltip.style("visibility", "visible");
     })
 
-    .on("mouseout", function() {
+    .on("mouseout", function(e) {
+      $('.hover-details').hide();
       return tooltip.style("visibility", "hidden");
     })
     .on("click", function(d, i,e) {
@@ -211,56 +216,77 @@ function makeTimeline(data, city) {
       // if (event.clientY > largeScale) {
       //   event.clientY = largeScale;
       // }
-      $('body').addClass('changeCursor');
-          var move =$('line').attr('y1');
-       var a = scrollScale(event.pageX);
-        console.log('circle onclick',a);
-        var sbHeight =$(window).scrollTop();
+
+
+        //scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        var move =$('line').attr('y1');
+
+       // var a = scrollScale(event.pageX);
+        //console.log('circle onclick',a);
+        var sbHeight =$(window).scrollTop()
         // window.pageYOffset =event.clientY//
         document.body.scrollTop= y(d.start) ;
-         mouseY =  y(d.start);
-         console.log("scrol onclic",scrolbybot);
+        mouseY =  y(d.start);
+        console.log("scrol onclic",scrolbybot);
         dot.attr("cy", mouseY);
         dot.style("visibility", "visible");
         events.style("visibility", "visible");
+      
+        events.each(function(e, i) {
+         var distance = Math.abs(d3.select(this).attr("cy") - mouseY);
+        if (distance < 1.2) {
+         var t = mouseY + 102;
+      // tooltip.style("visibility", "visible");
 
-
-
-
-
-         var wickedLocation =  new google.maps.LatLng(d.start_lat, d.start_lon);
-
-       // googleMap.setCenter(wickedLocation);
+        var wickedLocation =  new google.maps.LatLng(e.start_lat, e.start_lon);
+         // googleMap.setCenter(wickedLocation);
         googleMap.setZoom(13);
         openImg(e);
-        console.log(d.event);
-        var infoWindow = new google.maps.InfoWindow({ content: d.event });
+        console.log(e.event);
+        var infoWindow = new google.maps.InfoWindow({ content: e.event });
         // console.log(markers[i].index); // get index of current timeline node
         google.maps.event.trigger(markers[i], "click");
         googleMap.panTo(wickedLocation);
 
+           date.style("visibility", "visible");
+          // date.text(e.date);
+         date.style("top", t + "px").style("right", 90 + "px");
 
-      events.each(function(e, i) {
-     var distance = Math.abs(d3.select(this).attr("cy") - mouseY);
-    if (distance < 1.2) {
-      var t = mouseY + 102;
-      // tooltip.style("visibility", "visible");
-
-      date.style("visibility", "visible");
-      // date.text(e.date);
-      date.style("top", t + "px").style("right", 90 + "px");
-
-      $("#current_date").html(
-        '<span style="color:yellow">Date : <span><span style="color:white">' +
-          e.date +
-          "</span>"
-      );
+            $("#current_date").html(
+             '<span style="color:yellow">Date : <span><span style="color:white">' +
+                e.date +
+                "</span>"
+             );
 
       var ty = d3.select(this).attr("cy");
       stateLine
         .transition()
         .duration(520)
         .attr("y1", ty);
+
+       
+      //  var flag=1;
+
+      //  if(ty > move){
+      //   resultantfactor=ty-move;
+      //    flag=0;
+      //  }else{
+      //    resultantfactor=move-ty;
+      //  }
+      // percentage=resultantfactor/move;
+      // percentage=percentage*100;
+      //   var final_value;
+      //   if(flag){
+      //    final_value=(sbHeight*percentage)/100;
+      //    sbHeight=sbHeight+final_value;
+      //    window.scrollTo(0, sbHeight);
+      //    }else{
+      //    final_value=(sbHeight*percentage)/100;
+      //    sbHeight=sbHeight+final_value;
+      //    window.scrollTo(0, sbHeight);
+      //   }
+
+
 
       if (e.event != eventname) {
         console.log('event',e);
