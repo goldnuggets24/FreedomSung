@@ -189,11 +189,9 @@ function makeTimeline(data, city) {
       return width / 2;
     })
     .attr("cy", function(d) {
-      return y(d.start);
+       return y(d.start);
     })
-    .attr("transform", function(d, i) {
-        return "translate(0,0)";
-    })
+    
 
     .attr("r", 1.5)
     .style("fill", "#FFEB3B")
