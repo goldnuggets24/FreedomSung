@@ -39,6 +39,7 @@ var svg_black = d3
 var svg = d3
   .select("#timeline")
   .append("svg")
+  .attr('class','new_svg')
   .attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom)
   .append("g")
@@ -188,6 +189,7 @@ function makeTimeline(data, city) {
     .attr("cy", function(d) {
       return y(d.start);
     })
+    
     .attr("r", 1.5)
     .style("fill", "#FFEB3B")
     .style("opacity", 0.9)
@@ -195,12 +197,14 @@ function makeTimeline(data, city) {
     .style("stroke-width", 0)
     .style("visibility", "hidden")
      .on("mouseover", function(e) {
-      var windowHeight=$( window ).height();
-      var offset=$(this).offset();
-      var hig = parseInt($(this).attr('cy')) + 100 + 'px' ;
-      tooltip.style('top', hig);
-      tooltip.text("Event : " + e.event + ", Date : " + e.date);
-      return tooltip.style("visibility", "visible");
+       var windowHeight=parseInt($(window).height());
+       var top=parseInt($('.new_svg').attr('height'));
+       var result=windowHeight-top;
+       result=result/2;
+       var hig = parseInt($(this).attr('cy')) + result + 'px' ;
+       tooltip.style('top', hig);
+       tooltip.text("Event : " + e.event + ", Date : " + e.date);
+       return tooltip.style("visibility", "visible");
     })
 
     .on("mouseout", function(e) {
