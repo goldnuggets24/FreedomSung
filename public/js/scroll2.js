@@ -142,6 +142,7 @@ function Init(d) {
                             slideshowContent +
                       '</div>';
 
+
   marker.openPopup();
   marker.addTo(cityLayer);
   // marker.addTo(markerLayer);
@@ -189,7 +190,6 @@ onscroll = function() {
 
   scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
   if (scrollTop < 80) {
-
     change = 0;
 
     base_layer.setOpacity(1);
