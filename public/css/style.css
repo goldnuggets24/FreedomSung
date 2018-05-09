@@ -42,7 +42,7 @@ h3 {
     padding: 10px;
 }
 
-#container {margin-top: 54px;}
+#container {margin-top: 20px;}
 
 #h1 {
   z-index: 3;
@@ -341,11 +341,18 @@ body { font-family: sans-serif; }
 .title {
   position: relative;
   left: 0;
-  font-size: 10px;
+  font-size: 9px;
   color: #fff;
   float: left;
   margin-top: 10px;
   background: none;
+}
+
+.description {
+  margin-left: 20px;
+  color: #fff;
+  font-size: 10px;
+  clear: both;
 }
 
 .btn.back {
@@ -373,7 +380,11 @@ body { font-family: sans-serif; }
 
 @media (min-width: 768px) { #wrapper.toggled {padding-left: 220px !important;}}
 
-.gallery-pane-toggle-button-container {position: absolute; top: 0;}
+.gallery-pane-toggle-button-container {
+  position: absolute; 
+  top: 0;
+  left: 4px;
+}
 
 .gm-style div div div {
     font-size: 11px !important;
@@ -401,12 +412,12 @@ body { font-family: sans-serif; }
 
 .slick-prev { 
     z-index: 100 !important;
-    left: 5px !important;
+    left: 14px !important;
 }
 
 .slick-next {
   z-index: 100 !important;
-  right: 10px !important;
+  right: 14px !important;
 }
 
 .slick-prev:before, .slick-next:before {font-size: 28px !important;}
