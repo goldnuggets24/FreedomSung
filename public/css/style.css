@@ -42,7 +42,9 @@ h3 {
     padding: 10px;
 }
 
-#container {margin-top: 20px;}
+#container {
+  margin: 20px 0 0 18px;
+}
 
 #h1 {
   z-index: 3;
@@ -383,7 +385,7 @@ body { font-family: sans-serif; }
 .gallery-pane-toggle-button-container {
   position: absolute; 
   top: 0;
-  left: 4px;
+  left: 2%;
 }
 
 .gm-style div div div {
@@ -476,6 +478,7 @@ body.media-body {background: #000; height: 100%;}
 
 .grid-item {
   float: left;
+  border: 1px solid #000;
 }
 
 .grid-item img {
