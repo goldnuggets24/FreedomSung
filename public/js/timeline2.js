@@ -169,10 +169,33 @@ function makeTimeline(data, city) {
       );
     });
 
-  data.forEach(function(d) {
+  // Search functionality
+  data.forEach(function(d, i) {
     d.date = d.start;
-	d.start = parseDate(d.start);
+    d.start = parseDate(d.start);
+    $("#timeline").append("<div class='" + i + "'>" + i + "</div>");
+
+    $("." + i).on("click", function() {
+      dood = parseInt($(this).attr('class'));
+      // document.body.scrollTop= y(d.start) ;
+      events.each(function(e, i) {
+        if (i === dood) {
+          var wickedLocation =  new google.maps.LatLng(e.start_lat, e.start_lon);
+          googleMap.setCenter(wickedLocation);
+          googleMap.setZoom(13);
+          // openImg(e);
+          console.log(e.event);
+          var infoWindow = new google.maps.InfoWindow({ content: e.event });
+          // console.log(markers[i].index); // get index of current timeline node
+          google.maps.event.trigger(markers[i], "click");
+          googleMap.panTo(wickedLocation);
+          console.log(e.event);
+      }
+      });
+    });
   });
+
+
 
   y.domain(
     d3.extent(data, function(d) {
@@ -206,7 +229,7 @@ function makeTimeline(data, city) {
        result=result/2;
        var hig = parseInt($(this).attr('cy')) + result + 'px' ;
        tooltip.style('top', hig);
-       tooltip.text("Event : " + e.event + ", Date : " + e.date);
+       tooltip.text("Event: " + e.event + ", Date : " + e.date);
        return tooltip.style("visibility", "visible");
     })
 
