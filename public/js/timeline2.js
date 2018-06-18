@@ -169,12 +169,11 @@ function makeTimeline(data, city) {
       );
     });
 
-  // Search functionality
+  // PLEASE REMOVE THIS FUNCTION!!!
   data.forEach(function(d, i) {
     d.date = d.start;
     d.start = parseDate(d.start);
     $("#timeline").append("<div class='" + i + "'>" + i + "</div>");
-
     $("." + i).on("click", function() {
       dood = parseInt($(this).attr('class'));
       // document.body.scrollTop= y(d.start) ;
@@ -194,8 +193,6 @@ function makeTimeline(data, city) {
       });
     });
   });
-
-
 
   y.domain(
     d3.extent(data, function(d) {
@@ -495,3 +492,44 @@ function showPopup(d) {
  
 }
 // tempMarker.setOpacity(0.3);
+
+function buildSearchResults(number) {
+  // You need to make 'number' an array to sort through multiple search results
+  $("#timeline").append("<div class='" + number + "'>" + number + "</div>");
+  $("." + number).on("click", function() {
+    // document.body.scrollTop= y(d.start) ;
+    events.each(function(e, i) {
+      if (i === number) {
+        var wickedLocation =  new google.maps.LatLng(e.start_lat, e.start_lon);
+        googleMap.setCenter(wickedLocation);
+        googleMap.setZoom(13);
+        // openImg(e);
+        var infoWindow = new google.maps.InfoWindow({ content: e.event });
+        // console.log(markers[i].index); // get index of current timeline node
+        google.maps.event.trigger(markers[i], "click");
+        googleMap.panTo(wickedLocation);
+        console.log(e.event);
+    }
+    });
+  });
+}
+
+function suggestion(text){
+   $.getJSON('/documents/suggest/'+text)
+       .done(function(data){
+            window.data = data;
+            buildSearchResults(data); // Change 'data' to the number of the search result from array
+           // var firstName = data.suggest.firstNameSuggester[0].options;
+           // var lastName = data.suggest.lastNameSuggester[0].options;
+           // $.each(firstName, function(index, value){
+           //     $('.autocomplete').append('<a class="option" href="#" data-id="'+value._id+'" data-name="'+value._source.firstName+' '+value._source.lastName+'"><span class="bold">'+ value._source.firstName +'</span> '+ value._source.lastName +'</a>')
+           // });
+           // $.each(lastName, function(index, value){
+           //     $('.autocomplete').append('<a class="option" href="#" data-id="'+value._id+'" data-name="'+value._source.firstName+' '+value._source.lastName+'">'+value._source.firstName +' <span class="bold">'+ value._source.lastName +'</span></a>')
+           // });
+       });
+}
+
+$('#h2').on('click', function() {
+  console.log(suggestion('hitchhiker'));
+});

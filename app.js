@@ -11,9 +11,12 @@ var cool = require('cool-ascii-faces');
 // the ExpressJS App
 var app = express();
 
+// testing import of modules 
+var msg = require('./models/Message.js');
+console.log(msg);
+
 // configuration of port, templates (/views), static files (/public)
 // and other expressjs settings for the web server.
-app.configure(function(){
 
   // server port number
   app.set('port', process.env.PORT || 5000);
@@ -26,51 +29,38 @@ app.configure(function(){
   //app.set('layout','layout');
   app.engine('html', require('hogan-express')); // https://github.com/vol4ok/hogan-express
 
-  app.use(express.favicon());
-  app.use(express.bodyParser());
-  app.use(express.methodOverride());
+  // app.use(express.favicon());
+  // app.use(express.bodyParser());
+  // app.use(express.methodOverride());
 
   // pass a secret to cookieParser() for signed cookies
-  app.use(express.cookieParser('SECRET_COOKIE_HASH_HERE'));
-  app.use(express.cookieSession()); // add req.session cookie support
+  // app.use(express.cookieParser('SECRET_COOKIE_HASH_HERE'));
+  // app.use(express.cookieSession()); // add req.session cookie support
   
-  // make sesssion information available to all templates
-  app.use(function(req, res, next){
-    res.locals.sessionUserName = req.session.userName;
-    res.locals.sessionUserColor = req.session.userColor;
-    next();
-  });
+  // // make sesssion information available to all templates
+  // app.use(function(req, res, next){
+  //   res.locals.sessionUserName = req.session.userName;
+  //   res.locals.sessionUserColor = req.session.userColor;
+  //   next();
+  // });
 
-  app.use(app.router);
+  // app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
 
   // database - skipping until week 5
   // app.db = mongoose.connect(process.env.MONGOLAB_URI);
   // console.log("connected to database");
-  
-});
 
-app.configure('development', function(){
-  app.use(express.errorHandler());
-});
+
+// app.configure('development', function(){
+//   app.use(express.errorHandler());
+// });
 
 app.get('/cool', function(request, response) {
   response.send(cool());
 });
 
-
-/* 
-SKIPPING FOR FUTURE CLASSES
-SESSIONS w/ MongoDB (store sessions across multiple dynos)
-COOKIEHASH in your .env file (also share with heroku) 
-*/
-// app.use(express.cookieParser(process.env.COOKIEHASH));
-// app.use(express.session({ 
-//     store: new mongoStore({url:process.env.MONGOLAB_URI, maxAge: 300000})
-//     , secret: process.env.COOKIEHASH
-//   })
-// );
-
+var documents = require('./routes/documents');  
 
 // ROUTES
 
@@ -89,6 +79,38 @@ app.get('/freedom', routes.freedom);
 app.get('/test', routes.test);
 
 app.get('/media', routes.media);
+
+app.use('/documents', documents);
+
+var elastic = require('./models/elasticsearch');
+elastic.indexExists().then(function (exists) {
+  if (exists) {
+    return elastic.deleteIndex();
+  }
+}).then(function () {
+  return elastic.initIndex().then(elastic.initMapping).then(function () {
+    //Add a few book titles for the autocomplete
+    var promises = [
+      'Thing Explainer',
+      'The Internet Is a Playground',
+      'The Pragmatic Programmer',
+      'The Hitchhikers Guide to the Galaxy',
+      'Trial of the Clone',
+      'All Quiet on the Western Front',
+      'The Animal Farm',
+      'The Circle'
+    ].map(function (bookTitle, i) {
+      return elastic.addDocument({
+        title: bookTitle,
+        content: bookTitle + i,
+        metadata: {
+          titleLength: bookTitle.length
+        }
+      });
+    });
+    return Promise.all(promises);
+  });
+});
 
 // app.get('/mediaImagesThumb', routes.mediaImagesThumb);
 
@@ -118,23 +140,10 @@ app.get('/media', routes.media);
 // // consume a remote API
 // app.get('/remote_api_demo', routes.remote_api);
 
-
 // app.post('/set_session', routes.set_session);
 
 // create NodeJS HTTP server using 'app'
+
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
