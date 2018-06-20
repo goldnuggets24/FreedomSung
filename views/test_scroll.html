@@ -38,31 +38,6 @@
 
   <!-- <img src="/img/logo-white.png" width="120" class="frontImg"> -->
 <h2 id='h2' style="top: 37%;color:#fff;">JOHANNESBURG, SOUTH AFRICA</h2>
-<div id="local-government-elections-workshop-pano"></div>
-<div id="orlando-east-march-pano"></div>
-<div id="protea-south-march-pano"></div>
-<div id="alex-peoples-inspection-pano"></div>
-<div id="src-march-pano"></div>
-<div id="vaal-march-pano"></div>
-<div id="heroes-day-pano"></div>
-<div id="abahlali-solidarity-march-pano"></div>
-<div id="nersa-hearings-pano"></div>
-<div id="dennis-brutus-memorial-pano"></div>
-<div id="visit-to-itereleng-pano"></div>
-<div id="vaal-march-two-pano"></div>
-<div id="sharpeville-memorial-pano"></div>
-<div id="powa-book-launch-pano"></div>
-<div id="vaal-march-to-arcelor-mittal-pano"></div>
-<div id="visit-to-cdp-pano"></div>
-<div id="world-cup-march-pano"></div>
-<div id="youth-day-pano"></div>
-<div id="jozi-regional-housing-march-pano"></div>
-<div id="schubart-park-anti-xenophobia-event-pano"></div>
-<div id="quagga-evictions-pano"></div>
-<div id="soweto-march-pano"></div>
-<div id="silent-march-pano"></div>
-<div id="scr-meeting-pano"></div>
-<div id="secc-march-pano"></div>
 <!-- <div id="floating-panel">
   <table>
     <tr>
@@ -142,8 +117,24 @@
     <script src="/js/scroll2.js"></script>
     <script src="/js/markers.js"></script>
     <script type="text/javascript" src="/js/infoWindowContent.js"></script>
+
+    <div class="form-group row">
+      <div class="col-10">
+        <input class="form-control search-input" type="search" placeholder="Search" id="event-search-input">
+      </div>
+    </div>
 <!--     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.js"></script> -->
 <!--     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js"></script>
     <script src="/js/material-modal.js"></script> -->
+
+    <script>
+      $(document).ready(function(){
+        // This calls the 'suggestion' function after every click on keyboard in search input field
+        $('#event-search-input').on('keyup', function(){
+          var dInput = this.value;
+          suggestion(dInput);
+        });
+      })
+    </script>
   </body>
 </html>

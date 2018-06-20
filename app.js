@@ -92,6 +92,7 @@ elastic.indexExists().then(function (exists) {
     //Add a few book titles for the autocomplete
     var promises = [
       'Thing Explainer',
+      'Tristan and Kanye are God',
       'The Internet Is a Playground',
       'The Pragmatic Programmer',
       'The Hitchhikers Guide to the Galaxy',
@@ -102,7 +103,7 @@ elastic.indexExists().then(function (exists) {
     ].map(function (bookTitle, i) {
       return elastic.addDocument({
         title: bookTitle,
-        content: bookTitle + i,
+        content: bookTitle + ' , number: ' + i,
         metadata: {
           titleLength: bookTitle.length
         }
