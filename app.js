@@ -92,7 +92,7 @@ elastic.indexExists().then(function (exists) {
     //Add a few book titles for the autocomplete
     var promises = [
       'Thing Explainer',
-      'Tristan and Kanye are God',
+      'Tristan and Kanye',
       'The Internet Is a Playground',
       'The Pragmatic Programmer',
       'The Hitchhikers Guide to the Galaxy',
