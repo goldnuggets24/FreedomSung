@@ -500,3 +500,7 @@ body.media-body {background: #000; height: 100%;}
   right: 0;
   bottom: 1%;
 }
+
+.event-title {
+  cursor: pointer;
+}

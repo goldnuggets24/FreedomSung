@@ -91,15 +91,31 @@ elastic.indexExists().then(function (exists) {
   return elastic.initIndex().then(elastic.initMapping).then(function () {
     //Add a few book titles for the autocomplete
     var promises = [
-      'Thing Explainer',
-      'Tristan and Kanye',
-      'The Internet Is a Playground',
-      'The Pragmatic Programmer',
-      'The Hitchhikers Guide to the Galaxy',
-      'Trial of the Clone',
-      'All Quiet on the Western Front',
-      'The Animal Farm',
-      'The Circle'
+      'Local Government Elections Workshop',
+      'Orlando East March',
+      'Protea South March',
+      'Alex People\'s Inspection',
+      'SCR March',
+      'Vaal March',
+      'Heroes Day',
+      'Abahlali Solidarity March',
+      'Nersa Hearings',
+      'Dennis Brutus Memorial',
+      'Visit to Itereleng',
+      'Vaal March',
+      'Sharpeville Memorial',
+      'POWA Book Launch',
+      'Vaal March to Arcelor Mittal',
+      'Visit to CDP',
+      'World Cup March',
+      'Youth Day',
+      'Jozi Regional Housing March',
+      'Schubart Park Anti-Xenophobia Event',
+      'Quagga Evictions',
+      'Soweto March',
+      'Silent March',
+      'SCR Meeting',
+      'SECC March'
     ].map(function (bookTitle, i) {
       return elastic.addDocument({
         title: bookTitle,

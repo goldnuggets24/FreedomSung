@@ -185,6 +185,7 @@ h5 {
     position: fixed;
     top: 15%;
     right: 5px;
+    float: right;
 }
 #map { 
 	position: fixed;
