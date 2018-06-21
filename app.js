@@ -103,7 +103,7 @@ elastic.indexExists().then(function (exists) {
     ].map(function (bookTitle, i) {
       return elastic.addDocument({
         title: bookTitle,
-        content: bookTitle + ' , number: ' + i,
+        content: i,
         metadata: {
           titleLength: bookTitle.length
         }

@@ -499,22 +499,20 @@ function buildSearchResults(data) {
       number = f['content'];
       title = f['title'];
       if (typeof number != 'undefined') {
-        $("#timeline").append("<div class='event-title " + number + "'>" + title + "</div>");
+        $("#timeline").append("<div class='event-title event-title-" + number + "'>" + title + "</div>");
       }
-      $("." + number).on("click", function() {
-        // document.body.scrollTop= y(d.start) ;
-        events.each(function(e, i) {
-          if (i === number) {
-            var wickedLocation =  new google.maps.LatLng(e.start_lat, e.start_lon);
-            googleMap.setCenter(wickedLocation);
-            googleMap.setZoom(13);
-            var infoWindow = new google.maps.InfoWindow({ content: e.event });
-            google.maps.event.trigger(markers[i], "click");
-            googleMap.panTo(wickedLocation);
-          }
-        });
-      });
     });
+  });  
+  // document.body.scrollTop= y(d.start) ;
+  events.each(function(e, i) {
+      $(".event-title-" + i).on("click", function() {
+        var wickedLocation =  new google.maps.LatLng(e.start_lat, e.start_lon);
+        googleMap.setCenter(wickedLocation);
+        googleMap.setZoom(13);
+        var infoWindow = new google.maps.InfoWindow({ content: e.event });
+        google.maps.event.trigger(markers[i], "click");
+        googleMap.panTo(wickedLocation);
+      });
   });
 }
 
