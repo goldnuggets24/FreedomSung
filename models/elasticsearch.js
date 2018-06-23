@@ -79,15 +79,15 @@ function getSuggestions(input) {
     return elasticClient.search({
         index: indexName,
         body: {
-    query: {
-      match: {
-        title: {
-            query: input,
-            fuzziness: 'AUTO'
+            query: {
+              match: {
+                title: {
+                    query: input,
+                    fuzziness: 'AUTO'
+                    }
+                }
+            }
         }
-      }
-    }
-  }
     });
 }
     
