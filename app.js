@@ -89,7 +89,6 @@ elastic.indexExists().then(function (exists) {
   }
 }).then(function () {
   return elastic.initIndex().then(elastic.initMapping).then(function () {
-    //Add a few book titles for the autocomplete
     var promises = [
       'Local Government Elections Workshop',
       'Orlando East March',

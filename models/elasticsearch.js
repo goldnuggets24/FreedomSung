@@ -41,12 +41,16 @@ exports.indexExists = indexExists;
 function initMapping() {  
     return elasticClient.indices.putMapping({
         index: indexName,
-        type: "document",
+        type: 'document',
         body: {
             properties: {
                 title: { type: 'text' },
                 content: { type: 'text' },
-                title_suggest: { type: 'completion' }
+                content_suggest: { 
+                    type: 'completion', 
+                    analyzer: 'simple', 
+                    search_analyzer: 'simple' 
+                }
             }
 
         }
@@ -74,8 +78,17 @@ exports.addDocument = addDocument;
 function getSuggestions(input) {  
     return elasticClient.search({
         index: indexName,
-        q: input
-  });
+        body: {
+    query: {
+      match: {
+        title: {
+            query: input,
+            fuzziness: 'AUTO'
+        }
+      }
+    }
+  }
+    });
 }
     
 exports.getSuggestions = getSuggestions;
