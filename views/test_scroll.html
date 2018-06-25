@@ -34,6 +34,7 @@
   <div id="timeline"></div>
       <div class="form-group row" id="search-row">
       <div class="col-10">
+        <div class="search-icon"><img src="/search.png" /></div>
         <input class="form-control search-input" type="search" placeholder="Search" id="event-search-input">
       </div>
     </div>
@@ -128,6 +129,10 @@
 
     <script>
       $(document).ready(function(){
+        $('.search-icon img').on('click', function() {
+          $('.search-input').show();
+          $('.search-icon img').hide();
+        });
         // This calls the 'suggestion' function after every click on keyboard in search input field
         $('#event-search-input').on('keyup', function(){
           var dInput = this.value;

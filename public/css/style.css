@@ -501,6 +501,23 @@ body.media-body {background: #000; height: 100%;}
   bottom: 1%;
 }
 
+.search-input {
+  display: none;
+  background: rgba(16, 15, 15, 0.4);
+  border: 1px solid black;
+}
+
+.search-icon {margin-right: 10px;}
+
+.search-icon img {
+  width: 50px;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 24px;
+  padding: 7px;
+  cursor: pointer;
+  border: 1px solid #000;
+}
+
 .event-title {
   cursor: pointer;
 }
