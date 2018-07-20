@@ -1,5 +1,5 @@
 var markers_image=[
-'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
+'/workshop-trans.png',
 'https://s3-us-west-2.amazonaws.com/orlandoeastmarch111309/IMG_0292.jpg',
 'https://s3-us-west-2.amazonaws.com/proteasouthmarch111509/IMG_0387.jpg',
 'https://s3-us-west-2.amazonaws.com/alexpeoplesinspection111909/IMG_0427.jpg',
@@ -12,9 +12,9 @@ var markers_image=[
 'https://s3-us-west-2.amazonaws.com/visittoitereleng012510/IMG_1037.jpg',
 'https://s3-us-west-2.amazonaws.com/vaalmarch022210/IMG_1066.jpg',
 'https://s3-us-west-2.amazonaws.com/sharpevillememorial032110/IMG_1206.jpg',
-'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
+'/workshop-trans.png',
 'https://s3-us-west-2.amazonaws.com/vaalmarchtoarcelormittal051110/IMG_1401.jpg',
-'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
+'/workshop-trans.png',
 'https://s3-us-west-2.amazonaws.com/worldcupmarch061110/IMG_1498.jpg',
 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
 'https://s3-us-west-2.amazonaws.com/joziregionalhousingmarch062510/IMG_1588.jpg',
@@ -23,7 +23,7 @@ var markers_image=[
 'https://s3-us-west-2.amazonaws.com/sowetomarch091510/IMG_2358.jpg',
 'https://s3-us-west-2.amazonaws.com/silentmarchfxi101910/IMG_2451.jpg',
 'https://s3-us-west-2.amazonaws.com/scrmarch112409/IMG_0717.jpg',
-'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
+'/workshop-trans.png',
 ];
 
 
