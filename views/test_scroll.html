@@ -23,10 +23,12 @@
 </style>
 </head>
 
-<body>
+<body onload="goToSearchLocation({{ latitude_of_event }} ,{{ longitude_of_event }} ,{{ event }} )">
   <script src="/js/d3.min.js"></script>
   <script src="/js/queue.min.js"></script>
-  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<!--   <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+ -->  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
   <script src='/js/leaflet.label.js'></script>
 
   <div class='custom-popup' id='map' style="display: none;"></div>

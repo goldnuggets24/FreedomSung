@@ -191,8 +191,6 @@ function makeTimeline(data, city) {
     .attr("cy", function(d) {
        return y(d.start);
     })
-    
-
     .attr("r", 1.5)
     .style("fill", "#FFEB3B")
     .style("opacity", 0.9)
@@ -238,6 +236,7 @@ function makeTimeline(data, city) {
         dot.attr("cy", mouseY);
         dot.style("visibility", "visible");
         events.style("visibility", "visible");
+
       
         events.each(function(e, i) {
          var distance = Math.abs(d3.select(this).attr("cy") - mouseY);
@@ -471,4 +470,80 @@ function showPopup(d) {
       "</div>";
  
 }
+
+function getheight(){
+    var d= document.documentElement;
+    var b= document.body;
+    var who= d.offsetHeight? d: b ;
+    return Math.max(who.scrollHeight,who.offsetHeight);
+}
 // tempMarker.setOpacity(0.3);
+function goToMyLocation(lat,long,d){
+
+
+        // var bodyHeight=getheight();
+        // var svgHeight=$('#timeline').height();
+     
+
+
+
+       var date1=new Date(d.start);
+        document.body.scrollTop= y(date1) ;
+        mouseY =  y(date1);
+
+        var move =parseInt($('line').attr('y1'))+mouseY;
+
+        console.log("scrol onclic",scrolbybot);
+        dot.attr("cy", mouseY);
+        dot.style("visibility", "visible");
+        events.style("visibility", "visible");
+        var wickedLocation =  new google.maps.LatLng(d.start_lat, d.start_lon);
+
+         openImg(d);
+        var infoWindow = new google.maps.InfoWindow({ content: d.event });
+        // console.log(markers[i].index); // get index of current timeline node
+        //google.maps.event.trigger(markers[i], "click");
+        googleMap.panTo(wickedLocation);
+      
+        events.each(function(e, i) {
+         var distance = Math.abs(d3.select(this).attr("cy") - mouseY);
+        if (distance < 1.2) {
+         var t = mouseY + 102;
+         var wickedLocation =  new google.maps.LatLng(e.start_lat, e.start_lon);
+           google.maps.event.trigger(markers[i], "click");
+           googleMap.panTo(wickedLocation);
+
+           date.style("visibility", "visible");
+          // date.text(e.date);
+         date.style("top", t + "px").style("right", 90 + "px");
+
+            $("#current_date").html(
+             '<span style="color:yellow">Date : <span><span style="color:white">' +
+                e.date +
+                "</span>"
+             );
+
+      var ty = d3.select(this).attr("cy");
+      stateLine
+        .transition()
+        .duration(520)
+        .attr("y1", ty);
+       if (e.event != eventname) {
+        var current_position = proj([e.start_lon, e.start_lat]); // lon, lat
+        console.log("current_post",current_position);
+        current.attr("transform", "translate(" + current_position + ")");
+        current2.attr("transform", "translate(" + current_position + ")");
+
+
+      }
+    } else {
+      d3.select(this).attr("x1", width / 2 - 7);
+      d3.select(this).style("stroke-width", 1.2);
+
+
+      // tooltip.style("visibility", "visible");
+    }
+    });
+
+
+}

@@ -35,9 +35,51 @@ exports.freedomsung = function(req, res) {
 	// res.render('test_2.html');
 }
 
+function isEmpty(obj) {
+    for(var prop in obj) {
+        if(obj.hasOwnProperty(prop))
+            return false;
+    }
+
+    return true;
+}
+
 exports.test = function(req, res) {
-	console.log("test page requested");
-	// res.render('test_mb.html');
+	console.log("test page requested",req.query,req.params);
+   let events=req.query;
+   console.log('-----------------',events);
+   var eventsJson = require("../public/event_final2.json"); // event names
+
+   if(!isEmpty(events)){
+
+      for (var i = 0; i < eventsJson.length; i++) {
+       let name=eventsJson[i].event.toLowerCase();	
+       let search=events.event.toLowerCase();
+       if(name==search){
+       console.log('match the data');
+        var latitude_of_event=eventsJson[i].start_lat;
+        var longitude_of_event=eventsJson[i].start_lon;
+        var  matched_event=eventsJson[i];
+        console.log(longitude_of_event);
+        break;
+    }
+
+    }
+
+  }
+
+  
+
+ 
+
+   res.locals = {
+		latitude_of_event:(latitude_of_event)?latitude_of_event:0,
+		longitude_of_event:(longitude_of_event)?longitude_of_event:0,
+		event:(JSON.stringify(matched_event))?JSON.stringify(matched_event):0
+
+	};
+
+    // res.render('test_mb.html');
 	// res.render('test_2.html');
 	res.render('test_scroll.html');
 }
