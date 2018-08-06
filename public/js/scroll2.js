@@ -300,23 +300,16 @@ function hideMe(obj) {
     obj.style.visibility = 'hidden';
 }
 
-
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
 
 function goToSearchLocation(lat,long,d){
- 
 if(lat!=0){
 setScrollBarToMyLocation(lat,long,d)
 goToMyLocation(lat,long,d);
+  }
 }
- 
-
-}
-
-
-
-
-
-
 function setScrollBarToMyLocation(lat ,long,d){
 
    scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
@@ -325,9 +318,8 @@ if(scrollTop>0){
    scrollTop=scrollTop;
 
 }else{
+    var date1=new Date(d.start);
    scrollTop=scrollTop+300;
-
-
 }
   // alert(scrollTop);
   if (scrollTop < 80) {

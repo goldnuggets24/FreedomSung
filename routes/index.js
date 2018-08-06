@@ -68,10 +68,6 @@ exports.test = function(req, res) {
 
   }
 
-  
-
- 
-
    res.locals = {
 		latitude_of_event:(latitude_of_event)?latitude_of_event:0,
 		longitude_of_event:(longitude_of_event)?longitude_of_event:0,
