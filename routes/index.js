@@ -371,7 +371,8 @@ exports.media = function(req, res) {
 	res.locals = {
 		media: infoWindowContent,
 		size: infoWindowContent["num"],
-		title: events[id]["event"]
+		title: events[id]["event"],
+		description: events[id]["description"]
 	};
 	return res.render('media', {
       partials: {mediaImagesThumb: 'mediaImagesThumb', mediaImagesFull: 'mediaImagesFull'} 
