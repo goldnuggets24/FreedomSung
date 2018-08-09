@@ -13,7 +13,7 @@ var app = express();
 
 // configuration of port, templates (/views), static files (/public)
 // and other expressjs settings for the web server.
-app.configure(function(){
+
 
   // server port number
   app.set('port', process.env.PORT || 5000);
@@ -26,33 +26,22 @@ app.configure(function(){
   //app.set('layout','layout');
   app.engine('html', require('hogan-express')); // https://github.com/vol4ok/hogan-express
 
-  app.use(express.favicon());
-  app.use(express.bodyParser());
-  app.use(express.methodOverride());
 
-  // pass a secret to cookieParser() for signed cookies
-  app.use(express.cookieParser('SECRET_COOKIE_HASH_HERE'));
-  app.use(express.cookieSession()); // add req.session cookie support
+
   
   // make sesssion information available to all templates
-  app.use(function(req, res, next){
-    res.locals.sessionUserName = req.session.userName;
-    res.locals.sessionUserColor = req.session.userColor;
-    next();
-  });
 
-  app.use(app.router);
+
+
   app.use(express.static(path.join(__dirname, 'public')));
 
   // database - skipping until week 5
   // app.db = mongoose.connect(process.env.MONGOLAB_URI);
   // console.log("connected to database");
   
-});
 
-app.configure('development', function(){
-  app.use(express.errorHandler());
-});
+
+
 
 app.get('/cool', function(request, response) {
   response.send(cool());
