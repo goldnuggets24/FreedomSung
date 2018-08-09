@@ -498,7 +498,7 @@ body.media-body {background: #000; height: 100%;}
 #search-row {
   position: fixed;
   right: 0;
-  bottom: 1%;
+  top: 1%;
 }
 
 .search-input {
