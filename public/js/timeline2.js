@@ -503,7 +503,10 @@ function goToMyLocation(lat,long,d){
         var infoWindow = new google.maps.InfoWindow({ content: d.event });
         // console.log(markers[i].index); // get index of current timeline node
         //google.maps.event.trigger(markers[i], "click");
-        googleMap.panTo(wickedLocation);
+        //googleMap.panTo(wickedLocation);
+
+        googleMap.setCenter({lat,long});
+
       
         events.each(function(e, i) {
          var distance = Math.abs(d3.select(this).attr("cy") - mouseY);

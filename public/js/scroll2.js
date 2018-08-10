@@ -316,9 +316,8 @@ function setScrollBarToMyLocation(lat ,long,d){
 
 if(scrollTop>0){
    scrollTop=scrollTop;
-
 }else{
-    var date1=new Date(d.start);
+   var date1=new Date(d.start);
    scrollTop=scrollTop+300;
 }
   // alert(scrollTop);
@@ -327,13 +326,10 @@ if(scrollTop>0){
 
     base_layer.setOpacity(1);
     // hideTimeline();
-
     centerLayer.addTo(map);
     // map.removeLayer(markerLayer);
     // map.removeLayer(cityLayer);
-
     // map.setView([-26.204407 + 8,28.037939 + 30], 4);
-
     $('#h1').css({"visibility":"visible"});
     $('#h2').css({"visibility":"visible"});
     $('#intro').css({"visibility":"visible"});
