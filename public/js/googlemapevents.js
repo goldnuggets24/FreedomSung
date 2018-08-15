@@ -1,31 +1,12 @@
-var markers_image=[
-'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
-'https://s3-us-west-2.amazonaws.com/orlandoeastmarch111309/IMG_0292.jpg',
-'https://s3-us-west-2.amazonaws.com/proteasouthmarch111509/IMG_0387.jpg',
-'https://s3-us-west-2.amazonaws.com/alexpeoplesinspection111909/IMG_0427.jpg',
-'https://s3-us-west-2.amazonaws.com/scrmarch112409/IMG_0716.jpg',
-'https://s3-us-west-2.amazonaws.com/vaalmarch112709/IMG_0771.jpg',
-'https://s3-us-west-2.amazonaws.com/heroesday112809/IMG_0778.jpg',
-'https://s3-us-west-2.amazonaws.com/abahlalisolidaritymarch120509/IMG_0860.jpg',
-'https://s3-us-west-2.amazonaws.com/nersahearings012110/IMG_0963.jpg',
-'https://s3-us-west-2.amazonaws.com/dennisbrutusmemorial012310/IMG_1024.jpg',
-'https://s3-us-west-2.amazonaws.com/visittoitereleng012510/IMG_1037.jpg',
-'https://s3-us-west-2.amazonaws.com/vaalmarch022210/IMG_1066.jpg',
-'https://s3-us-west-2.amazonaws.com/sharpevillememorial032110/IMG_1206.jpg',
-'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
-'https://s3-us-west-2.amazonaws.com/vaalmarchtoarcelormittal051110/IMG_1401.jpg',
-'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
-'https://s3-us-west-2.amazonaws.com/worldcupmarch061110/IMG_1498.jpg',
-'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
-'https://s3-us-west-2.amazonaws.com/joziregionalhousingmarch062510/IMG_1588.jpg',
-'https://s3-us-west-2.amazonaws.com/schubartparkanti-xenophobiaevent071110/IMG_2183.jpg',
-'https://s3-us-west-2.amazonaws.com/quaggaevictions080310/IMG_2306.jpg',
-'https://s3-us-west-2.amazonaws.com/sowetomarch091510/IMG_2358.jpg',
-'https://s3-us-west-2.amazonaws.com/silentmarchfxi101910/IMG_2451.jpg',
-'https://s3-us-west-2.amazonaws.com/scrmarch112409/IMG_0717.jpg',
-'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
-];
-
+var markers_image_type={
+  'workshop': '../img/workshop.png',
+  'march': '../img/march.png',
+  'fieldvisit': '../img/fieldvisit.png',
+  'commemoration': '../img/commemoration.png', 
+  'demonstration': '../img/demonstration.png', 
+  'event': '../img/event.png',
+  'meeting':'../img/meeting.png',
+};
 
 function CoordMapType(tileSize) {
   this.tileSize = tileSize;
@@ -70,9 +51,9 @@ function myMap() {
         title: markers[i][0],
         label: markers[i][0],
         icon: {
-          url: markers_image[i], // yellow markers
+          url: markers_image_type[markers[i][5]],//markers_image[i], // yellow markers
           //url:'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
-          scaledSize: new google.maps.Size(30, 30), // scaled size
+          scaledSize: new google.maps.Size(35, 35), // scaled size
           labelOrigin: new google.maps.Point(markers[i][3], markers[i][4]) // label condition (remove or keep?)
         },
         label: {
