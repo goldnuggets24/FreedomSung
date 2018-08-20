@@ -173,7 +173,7 @@ function makeTimeline(data, city) {
   data.forEach(function(d, i) {
     d.date = d.start;
     d.start = parseDate(d.start);
-    $("#timeline").append("<div class='" + i + "'>" + i + "</div>");
+    // $("#timeline").append("<div class='" + i + "'>" + i + "</div>");
 
     $("." + i).on("click", function() {
       dood = parseInt($(this).attr('class'));

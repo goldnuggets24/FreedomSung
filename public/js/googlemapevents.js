@@ -43,7 +43,13 @@ function myMap() {
 
   // Loop through our array of markers & place each one on Google map  
   for( i = 0; i < markers.length; i++ ) {
-    var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+    // Local Gov Elections Workshop
+    if (i == 0) {
+      var position = new google.maps.LatLng(-26.204407,28.037939)
+      } else {
+        var position = new google.maps.LatLng(markers[i][1], markers[i][2])
+      }
+
     bounds.extend(position);
     markers[i] = new google.maps.Marker({
         position: position,
