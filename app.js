@@ -3,6 +3,7 @@
  * Module dependencies.
  */
 var express = require('express');
+const config = require('./public/config');
 var http = require('http');
 var path = require('path');
 // var mongoose = require('mongoose');
