@@ -52,6 +52,7 @@ var current2;
 var eventname = "test";
 var mouseY;
 var scrolbybot;
+var prev=flagcount=0;
 // For the map
 var proj = d3.geo
   .mercator()
@@ -212,7 +213,24 @@ function makeTimeline(data, city) {
       return width / 2;
     })
     .attr("cy", function(d) {
-       return y(d.start);
+
+
+       if(flagcount==0){
+          console.log("I am Here For First Time");
+          flagcount=flagcount+1;
+          prev=y(d.start);
+          
+        }else{
+
+          if(y(d.start)-prev>10){
+            console.log("Here For Second Time And So on");
+             prev=y(d.start)+100;
+         return y(d.start)+100;
+
+          }
+        } 
+
+        return y(d.start);
     })
     .attr("r", 1.5)
     .style("fill", "#FFEB3B")
@@ -243,6 +261,9 @@ function makeTimeline(data, city) {
       // if (event.clientY > largeScale) {
       //   event.clientY = largeScale;
       // }
+ var distance_between_previous_dot= $(this).attr("cy");
+
+      console.log(distance_between_previous_dot);
 
 
       var move =parseInt($('line').attr('y1'));
@@ -254,8 +275,25 @@ function makeTimeline(data, city) {
 
         // window.pageYOffset =event.clientY//
         document.body.scrollTop= y(d.start) ;
+
+        console.log(distance_between_previous_dot-mouseY);
+
+
         mouseY =  y(d.start);
-        console.log("scrol onclic",scrolbybot);
+
+        if(parseInt(distance_between_previous_dot-mouseY)==100){
+
+          mouseY=mouseY+100;
+        }
+
+
+       //scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+       // var a = scrollScale(event.pageX);
+        //console.log('circle onclick',a);
+
+        // window.pageYOffset =event.clientY//
+       
         dot.attr("cy", mouseY);
         dot.style("visibility", "visible");
         events.style("visibility", "visible");
