@@ -491,7 +491,7 @@ function goToMyLocation(lat,long,d){
         document.body.scrollTop= y(date1) ;
         mouseY =  y(date1);
 
-        var move =parseInt($('line').attr('y1'))+mouseY;
+        //var move =parseInt($('line').attr('y1'))+mouseY;
 
         console.log("scrol onclic",scrolbybot);
         dot.attr("cy", mouseY);

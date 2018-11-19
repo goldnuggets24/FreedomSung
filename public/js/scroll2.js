@@ -306,7 +306,7 @@ window.onbeforeunload = function () {
 
 function goToSearchLocation(lat,long,d){
 if(lat!=0){
-setScrollBarToMyLocation(lat,long,d)
+setScrollBarToMyLocation2(lat,long,d)
 goToMyLocation(lat,long,d);
   }
 }
@@ -324,6 +324,109 @@ if(scrollTop>0){
   if (scrollTop < 80) {
       change = 0;
 
+    base_layer.setOpacity(1);
+    // hideTimeline();
+    centerLayer.addTo(map);
+    // map.removeLayer(markerLayer);
+    // map.removeLayer(cityLayer);
+    // map.setView([-26.204407 + 8,28.037939 + 30], 4);
+    $('#h1').css({"visibility":"visible"});
+    $('#h2').css({"visibility":"visible"});
+    $('#intro').css({"visibility":"visible"});
+    $('#scroll').css({"visibility":"visible"});
+    // $('#bg_intro').css({'"visibility':"hidden"});
+    $('#bg_intro').css({"visibility":"hidden"});
+
+    $('#h1_2').css({"visibility":"hidden"});
+    $('#h5').css({"visibility":"hidden"});
+    $('.boundary').css({"visibility":"hidden"});
+    $('.circle').css({"visibility":"hidden"});
+
+    $('#image').css({"visibility":"hidden"});
+    $('#pointing').css({"visibility":"hidden"});
+    $('#southAftica').css({"visibility":"hidden"});
+
+    $('#current_date').css({"visibility":"hidden"});
+    $('#notes').css({"visibility":"hidden"});
+    $('#cityname').css({"visibility":"hidden"});
+
+    // tooltip.style("visibility", "hidden");
+    // bg_city.style('visibility', 'hidden');
+    // bg_timeline.style("visibility", "hidden");
+    // stateLine.style('visibility', 'hidden');
+
+    date.style("visibility", "hidden");
+    eventname = 'test';
+
+    if(scrollTop > 40) {
+       updateTimeline(scrollTop);
+    }
+
+  } else if(scrollTop >= 80) {
+
+    base_layer.setOpacity(0.8);
+
+    if(change == 0) {
+      tempMarker.setLatLng([-26.20192,28.05097 ]);
+      // map.setView([-26.20192,28.05097], 13);  
+
+      change = 1;
+    }
+
+    map.removeLayer(centerLayer);
+    cityLayer.addTo(map);
+    updateTimeline(scrollTop);
+    stateLine.style('visibility', 'visible');
+    
+    // map.removeLayer(markerLayer);
+    // map.removeLayer(centerLayer);
+
+    bg_city.style('visibility', 'visible');
+    bg_timeline.style("visibility", "visible");
+
+    $('#cityname').css({"visibility":"visible"});
+
+    $('#h1').css({"visibility":"hidden"});
+    $('#h2').css({"visibility":"hidden"});
+    $('#intro').css({"visibility":"hidden"});
+    $('#scroll').css({"visibility":"hidden"});
+
+    // $('#bg_intro').css({'"visibility':"visible"});
+    $('#bg_intro').css({"visibility":"visible"});
+
+    $('#h1_2').css({"visibility":"visible"});
+    $('#h5').css({"visibility":"visible"});
+    $('.boundary').css({"visibility":"visible"});
+    $('.circle').css({"visibility":"visible"});
+
+    $('#current_date').css({"visibility":"visible"});
+
+    $('#notes').css({"visibility":"visible"});
+    $('#image').css({"visibility":"visible"});
+    $('#pointing').css({"visibility":"visible"});
+    $('#southAftica').css({"visibility":"visible"});
+  }
+    if ($('.gm-style-iw').length > 0) {
+      $('#h2').css({"visibility":"hidden"});
+    } 
+
+      window.scrollTo(0, 367.4710900473934);
+
+}
+
+
+function setScrollBarToMyLocation2(lat ,long,d){
+ scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+     if(scrollTop>0){
+      scrollTop=scrollTop;
+      } else{
+       var date1=new Date(d.start);
+      scrollTop=scrollTop+300;
+      }
+  // alert(scrollTop);
+  if (scrollTop < 80) {
+      change = 0;
     base_layer.setOpacity(1);
     // hideTimeline();
     centerLayer.addTo(map);
